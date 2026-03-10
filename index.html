@@ -554,7 +554,7 @@
   position:relative;
   z-index:1;
   display:grid;
-  grid-template-columns:1.15fr .85fr;
+  grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap:28px;
   align-items:stretch;
 }
@@ -565,15 +565,21 @@
   border:1px solid rgba(255,255,255,.08);
   background:#050505;
   box-shadow:var(--shadow);
-  min-height:760px;
+  min-height:820px;
   position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
 }
 
 .drinks-visual img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  object-position:center top;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+  background:#050505;
 }
 
 .drinks-card{
@@ -593,13 +599,14 @@
   }
 
   .drinks-visual{
-    min-height:620px;
+    min-height:720px;
   }
 }
 
 @media (max-width:760px){
   .drinks-visual{
-    min-height:480px;
+    min-height:520px;
+    padding:12px;
   }
 }
 
@@ -879,7 +886,7 @@
         </div>
 
         <div class="image-card">
-          <img src="PHOTO-2026-02-11-14-35-05.jpg" alt="Getränke und Markenbild bei Sultan" />
+          <img src="PHOTO-2026-02-11-14-35-05 5.jpg" alt="Getränke und Markenbild bei Sultan" />
           <div class="caption">
             Sultan ist für uns auch ein Dankeschön an treue Gäste, Freunde und Familien – an alle, die sich gutes Essen gönnen möchten, ohne dafür zu viel zu bezahlen.
           </div>
@@ -1208,20 +1215,21 @@
         </p>
       </div>
 
-      <div class="drinks-grid">
+     <div class="drinks-grid">
   <div class="drinks-visual">
-    <img src="PHOTO-2026-02-11-14-35-05.jpg" alt="Elephant Bay und Erfrischungen bei Sultan Gemüse Kebab" />
+    <img src="PHOTO-2026-02-11-14-35-05 5.jpg" alt="Elephant Bay und Erfrischungen bei Sultan Gemüse Kebab" />
   </div>
 
   <div class="drinks-card">
     <div class="kicker" style="margin-bottom:10px;">Erfrischungen</div>
     <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);">
-      Sichtbar, frisch und perfekt in die Marke eingebunden.
+      Frisch, sichtbar und perfekt in die Marke eingebunden.
     </h3>
 
     <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;">
-      Auch unsere Getränke sollen nicht wie ein Nebengedanke wirken. Das Motiv bekommt jetzt
-      bewusst mehr Raum, damit Frische, Farbe und Markenwirkung sofort sichtbar werden.
+      Dieses Motiv bekommt jetzt bewusst mehr Raum, damit Frische, Farbe und Markenwirkung
+      sofort sichtbar werden. Auch im Getränkebereich bleibt Sultan klar, hochwertig und
+      sauber präsentiert.
     </p>
 
     <div class="drink-row">
@@ -1249,7 +1257,7 @@
     </div>
 
     <div class="quote" style="margin-top:22px;">
-      Limonade, Eistee und Cola – frisch inszeniert, klar präsentiert und passend zur Welt von Sultan.
+      Limonade, Eistee und Cola – modern inszeniert, klar lesbar und passend zur Welt von Sultan.
     </div>
   </div>
 </div>
