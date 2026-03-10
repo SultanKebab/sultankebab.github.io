@@ -4,48 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sultan Gemüse Kebab</title>
-  <meta name="description" content="Sultan Gemüse Kebab – offizieller Webauftritt mit Speisekarte, Getränken, Kontakt und modernem Sultan-Design." />
+  <meta name="description" content="Sultan Gemüse Kebab – moderner Webauftritt mit Speisekarte, Getränken und starkem Sultan-Design." />
   <style>
     :root{
-      --bg:#040404;
-      --bg-soft:#0b0f0c;
-      --card:#0b0b0b;
-      --card-2:#111411;
+      --bg:#050505;
+      --bg2:#0b0f0c;
+      --card:#0c0c0c;
+      --card2:#101511;
       --text:#ffffff;
-      --muted:#d8d8d8;
-      --muted-2:#b7b7b7;
+      --muted:#d4d4d4;
+      --soft:#a9a9a9;
       --line:rgba(255,255,255,.08);
       --green:#9fdc3b;
-      --green-strong:#a8ea32;
-      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --green2:#b0ef46;
+      --greenGlow:rgba(159,220,59,.18);
+      --shadow:0 18px 45px rgba(0,0,0,.35);
       --radius:24px;
+      --max:1200px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(159,220,59,.08), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(159,220,59,.06), transparent 24%),
-        var(--bg);
+      font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
-      line-height:1.6;
+      background:
+        radial-gradient(circle at top left, rgba(159,220,59,.08), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(159,220,59,.06), transparent 22%),
+        linear-gradient(180deg, #030303 0%, #060806 100%);
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
     .container{
-      width:min(1180px, calc(100% - 32px));
+      width:min(var(--max), calc(100% - 32px));
       margin:0 auto;
     }
 
@@ -53,13 +47,13 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(4,4,4,.88);
-      backdrop-filter:blur(12px);
+      backdrop-filter:blur(14px);
+      background:rgba(5,5,5,.86);
       border-bottom:1px solid var(--line);
     }
 
     .nav{
-      min-height:78px;
+      min-height:82px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -72,64 +66,88 @@
       gap:14px;
     }
 
-    .brand-badge{
-      width:42px;
-      height:42px;
+    .brand-mark{
+      width:44px;
+      height:44px;
       border-radius:50%;
       border:1px solid rgba(159,220,59,.45);
+      color:var(--green);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:12px;
-      color:var(--green);
+      font-weight:700;
+      background:rgba(159,220,59,.05);
+      box-shadow:0 0 20px rgba(159,220,59,.08) inset;
       flex:0 0 auto;
     }
 
-    .brand-text strong{
+    .brand-copy strong{
       display:block;
       font-size:20px;
-      letter-spacing:.3px;
+      letter-spacing:.2px;
     }
 
-    .brand-text span{
-      color:var(--muted-2);
-      font-size:13px;
+    .brand-copy span{
+      display:block;
+      font-size:12px;
+      color:var(--soft);
+      margin-top:2px;
+      letter-spacing:.4px;
+      text-transform:uppercase;
     }
 
     .nav-links{
       display:flex;
-      gap:20px;
+      gap:18px;
       flex-wrap:wrap;
       justify-content:flex-end;
     }
 
     .nav-links a{
       font-size:15px;
-      color:#f3f3f3;
-      opacity:.92;
+      color:#f0f0f0;
+      opacity:.94;
+      padding:10px 0;
+      position:relative;
     }
 
     .nav-links a:hover{
       color:var(--green);
     }
 
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:4px;
+      width:0;
+      height:2px;
+      background:var(--green);
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
     .hero{
       position:relative;
       overflow:hidden;
-      min-height:92vh;
+      min-height:95vh;
       display:flex;
       align-items:center;
       background:
-        linear-gradient(rgba(4,4,4,.62), rgba(4,4,4,.78)),
-        url('brand-bg.jpg') center/cover no-repeat;
+        linear-gradient(90deg, rgba(4,4,4,.82) 0%, rgba(4,4,4,.58) 48%, rgba(4,4,4,.82) 100%),
+        url("PHOTO-2026-02-11-14-35-04 7.jpg") center/cover no-repeat;
     }
 
-    .hero::after{
+    .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at center, rgba(159,220,59,.10), transparent 24%);
+        radial-gradient(circle at 20% 30%, rgba(159,220,59,.12), transparent 18%),
+        radial-gradient(circle at 80% 70%, rgba(159,220,59,.10), transparent 20%);
       pointer-events:none;
     }
 
@@ -138,58 +156,67 @@
       z-index:1;
       display:grid;
       grid-template-columns:1.1fr .9fr;
-      gap:34px;
-      align-items:center;
+      gap:28px;
+      width:100%;
       padding:48px 0;
+      align-items:center;
     }
 
     .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border:1px solid rgba(159,220,59,.55);
-      color:var(--green);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
       border-radius:999px;
+      border:1px solid rgba(159,220,59,.45);
+      background:rgba(0,0,0,.22);
+      color:var(--green2);
       font-size:13px;
-      letter-spacing:.6px;
+      font-weight:700;
+      letter-spacing:.7px;
+      text-transform:uppercase;
       margin-bottom:18px;
-      background:rgba(0,0,0,.18);
+      box-shadow:0 0 24px rgba(159,220,59,.08);
     }
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(42px, 7vw, 86px);
-      line-height:.98;
-      letter-spacing:-1.8px;
+      font-size:clamp(42px, 7vw, 88px);
+      line-height:.96;
+      letter-spacing:-2px;
+      max-width:760px;
     }
 
     .hero p{
-      max-width:720px;
-      font-size:19px;
-      color:var(--muted);
       margin:0 0 28px;
+      max-width:700px;
+      color:var(--muted);
+      font-size:19px;
+      line-height:1.65;
     }
 
     .cta-row{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
+      margin-bottom:28px;
     }
 
     .btn{
+      min-height:54px;
+      padding:0 24px;
+      border-radius:16px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:52px;
-      padding:0 22px;
-      border-radius:16px;
       font-weight:700;
       transition:.2s ease;
     }
 
     .btn-primary{
-      background:var(--green-strong);
-      color:#081005;
-      box-shadow:var(--shadow);
+      background:linear-gradient(180deg, var(--green2), var(--green));
+      color:#0b1007;
+      box-shadow:0 14px 30px rgba(159,220,59,.18);
     }
 
     .btn-primary:hover{
@@ -197,113 +224,194 @@
     }
 
     .btn-secondary{
-      border:1px solid rgba(159,220,59,.6);
-      color:var(--green);
+      border:1px solid rgba(159,220,59,.55);
+      color:var(--green2);
       background:rgba(0,0,0,.18);
     }
 
-    .hero-panel{
-      background:linear-gradient(180deg, rgba(10,10,10,.92), rgba(10,14,11,.92));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:28px;
-      padding:28px;
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      max-width:720px;
+    }
+
+    .stat{
+      background:rgba(12,12,12,.72);
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:18px;
+      padding:16px;
       box-shadow:var(--shadow);
     }
 
-    .hero-logo{
-      width:min(100%, 420px);
-      margin:0 auto 22px;
-      filter:drop-shadow(0 8px 25px rgba(0,0,0,.4));
+    .stat strong{
+      display:block;
+      font-size:22px;
+      color:var(--green2);
+      margin-bottom:4px;
     }
 
-    .mini-points{
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .hero-panel{
+      background:linear-gradient(180deg, rgba(10,10,10,.92), rgba(12,18,13,.92));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at top right, rgba(159,220,59,.10), transparent 28%);
+      pointer-events:none;
+    }
+
+    .hero-logo{
+      width:min(100%, 430px);
+      margin:0 auto 20px;
+      filter:drop-shadow(0 10px 24px rgba(0,0,0,.4));
+    }
+
+    .panel-points{
       display:grid;
       gap:12px;
     }
 
-    .mini-point{
-      padding:14px 16px;
+    .point{
       background:rgba(255,255,255,.03);
       border:1px solid rgba(255,255,255,.06);
-      border-radius:16px;
+      border-radius:18px;
+      padding:15px 16px;
     }
 
-    .mini-point strong{
+    .point strong{
       display:block;
-      color:var(--green);
       margin-bottom:4px;
+      color:var(--green2);
       font-size:15px;
       text-transform:uppercase;
       letter-spacing:.8px;
     }
 
     section{
-      padding:86px 0;
+      padding:92px 0;
     }
 
-    .section-kicker{
-      color:var(--green);
+    .section-head{
+      margin-bottom:28px;
+    }
+
+    .kicker{
+      color:var(--green2);
+      font-size:13px;
       text-transform:uppercase;
       letter-spacing:1px;
-      font-size:13px;
       font-weight:700;
       margin-bottom:12px;
     }
 
-    .section-title{
+    .section-head h2{
       margin:0 0 12px;
-      font-size:clamp(30px, 4vw, 48px);
-      line-height:1.05;
+      font-size:clamp(30px, 4.4vw, 50px);
+      line-height:1.04;
+      letter-spacing:-1px;
     }
 
-    .section-text{
-      margin:0 0 34px;
-      max-width:800px;
+    .section-head p{
+      margin:0;
+      max-width:820px;
       color:var(--muted);
       font-size:17px;
+      line-height:1.7;
     }
 
-    .about-grid{
+    .concept-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:24px;
     }
 
     .card{
-      background:linear-gradient(180deg, rgba(12,12,12,.96), rgba(13,17,14,.96));
+      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(13,18,14,.96));
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--radius);
-      padding:24px;
+      padding:26px;
       box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      right:0;
+      width:120px;
+      height:120px;
+      background:radial-gradient(circle, rgba(159,220,59,.10), transparent 70%);
+      pointer-events:none;
     }
 
     .card h3{
       margin:0 0 12px;
-      font-size:23px;
-      color:var(--green);
+      color:var(--green2);
+      font-size:24px;
     }
 
-    .quote-box{
-      border-left:3px solid var(--green);
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .quote{
+      margin-top:18px;
       padding-left:16px;
-      margin-top:16px;
-      color:#f2f2f2;
+      border-left:3px solid var(--green);
+      color:#f1f1f1;
       font-size:18px;
+      line-height:1.7;
     }
 
-    .image-grid{
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .chip{
+      border:1px solid rgba(159,220,59,.22);
+      background:rgba(159,220,59,.08);
+      color:#edf7da;
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:14px;
+    }
+
+    .visual-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.12fr .88fr;
       gap:24px;
+      margin-top:26px;
       align-items:stretch;
-      margin-top:24px;
     }
 
     .image-card{
-      overflow:hidden;
       border-radius:28px;
+      overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
-      background:#0b0b0b;
+      background:#090909;
       box-shadow:var(--shadow);
     }
 
@@ -313,11 +421,12 @@
       object-fit:cover;
     }
 
-    .image-caption{
+    .caption{
       padding:16px 18px;
       color:var(--muted);
       font-size:14px;
       border-top:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.02);
     }
 
     .menu-layout{
@@ -327,17 +436,35 @@
     }
 
     .menu-block{
-      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(13,17,14,.96));
+      background:
+        linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96)),
+        url("PHOTO-2026-02-11-14-35-04 7.jpg") center/cover no-repeat;
+      background-blend-mode:normal, overlay;
       border:1px solid rgba(255,255,255,.08);
-      border-radius:26px;
-      padding:24px;
+      border-radius:28px;
+      padding:26px;
       box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .menu-block::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(5,5,5,.78), rgba(5,5,5,.92));
+      pointer-events:none;
+    }
+
+    .menu-block > *{
+      position:relative;
+      z-index:1;
     }
 
     .menu-block h3{
       margin:0 0 18px;
-      color:var(--green);
-      font-size:28px;
+      color:var(--green2);
+      font-size:29px;
       letter-spacing:.2px;
     }
 
@@ -345,65 +472,51 @@
       display:flex;
       justify-content:space-between;
       gap:18px;
-      padding:10px 0;
-      border-bottom:1px solid rgba(255,255,255,.06);
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,.07);
     }
 
     .menu-item:last-child{
       border-bottom:none;
     }
 
-    .menu-item strong{
+    .menu-copy strong{
       display:block;
       font-size:20px;
       line-height:1.2;
     }
 
-    .menu-item small{
+    .menu-copy small{
       display:block;
-      color:var(--muted-2);
+      color:var(--soft);
+      margin-top:4px;
       font-size:14px;
-      margin-top:3px;
+      line-height:1.45;
     }
 
     .price{
-      color:#fff;
+      white-space:nowrap;
       font-size:24px;
       font-weight:800;
-      white-space:nowrap;
+      color:#ffffff;
     }
 
-    .subnote{
-      color:var(--muted-2);
-      font-size:14px;
-      margin-top:12px;
-    }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    .note{
       margin-top:14px;
-    }
-
-    .chip{
-      padding:9px 12px;
-      border-radius:999px;
-      background:rgba(159,220,59,.08);
-      border:1px solid rgba(159,220,59,.22);
-      color:#edf8d6;
+      color:var(--soft);
       font-size:14px;
+      line-height:1.6;
     }
 
-    .drinks-wrap{
+    .drinks-grid{
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
+      grid-template-columns:.95fr 1.05fr;
       gap:24px;
       align-items:center;
     }
 
     .drinks-card{
-      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(13,17,14,.96));
+      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96));
       border:1px solid rgba(255,255,255,.08);
       border-radius:28px;
       padding:26px;
@@ -414,7 +527,7 @@
       display:flex;
       justify-content:space-between;
       gap:18px;
-      padding:12px 0;
+      padding:13px 0;
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
@@ -428,11 +541,13 @@
     }
 
     .drink-row span{
-      color:var(--muted-2);
+      display:block;
+      color:var(--soft);
       font-size:14px;
+      margin-top:4px;
     }
 
-    .contact-grid{
+    .split{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:24px;
@@ -442,51 +557,49 @@
       margin:0;
       padding-left:18px;
       color:var(--muted);
-    }
-
-    .list li{
-      margin-bottom:10px;
+      line-height:1.8;
     }
 
     footer{
-      padding:26px 0 40px;
       border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted-2);
-      font-size:14px;
+      padding:28px 0 42px;
       text-align:center;
+      color:var(--soft);
+      font-size:14px;
     }
 
     .footer-links{
+      margin-top:8px;
       display:flex;
-      justify-content:center;
       gap:18px;
       flex-wrap:wrap;
-      margin-top:8px;
+      justify-content:center;
     }
 
     .footer-links a{
-      color:#e6e6e6;
+      color:#ececec;
     }
 
     .footer-links a:hover{
-      color:var(--green);
+      color:var(--green2);
     }
 
-    @media (max-width: 980px){
-      .hero{
-        min-height:auto;
-        padding-top:26px;
-      }
-
+    @media (max-width:1024px){
       .hero-inner,
-      .about-grid,
-      .image-grid,
+      .concept-grid,
+      .visual-grid,
       .menu-layout,
-      .drinks-wrap,
-      .contact-grid{
+      .drinks-grid,
+      .split{
         grid-template-columns:1fr;
       }
 
+      .hero{
+        min-height:auto;
+      }
+    }
+
+    @media (max-width:760px){
       .nav{
         padding:14px 0;
         flex-direction:column;
@@ -498,22 +611,20 @@
         gap:14px;
       }
 
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+
+      .menu-item,
+      .drink-row{
+        gap:14px;
+      }
+
       .price{
         font-size:21px;
       }
-    }
 
-    @media (max-width: 640px){
-      .brand-text strong{
-        font-size:18px;
-      }
-
-      .hero p{
-        font-size:17px;
-      }
-
-      .menu-item strong,
-      .drink-row strong{
+      .menu-copy strong{
         font-size:18px;
       }
 
@@ -528,20 +639,20 @@
   <header class="topbar">
     <div class="container nav">
       <div class="brand">
-        <div class="brand-badge">SK</div>
-        <div class="brand-text">
+        <div class="brand-mark">SK</div>
+        <div class="brand-copy">
           <strong>Sultan Gemüse Kebab</strong>
-          <span>Modern. Markant. Mit einem Hauch Heimat.</span>
+          <span>Ein Hauch Heimat · modern serviert</span>
         </div>
       </div>
 
       <nav class="nav-links">
         <a href="#start">Start</a>
-        <a href="#konzept">Konzept</a>
+        <a href="#marke">Marke</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
-        <a href="#laden">Laden</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#laden">Atmosphäre</a>
+        <a href="#abschluss">Abschluss</a>
       </nav>
     </div>
   </header>
@@ -550,68 +661,85 @@
     <div class="container hero-inner">
       <div>
         <div class="eyebrow">Original Chicken Gemüse Kebab</div>
-        <h1>Ein Hauch Heimat.<br>Modern serviert.</h1>
+        <h1>Ein Hauch Heimat.<br>Mit Stil serviert.</h1>
         <p>
-          Sultan Gemüse Kebab verbindet starken Geschmack, frische Zutaten und einen
-          hochwertigen Auftritt. Dunkle Eleganz, grüner Kontrast und eine klare Linie –
-          inspiriert von deiner Marke und dem Gefühl von echter Gastfreundschaft.
+          Sultan Gemüse Kebab soll nicht nur lecker wirken, sondern wie eine echte Marke:
+          klar, modern, hochwertig und sofort wiedererkennbar. Dunkle Eleganz, kräftige
+          Sultan-Akzente und eine Atmosphäre, die Appetit macht.
         </p>
+
         <div class="cta-row">
-          <a class="btn btn-primary" href="#speisekarte">Speisekarte ansehen</a>
-          <a class="btn btn-secondary" href="#kontakt">Kontakt & Infos</a>
+          <a href="#speisekarte" class="btn btn-primary">Speisekarte entdecken</a>
+          <a href="#getraenke" class="btn btn-secondary">Getränke ansehen</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>Döner</strong>
+            <span>Signature-Produkte mit klarer Preisstruktur</span>
+          </div>
+          <div class="stat">
+            <strong>Falafel</strong>
+            <span>Vegetarische Auswahl elegant integriert</span>
+          </div>
+          <div class="stat">
+            <strong>Sultan</strong>
+            <span>Markenauftritt mit Charakter statt Standard-Imbiss</span>
+          </div>
         </div>
       </div>
 
       <div class="hero-panel">
-        <img class="hero-logo" src="logo-sultan.png" alt="Sultan Logo" />
-        <div class="mini-points">
-          <div class="mini-point">
-            <strong>Frisch & markant</strong>
-            Geschmack, der sofort auffällt und im Kopf bleibt.
+        <img src="Sultan Logo 8K.png" alt="Sultan Logo" class="hero-logo" />
+        <div class="panel-points">
+          <div class="point">
+            <strong>Markant</strong>
+            Eine starke Handschrift mit Rose, Kontrast und Wiedererkennung.
           </div>
-          <div class="mini-point">
-            <strong>Sauberer Auftritt</strong>
-            Modernes Design, klare Struktur und starker Wiedererkennungswert.
+          <div class="point">
+            <strong>Hochwertig</strong>
+            Übersicht wie bei einer großen Marke – aber mit eigener Seele.
           </div>
-          <div class="mini-point">
-            <strong>Sultan Gefühl</strong>
-            Edel, warm und urban – wie ein stilvoller Hauch Türkei mitten in der Stadt.
+          <div class="point">
+            <strong>Einladend</strong>
+            Die Seite soll Hunger machen, Vertrauen geben und Lust auf einen Besuch wecken.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="konzept">
+  <section id="marke">
     <div class="container">
-      <div class="section-kicker">Das Gefühl hinter der Marke</div>
-      <h2 class="section-title">Sultan soll nicht nur satt machen – Sultan soll in Erinnerung bleiben.</h2>
-      <p class="section-text">
-        Deine Bildsprache ist bereits stark: Schwarz als Bühne, kräftiges Grün als Signatur,
-        weiße Typografie, Rose und Handschrift als Charakter. Daraus wird online ein Auftritt,
-        der nicht wie eine gewöhnliche Imbiss-Seite wirkt, sondern wie eine echte Gastro-Marke.
-      </p>
+      <div class="section-head">
+        <div class="kicker">Die Marke Sultan</div>
+        <h2>Modern, edel und mit Gefühl statt einfach nur schwarz.</h2>
+        <p>
+          Deine Bildwelt ist bereits stark: dunkle Flächen, grünes Leuchten, weiße Schrift,
+          Rose und Handschrift als Charakter. Genau daraus entsteht online ein Auftritt,
+          der professionell wirkt und gleichzeitig warm, einladend und unverwechselbar bleibt.
+        </p>
+      </div>
 
-      <div class="about-grid">
+      <div class="concept-grid">
         <div class="card">
-          <h3>Wofür Sultan steht</h3>
+          <h3>Wofür Sultan stehen soll</h3>
           <p>
-            Für Klarheit, Geschmack, Qualität und einen selbstbewussten Auftritt.
-            Die Seite soll Appetit machen, Vertrauen aufbauen und sofort zeigen:
-            Hier steckt Stil, Ordnung und Anspruch dahinter.
+            Für Geschmack, saubere Präsentation, Qualität und einen Auftritt, der sofort
+            seriös wirkt. Nicht wie eine überladene Döner-Seite, sondern wie eine geordnete
+            Gastro-Marke mit Stil.
           </p>
-          <div class="quote-box">
-            „Ein Hauch Heimat“ heißt hier: Wärme, gute Küche, Gastfreundschaft und
-            ein Gefühl von Türkei – modern übersetzt für heute.
+          <div class="quote">
+            „Ein Hauch Heimat“ bedeutet hier: moderne Türkei-Gefühle, Gastfreundschaft,
+            warme Küche und ein Design, das Tradition nicht kopiert, sondern elegant übersetzt.
           </div>
         </div>
 
         <div class="card">
-          <h3>Was Kunden sofort finden sollen</h3>
+          <h3>Was Kunden sofort verstehen sollen</h3>
           <p>
-            Eine echte Speisekarte mit Preisen, einen attraktiven ersten Eindruck,
-            Getränkebereich, Ladenatmosphäre, Kontaktmöglichkeiten und später
-            ein vollständiges Impressum sowie eine saubere Datenschutzerklärung.
+            Wo sie sind. Was euch besonders macht. Welche Produkte es gibt. Was es kostet.
+            Und dass der Laden Wert auf Optik, Struktur und Qualität legt.
           </p>
           <div class="chips">
             <div class="chip">Chicken Gemüse Kebab</div>
@@ -624,18 +752,18 @@
         </div>
       </div>
 
-      <div class="image-grid" id="laden">
+      <div class="visual-grid" id="laden">
         <div class="image-card">
-          <img src="shop.jpg" alt="Innenansicht von Sultan Gemüse Kebab" />
-          <div class="image-caption">
-            Der Ladenauftritt wirkt modern, dunkel und markant – genau diese Atmosphäre übernimmt auch die Website.
+          <img src="PHOTO-2026-02-11-14-35-04 4.jpg" alt="Sultan Markenatmosphäre" />
+          <div class="caption">
+            Dieses Bild dient aktuell als visuelle Sultan-Atmosphäre. Später ersetzen wir es durch ein starkes echtes Ladenfoto.
           </div>
         </div>
 
         <div class="image-card">
-          <img src="drinks.jpg" alt="Getränke-Promotion bei Sultan" />
-          <div class="image-caption">
-            Auch Promotions und Markenbilder können stilvoll in die Seite integriert werden.
+          <img src="PHOTO-2026-02-11-14-35-05.jpg" alt="Getränke bei Sultan Gemüse Kebab" />
+          <div class="caption">
+            Promotions und Produktbilder werden hier nicht zufällig gezeigt, sondern klar in die Markenwelt eingebunden.
           </div>
         </div>
       </div>
@@ -644,19 +772,21 @@
 
   <section id="speisekarte">
     <div class="container">
-      <div class="section-kicker">Unsere Auswahl</div>
-      <h2 class="section-title">Speisekarte</h2>
-      <p class="section-text">
-        Hier ist deine Karte bereits professionell als Website aufgebaut – nicht nur als Foto,
-        sondern sauber lesbar, mobilfreundlich und direkt verständlich.
-      </p>
+      <div class="section-head">
+        <div class="kicker">Unsere Auswahl</div>
+        <h2>Speisekarte</h2>
+        <p>
+          Nicht als unlesbares Plakat, sondern als klare Website-Struktur: gut lesbar,
+          sauber gegliedert, mobilfreundlich und professionell präsentiert.
+        </p>
+      </div>
 
       <div class="menu-layout">
         <div class="menu-block">
           <h3>Döner</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Bowl</strong>
               <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
             </div>
@@ -664,7 +794,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Dürüm</strong>
               <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
             </div>
@@ -672,7 +802,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Box</strong>
               <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
             </div>
@@ -680,17 +810,17 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Brot</strong>
               <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
             </div>
             <div class="price">7,50 €</div>
           </div>
 
-          <h3 style="margin-top:28px;">Falafel</h3>
+          <h3 style="margin-top:30px;">Falafel</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Bowl</strong>
               <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
             </div>
@@ -698,7 +828,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Dürüm</strong>
               <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
             </div>
@@ -706,7 +836,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Box</strong>
               <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
             </div>
@@ -714,17 +844,17 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Brot</strong>
               <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
             </div>
             <div class="price">7,50 €</div>
           </div>
 
-          <h3 style="margin-top:28px;">Verfeinern</h3>
+          <h3 style="margin-top:30px;">Verfeinern</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Chicken extra</strong>
               <small>Allergene 6,7</small>
             </div>
@@ -732,7 +862,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Falafel extra</strong>
               <small>Allergene 1,11</small>
             </div>
@@ -740,14 +870,14 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Brot extra</strong>
               <small>Allergen 1</small>
             </div>
             <div class="price">1,00 €</div>
           </div>
 
-          <div class="subnote">
+          <div class="note">
             Saucen: Kräuter (3,7) · Knoblauch (3,7) · Scharf Vegan · Knoblauch Vegan · Sesam Vegan (11)
           </div>
         </div>
@@ -756,7 +886,7 @@
           <h3>Lahmacun</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>10 Stück</strong>
               <small>frisch aus dem Ofen · Allergen 1</small>
             </div>
@@ -764,7 +894,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>5 Stück</strong>
               <small>frisch aus dem Ofen · Allergen 1</small>
             </div>
@@ -772,7 +902,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>3 Stück</strong>
               <small>frisch aus dem Ofen · Allergen 1</small>
             </div>
@@ -780,17 +910,17 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>1 Stück</strong>
               <small>frisch aus dem Ofen · Allergen 1</small>
             </div>
             <div class="price">2,00 €</div>
           </div>
 
-          <h3 style="margin-top:28px;">Pizza 28 cm</h3>
+          <h3 style="margin-top:30px;">Pizza 28 cm</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Tonno</strong>
               <small>Tomatensauce & Mozzarella · Thunfisch, Zwiebeln · Allergene 1,4,7</small>
             </div>
@@ -798,15 +928,15 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Sucuk</strong>
-              <small>Tomatensauce & Mozzarella · Sucuk · Allergene 1,7,9</small>
+              <small>Tomatensauce & Mozzarella · Allergene 1,7,9</small>
             </div>
             <div class="price">12,00 €</div>
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Salami</strong>
               <small>Tomatensauce & Mozzarella · Allergene 1,7,9</small>
             </div>
@@ -814,7 +944,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Prosciutto</strong>
               <small>Tomatensauce & Mozzarella · Putenbrust · Allergene 1,7,9</small>
             </div>
@@ -822,7 +952,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Mista</strong>
               <small>Tomatensauce & Mozzarella · Putenbrust, Salami · Allergene 1,7,9</small>
             </div>
@@ -830,7 +960,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Funghi</strong>
               <small>Tomatensauce & Mozzarella · Champignons · Allergene 1,7</small>
             </div>
@@ -838,7 +968,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Vegetaria</strong>
               <small>Tomatensauce & Mozzarella · Zucchini, Aubergine, Paprika · Allergene 1,7</small>
             </div>
@@ -846,7 +976,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Mozzarella</strong>
               <small>extra Mozzarella · Allergene 1,7</small>
             </div>
@@ -854,7 +984,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Margherita</strong>
               <small>Mozzarella · Allergene 1,7</small>
             </div>
@@ -868,7 +998,7 @@
           <h3>Salate & Sides</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Salat Thunfisch</strong>
               <small>Allergen 4</small>
             </div>
@@ -876,7 +1006,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Salat Käse</strong>
               <small>Allergen 7</small>
             </div>
@@ -884,7 +1014,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Salat Gemischt</strong>
               <small>frisch und leicht</small>
             </div>
@@ -892,7 +1022,7 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Linsensuppe</strong>
               <small>wärmend und klassisch</small>
             </div>
@@ -900,15 +1030,15 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Pommes</strong>
-              <small>golden und knusprig</small>
+              <small>knusprig serviert</small>
             </div>
             <div class="price">5,00 €</div>
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Falafel 4 Stück</strong>
               <small>Allergene 1,11</small>
             </div>
@@ -920,7 +1050,7 @@
           <h3>Dessert & Allergene</h3>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Baklava 3 Stück</strong>
               <small>Allergene 1,3,7,8</small>
             </div>
@@ -928,14 +1058,14 @@
           </div>
 
           <div class="menu-item">
-            <div>
+            <div class="menu-copy">
               <strong>Burma 3 Stück</strong>
               <small>Allergene 1,3,7,8</small>
             </div>
             <div class="price">5,00 €</div>
           </div>
 
-          <div class="subnote" style="margin-top:18px;">
+          <div class="note" style="margin-top:18px;">
             Allergene: 1 Gluten · 2 Krebstiere · 3 Eier · 4 Fisch · 5 Erdnüsse · 6 Soja ·
             7 Laktose · 8 Schalenfrüchte · 9 Sellerie · 10 Senf · 11 Sesam · 12 Sulfite ·
             13 Lupinen · 14 Weichtiere
@@ -951,15 +1081,18 @@
 
   <section id="getraenke">
     <div class="container">
-      <div class="section-kicker">Erfrischungen</div>
-      <h2 class="section-title">Getränke</h2>
-      <p class="section-text">
-        Frisch, kalt und passend zum Auftritt der Marke – klar präsentiert und direkt verständlich.
-      </p>
+      <div class="section-head">
+        <div class="kicker">Erfrischungen</div>
+        <h2>Getränke, modern inszeniert</h2>
+        <p>
+          Auch der Getränkebereich soll nicht wie ein Nebengedanke wirken, sondern wie ein fester
+          Teil der Marke: sauber, präsent und visuell stark.
+        </p>
+      </div>
 
-      <div class="drinks-wrap">
+      <div class="drinks-grid">
         <div class="image-card">
-          <img src="drinks.jpg" alt="Getränke bei Sultan Gemüse Kebab" />
+          <img src="PHOTO-2026-02-11-14-35-05.jpg" alt="Getränke bei Sultan Gemüse Kebab" />
         </div>
 
         <div class="drinks-card">
@@ -987,50 +1120,51 @@
             <div class="price">2,00 €</div>
           </div>
 
-          <div class="quote-box" style="margin-top:18px;">
-            Limonade · Eistee · Cola – modern inszeniert, aber klar in die Marke Sultan eingebettet.
+          <div class="quote" style="margin-top:20px;">
+            Limonade · Eistee · Cola – stark dargestellt, ohne die Hauptmarke Sultan aus dem Fokus zu nehmen.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="kontakt">
+  <section id="abschluss">
     <div class="container">
-      <div class="section-kicker">Kontakt & Abschluss</div>
-      <h2 class="section-title">Jetzt fehlt nur noch der letzte professionelle Schliff</h2>
-      <p class="section-text">
-        Das Design und die Speisekarte stehen jetzt stark. Für die rechtlich und geschäftlich
-        finale Version brauchen wir noch deine echten Betriebsdaten.
-      </p>
+      <div class="section-head">
+        <div class="kicker">Finaler Feinschliff</div>
+        <h2>Die Seite steht stark – jetzt fehlen nur noch die echten Betriebsdaten.</h2>
+        <p>
+          Design, Speisekarte und Struktur sind jetzt auf Premium-Niveau vorbereitet.
+          Für die endgültige Abschlussversion fehlen nur noch die geschäftlichen und rechtlichen Angaben.
+        </p>
+      </div>
 
-      <div class="contact-grid">
+      <div class="split">
         <div class="card">
-          <h3>Was schon steht</h3>
+          <h3>Was jetzt schon professionell steht</h3>
           <ul class="list">
-            <li>Markenstil passend zu Sultan</li>
-            <li>Logo und Bildsprache eingebunden</li>
-            <li>Echte Speisekarte mit Preisen integriert</li>
-            <li>Getränkebereich professionell dargestellt</li>
-            <li>Ladenatmosphäre über Bildwelt transportiert</li>
-            <li>Mobile, klare und moderne Website-Struktur</li>
+            <li>starke Startseite mit Sultan-Markenwirkung</li>
+            <li>echtes Logo prominent eingebunden</li>
+            <li>saubere Navigationsstruktur</li>
+            <li>echte Speisekarte mit Preisen und Allergenen</li>
+            <li>Getränkebereich visuell hochwertig integriert</li>
+            <li>mobiles, klares und markentaugliches Layout</li>
           </ul>
         </div>
 
-        <div class="card" id="rechtliches">
-          <h3>Was noch fehlt für die finale Abschluss-Version</h3>
+        <div class="card">
+          <h3>Was mir noch fehlt für die perfekte Schlussversion</h3>
           <ul class="list">
-            <li>vollständiger Betreibername für das Impressum</li>
+            <li>vollständiger Betreibername</li>
             <li>Rechtsform: Einzelunternehmen, UG, GmbH oder anderes</li>
-            <li>vollständige Adresse mit Straße, Hausnummer, PLZ, Stadt</li>
-            <li>Telefonnummer für Kunden</li>
-            <li>E-Mail-Adresse für Kontakt und Impressum</li>
+            <li>vollständige Adresse</li>
+            <li>Telefonnummer</li>
+            <li>E-Mail-Adresse</li>
             <li>echte Öffnungszeiten</li>
-            <li>Name der vertretungsberechtigten Person</li>
+            <li>Name der verantwortlichen Person</li>
             <li>USt-IdNr., falls vorhanden</li>
-            <li>Handelsregister und Registernummer, falls vorhanden</li>
-            <li>Links zu Instagram, TikTok, Lieferdienst oder Google Maps, falls du sie nutzen willst</li>
-            <li>Info, ob wir bewusst ohne Tracking und ohne Cookie-Banner starten sollen</li>
+            <li>Handelsregister + Registernummer, falls vorhanden</li>
+            <li>Instagram, TikTok, Maps oder Lieferdienst-Links, falls vorhanden</li>
           </ul>
         </div>
       </div>
@@ -1041,9 +1175,10 @@
     <div class="container">
       © 2026 Sultan Gemüse Kebab – Offizielle Website
       <div class="footer-links">
-        <a href="#kontakt">Kontakt</a>
-        <a href="#rechtliches">Impressum folgt</a>
-        <a href="#rechtliches">Datenschutz folgt</a>
+        <a href="#start">Start</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#getraenke">Getränke</a>
+        <a href="#abschluss">Kontakt & Abschluss</a>
       </div>
     </div>
   </footer>
