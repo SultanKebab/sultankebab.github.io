@@ -12,7 +12,7 @@
   >
   <meta name="robots" content="index,follow">
   <meta name="author" content="Sultan Gemüse Kebab">
-  <meta name="theme-color" content="#050505">
+  <meta name="theme-color" content="#06100c">
 
   <meta name="geo.region" content="DE-BE">
   <meta name="geo.placename" content="Berlin">
@@ -23,23 +23,23 @@
   <meta property="og:title" id="meta-og-title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
   <meta property="og:description" id="meta-og-description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
+  <meta property="og:image" content="PHOTO-2026-02-11-14-35-05 8.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" id="meta-twitter-title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
   <meta name="twitter:description" id="meta-twitter-description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
-  <meta name="twitter:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
+  <meta name="twitter:image" content="PHOTO-2026-02-11-14-35-05 8.jpg">
 
+  <link rel="preload" as="image" href="PHOTO-2026-02-11-14-35-05 8.jpg">
   <link rel="preconnect" href="https://www.google.com">
   <link rel="dns-prefetch" href="https://www.google.com">
-  <link rel="preload" as="image" href="PHOTO-2026-02-11-14-35-05 7.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Sultan Gemüse Kebab",
-    "image": "PHOTO-2026-02-11-14-35-05 7.jpg",
+    "image": "PHOTO-2026-02-11-14-35-05 8.jpg",
     "description": "Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.",
     "servesCuisine": ["Turkish", "Kebab", "Falafel", "Pizza"],
     "priceRange": "€",
@@ -77,15 +77,19 @@
 
   <style>
     :root{
-      --bg:#050505;
-      --panel:#0b0e0c;
+      --bg:#06100c;
+      --panel:rgba(9,16,13,.78);
+      --panel-strong:rgba(7,12,10,.88);
+      --panel-soft:rgba(11,20,16,.68);
       --text:#ffffff;
-      --muted:#d7d7d7;
-      --soft:#a9ada9;
+      --muted:#d9ddd9;
+      --soft:#a7afa8;
       --line:rgba(255,255,255,.08);
+      --line-soft:rgba(255,255,255,.05);
       --green:#9ed63c;
       --green-strong:#b8ef53;
-      --shadow:0 24px 70px rgba(0,0,0,.36);
+      --shadow:0 24px 70px rgba(0,0,0,.38);
+      --shadow-strong:0 34px 100px rgba(0,0,0,.48);
       --radius:28px;
       --max:1240px;
     }
@@ -97,12 +101,37 @@
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(158,214,60,.05), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(158,214,60,.04), transparent 24%),
-        linear-gradient(180deg, #030303 0%, #070907 100%);
+      background:var(--bg);
+      position:relative;
+      overflow-x:hidden;
     }
 
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background:url("PHOTO-2026-02-11-14-35-05 8.jpg") center top / cover no-repeat;
+      opacity:.50;
+      transform:scale(1.03);
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg, rgba(4,8,6,.76) 0%, rgba(4,8,6,.86) 28%, rgba(4,8,6,.92) 100%),
+        radial-gradient(circle at 18% 12%, rgba(158,214,60,.10), transparent 18%),
+        radial-gradient(circle at 82% 18%, rgba(158,214,60,.08), transparent 18%),
+        radial-gradient(circle at 26% 78%, rgba(158,214,60,.06), transparent 18%),
+        radial-gradient(circle at 84% 72%, rgba(158,214,60,.05), transparent 18%);
+      pointer-events:none;
+    }
+
+    main{position:relative;z-index:1}
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
@@ -136,9 +165,11 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,.82);
+      background:rgba(5,10,8,.70);
       backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
       border-bottom:1px solid rgba(255,255,255,.06);
+      box-shadow:0 8px 30px rgba(0,0,0,.18);
     }
 
     .nav{
@@ -163,6 +194,7 @@
       object-fit:cover;
       box-shadow:0 0 0 1px rgba(255,255,255,.06);
       flex:0 0 auto;
+      background:rgba(255,255,255,.02);
     }
 
     .brand-copy strong{
@@ -202,9 +234,7 @@
       position:relative;
     }
 
-    .nav-links a:hover{
-      color:var(--green-strong);
-    }
+    .nav-links a:hover{color:var(--green-strong)}
 
     .nav-links a::after{
       content:"";
@@ -230,6 +260,7 @@
       border:1px solid rgba(255,255,255,.08);
       border-radius:999px;
       padding:6px;
+      box-shadow:0 8px 24px rgba(0,0,0,.16);
     }
 
     .lang-btn{
@@ -257,11 +288,10 @@
 
     .hero{
       position:relative;
-      min-height:100vh;
+      min-height:92svh;
       display:flex;
       align-items:center;
       overflow:hidden;
-      background:#050505;
       isolation:isolate;
     }
 
@@ -269,36 +299,28 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(4,4,4,.80) 0%, rgba(4,4,4,.46) 42%, rgba(4,4,4,.72) 100%),
-        url("PHOTO-2026-02-11-14-35-05 7.jpg") center center / cover no-repeat;
-      transform:scale(1.06);
+        linear-gradient(90deg, rgba(5,8,7,.82) 0%, rgba(5,8,7,.58) 42%, rgba(5,8,7,.78) 100%),
+        radial-gradient(circle at 18% 22%, rgba(158,214,60,.14), transparent 18%),
+        radial-gradient(circle at 82% 74%, rgba(158,214,60,.08), transparent 18%),
+        url("PHOTO-2026-02-11-14-35-05 8.jpg") center center / cover no-repeat;
+      transform:scale(1.04);
       animation:heroZoom 18s ease-in-out infinite alternate;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 18% 24%, rgba(158,214,60,.18), transparent 16%),
-        radial-gradient(circle at 82% 72%, rgba(158,214,60,.10), transparent 18%);
       z-index:0;
-      pointer-events:none;
     }
 
     .hero::after{
       content:"";
       position:absolute;
       inset:auto 0 0 0;
-      height:240px;
-      background:linear-gradient(180deg, rgba(5,5,5,0), rgba(5,5,5,.95));
+      height:220px;
+      background:linear-gradient(180deg, rgba(6,10,8,0), rgba(6,10,8,.94));
       z-index:0;
       pointer-events:none;
     }
 
     @keyframes heroZoom{
-      from{transform:scale(1.06) translateY(0)}
-      to{transform:scale(1.12) translateY(-8px)}
+      from{transform:scale(1.04) translateY(0)}
+      to{transform:scale(1.09) translateY(-6px)}
     }
 
     .hero-inner{
@@ -306,10 +328,10 @@
       z-index:1;
       width:100%;
       display:grid;
-      grid-template-columns:1.08fr .92fr;
+      grid-template-columns:1.06fr .94fr;
       gap:30px;
       align-items:center;
-      padding:64px 0;
+      padding:64px 0 54px;
     }
 
     .eyebrow{
@@ -318,31 +340,32 @@
       gap:8px;
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid rgba(158,214,60,.45);
+      border:1px solid rgba(158,214,60,.40);
       background:rgba(0,0,0,.18);
       color:var(--green-strong);
       text-transform:uppercase;
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
-      letter-spacing:.85px;
+      letter-spacing:.9px;
       margin-bottom:18px;
       box-shadow:0 0 26px rgba(158,214,60,.08);
     }
 
     h1{
       margin:0 0 18px;
-      font-size:clamp(46px, 7.4vw, 96px);
-      line-height:.94;
-      letter-spacing:-2.2px;
-      max-width:840px;
+      font-size:clamp(38px, 6.2vw, 76px);
+      line-height:.96;
+      letter-spacing:-1.8px;
+      max-width:780px;
+      text-wrap:balance;
     }
 
     .hero p{
       max-width:760px;
       margin:0 0 28px;
       color:var(--muted);
-      font-size:19px;
-      line-height:1.72;
+      font-size:17px;
+      line-height:1.78;
     }
 
     .cta-row{
@@ -375,9 +398,9 @@
     }
 
     .btn-secondary{
-      border:1px solid rgba(158,214,60,.5);
+      border:1px solid rgba(158,214,60,.46);
       color:var(--green-strong);
-      background:rgba(0,0,0,.14);
+      background:rgba(0,0,0,.16);
     }
 
     .btn-secondary:hover{
@@ -394,12 +417,13 @@
     }
 
     .highlight{
-      background:rgba(8,8,8,.58);
-      border:1px solid rgba(255,255,255,.07);
+      background:rgba(8,8,8,.42);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
       padding:16px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(4px);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
     }
 
     .highlight strong{
@@ -419,12 +443,13 @@
     .hero-panel{
       position:relative;
       overflow:hidden;
-      background:linear-gradient(180deg, rgba(10,10,10,.84), rgba(11,18,13,.90));
+      background:linear-gradient(180deg, rgba(7,12,10,.76), rgba(8,13,11,.88));
       border:1px solid rgba(255,255,255,.08);
       border-radius:32px;
       padding:30px;
-      box-shadow:0 30px 90px rgba(0,0,0,.46);
-      backdrop-filter:blur(8px);
+      box-shadow:var(--shadow-strong);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .hero-panel::before{
@@ -440,7 +465,7 @@
     .hero-panel-logo{
       position:relative;
       z-index:1;
-      width:min(100%, 410px);
+      width:min(100%, 390px);
       margin:0 auto 22px;
       filter:drop-shadow(0 10px 24px rgba(0,0,0,.45));
     }
@@ -457,22 +482,23 @@
       border:1px solid rgba(255,255,255,.06);
       border-radius:18px;
       padding:15px 16px;
-      line-height:1.65;
+      line-height:1.68;
       color:var(--muted);
+      font-size:15px;
     }
 
     .hero-point strong{
       display:block;
       color:var(--green-strong);
       margin-bottom:4px;
-      font-size:15px;
+      font-size:14px;
       text-transform:uppercase;
       letter-spacing:.8px;
     }
 
     section{
       position:relative;
-      padding:100px 0;
+      padding:92px 0;
     }
 
     .section-soft::before{
@@ -480,6 +506,7 @@
       position:absolute;
       inset:0;
       background:
+        linear-gradient(180deg, rgba(6,10,8,.04), rgba(6,10,8,.14)),
         radial-gradient(circle at 12% 18%, rgba(158,214,60,.05), transparent 18%),
         radial-gradient(circle at 88% 78%, rgba(158,214,60,.04), transparent 20%);
       pointer-events:none;
@@ -488,31 +515,32 @@
     .section-head{
       position:relative;
       z-index:1;
-      margin-bottom:32px;
+      margin-bottom:34px;
     }
 
     .kicker{
       color:var(--green-strong);
       text-transform:uppercase;
       letter-spacing:1px;
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
       margin-bottom:12px;
     }
 
     .section-head h2{
       margin:0 0 12px;
-      font-size:clamp(30px, 4.5vw, 52px);
-      line-height:1.04;
+      font-size:clamp(28px, 4vw, 48px);
+      line-height:1.07;
       letter-spacing:-1px;
+      text-wrap:balance;
     }
 
     .section-head p{
       margin:0;
-      max-width:900px;
+      max-width:920px;
       color:var(--muted);
-      font-size:17px;
-      line-height:1.75;
+      font-size:16px;
+      line-height:1.8;
     }
 
     .story-grid{
@@ -526,17 +554,20 @@
     .card{
       position:relative;
       overflow:hidden;
-      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96));
-      border:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(8,13,11,.76), rgba(7,12,10,.88));
+      border:1px solid rgba(255,255,255,.07);
       border-radius:var(--radius);
       padding:28px;
-      box-shadow:0 28px 80px rgba(0,0,0,.45);
-      transition:transform .3s ease, box-shadow .3s ease;
+      box-shadow:var(--shadow);
+      transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .card:hover{
       transform:translateY(-6px);
-      box-shadow:0 40px 100px rgba(0,0,0,.6);
+      box-shadow:0 40px 100px rgba(0,0,0,.48);
+      border-color:rgba(255,255,255,.10);
     }
 
     .card::before{
@@ -544,8 +575,8 @@
       position:absolute;
       top:0;
       right:0;
-      width:140px;
-      height:140px;
+      width:160px;
+      height:160px;
       background:radial-gradient(circle, rgba(158,214,60,.10), transparent 70%);
       pointer-events:none;
     }
@@ -559,19 +590,18 @@
     .card p{
       margin:0 0 14px;
       color:var(--muted);
-      line-height:1.78;
+      line-height:1.8;
+      font-size:15px;
     }
 
-    .card p:last-child{
-      margin-bottom:0;
-    }
+    .card p:last-child{margin-bottom:0}
 
     .quote{
       margin-top:18px;
       border-left:3px solid var(--green);
       padding-left:16px;
       color:#f1f1f1;
-      font-size:18px;
+      font-size:17px;
       line-height:1.72;
     }
 
@@ -588,11 +618,13 @@
       gap:8px;
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(158,214,60,.08);
-      border:1px solid rgba(158,214,60,.22);
+      background:rgba(158,214,60,.09);
+      border:1px solid rgba(158,214,60,.24);
       color:#eef7dd;
       font-size:14px;
       transition:.22s ease;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
     }
 
     a.pill:hover{
@@ -621,14 +653,17 @@
       border-radius:30px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
-      background:#090909;
+      background:linear-gradient(180deg, rgba(8,13,11,.74), rgba(7,12,10,.84));
       box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .image-card img{
       width:100%;
       height:100%;
       object-fit:cover;
+      min-height:420px;
     }
 
     .caption{
@@ -637,7 +672,7 @@
       font-size:14px;
       border-top:1px solid rgba(255,255,255,.06);
       background:rgba(255,255,255,.02);
-      line-height:1.6;
+      line-height:1.7;
     }
 
     .menu-layout{
@@ -651,23 +686,22 @@
     .menu-block{
       position:relative;
       overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(10,10,10,.92), rgba(12,18,13,.95)),
-        url("PHOTO-2026-02-11-14-35-05 7.jpg") center/cover no-repeat;
-      background-blend-mode:normal, soft-light;
+      background:linear-gradient(180deg, rgba(8,13,11,.80), rgba(7,12,10,.90));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       padding:28px;
       box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
-    .menu-block::after{
+    .menu-block::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(180deg, rgba(5,5,5,.68), rgba(5,5,5,.88)),
-        radial-gradient(circle at center, rgba(158,214,60,.06), transparent 36%);
+        linear-gradient(180deg, rgba(255,255,255,.015), transparent),
+        radial-gradient(circle at center, rgba(158,214,60,.05), transparent 38%);
       pointer-events:none;
     }
 
@@ -679,7 +713,7 @@
     .menu-block h3{
       margin:0 0 18px;
       color:var(--green-strong);
-      font-size:29px;
+      font-size:28px;
       letter-spacing:.2px;
     }
 
@@ -691,13 +725,11 @@
       border-bottom:1px solid rgba(255,255,255,.07);
     }
 
-    .menu-item:last-child{
-      border-bottom:none;
-    }
+    .menu-item:last-child{border-bottom:none}
 
     .menu-copy strong{
       display:block;
-      font-size:20px;
+      font-size:19px;
       line-height:1.2;
     }
 
@@ -706,12 +738,12 @@
       color:var(--soft);
       margin-top:4px;
       font-size:14px;
-      line-height:1.45;
+      line-height:1.5;
     }
 
     .price{
       white-space:nowrap;
-      font-size:24px;
+      font-size:23px;
       font-weight:800;
       color:#ffffff;
     }
@@ -720,14 +752,14 @@
       margin-top:14px;
       color:var(--soft);
       font-size:14px;
-      line-height:1.6;
+      line-height:1.68;
     }
 
     .drinks-grid{
       position:relative;
       z-index:1;
       display:grid;
-      grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      grid-template-columns:minmax(0, 1.04fr) minmax(320px, .96fr);
       gap:28px;
       align-items:stretch;
     }
@@ -736,14 +768,16 @@
       border-radius:32px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
-      background:#050505;
+      background:linear-gradient(180deg, rgba(8,13,11,.78), rgba(7,12,10,.88));
       box-shadow:var(--shadow);
-      min-height:820px;
+      min-height:720px;
       position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:18px;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .drinks-visual img{
@@ -752,11 +786,11 @@
       object-fit:contain;
       object-position:center center;
       display:block;
-      background:#050505;
+      background:transparent;
     }
 
     .drinks-card{
-      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96));
+      background:linear-gradient(180deg, rgba(8,13,11,.80), rgba(7,12,10,.90));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       padding:30px;
@@ -764,6 +798,8 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .drink-row{
@@ -774,13 +810,11 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .drink-row:last-child{
-      border-bottom:none;
-    }
+    .drink-row:last-child{border-bottom:none}
 
     .drink-row strong{
       display:block;
-      font-size:20px;
+      font-size:19px;
     }
 
     .drink-row span{
@@ -795,6 +829,8 @@
       grid-template-columns:1fr 1fr;
       gap:24px;
       margin-top:24px;
+      position:relative;
+      z-index:1;
     }
 
     .maps-link{
@@ -812,19 +848,17 @@
       color:#dff8a4;
     }
 
-    .maps-link svg{
-      width:18px;
-      height:18px;
-      flex:0 0 auto;
-    }
-
     footer{
+      position:relative;
+      z-index:1;
       border-top:1px solid rgba(255,255,255,.08);
       padding:40px 0 48px;
       text-align:center;
       color:var(--soft);
       font-size:14px;
-      background:linear-gradient(180deg,#050505,#020202);
+      background:linear-gradient(180deg, rgba(6,10,8,.38), rgba(6,10,8,.82));
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .footer-links{
@@ -843,7 +877,7 @@
       color:var(--green-strong);
     }
 
-    @media (max-width:1024px){
+    @media (max-width:1100px){
       .hero-inner,
       .story-grid,
       .visual-grid,
@@ -853,13 +887,7 @@
         grid-template-columns:1fr;
       }
 
-      .hero{
-        min-height:auto;
-      }
-
-      .drinks-visual{
-        min-height:720px;
-      }
+      .hero{min-height:auto}
     }
 
     @media (max-width:860px){
@@ -878,12 +906,30 @@
         justify-content:flex-start;
         gap:14px;
       }
+
+      .drinks-visual{
+        min-height:560px;
+      }
     }
 
     @media (max-width:760px){
+      .container{
+        width:min(var(--max), calc(100% - 22px));
+      }
+
       .brand-logo{
         width:46px;
         height:46px;
+      }
+
+      h1{
+        font-size:clamp(34px, 10vw, 54px);
+        line-height:1;
+      }
+
+      .hero p,
+      .section-head p{
+        font-size:15px;
       }
 
       .hero-highlights{
@@ -891,12 +937,12 @@
       }
 
       .price{
-        font-size:21px;
+        font-size:20px;
       }
 
       .menu-copy strong,
       .drink-row strong{
-        font-size:18px;
+        font-size:17px;
       }
 
       .btn{
@@ -904,17 +950,23 @@
       }
 
       .drinks-visual{
-        min-height:520px;
+        min-height:420px;
         padding:12px;
       }
 
-      .hero-panel{
+      .hero-panel,
+      .card,
+      .menu-block,
+      .drinks-card{
         padding:22px;
       }
 
       section{
-        padding:82px 0;
+        padding:76px 0;
       }
+
+      .lang-switch{gap:4px}
+      .lang-btn{padding:9px 10px}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -995,7 +1047,7 @@
         </div>
 
         <div class="hero-panel">
-          <img src="Sultan Logo 8K.png" alt="Sultan Gemüse Kebab Logo" class="hero-panel-logo" width="410" height="410" data-i18n-attr="alt:heroLogoAlt">
+          <img src="Sultan Logo 8K.png" alt="Sultan Gemüse Kebab Logo" class="hero-panel-logo" width="390" height="390" data-i18n-attr="alt:heroLogoAlt">
           <div class="hero-panel-copy">
             <div class="hero-point">
               <strong data-i18n="heroPoint1Title">Unsere Art zu arbeiten</strong>
@@ -1020,7 +1072,7 @@
           <div class="kicker" data-i18n="storeKicker">Unser Laden</div>
           <h2 data-i18n="storeTitle">Einfach gesagt: Wir nehmen uns Zeit für Dinge, die man später schmeckt.</h2>
           <p data-i18n="storeText">
-            Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.
+            Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Nach einer Zeit, in der viele Gäste uns vermisst haben, sind wir mit neuer Energie und frischem Blick zurück. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.
           </p>
         </div>
 
@@ -1372,9 +1424,7 @@
             </div>
 
             <div class="note" data-i18n-html="allergenNote">
-              Allergene: 1 Gluten · 2 Krebstiere · 3 Eier · 4 Fisch · 5 Erdnüsse · 6 Soja ·
-              7 Laktose · 8 Schalenfrüchte · 9 Sellerie · 10 Senf · 11 Sesam · 12 Sulfite ·
-              13 Lupinen · 14 Weichtiere
+              Allergene: 1 Gluten · 2 Krebstiere · 3 Eier · 4 Fisch · 5 Erdnüsse · 6 Soja · 7 Laktose · 8 Schalenfrüchte · 9 Sellerie · 10 Senf · 11 Sesam · 12 Sulfite · 13 Lupinen · 14 Weichtiere
               <br><br>
               * Gluten auch inkl. Weizen, Roggen, Gerste, Hafer
               <br>
@@ -1408,11 +1458,11 @@
 
           <div class="drinks-card">
             <div class="kicker" style="margin-bottom:10px;" data-i18n="refreshmentsKicker">Erfrischungen</div>
-            <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);" data-i18n="refreshmentsTitle">
+            <h3 style="margin:0 0 16px; font-size:30px; line-height:1.08; color:var(--green-strong);" data-i18n="refreshmentsTitle">
               Gekühlt und unkompliziert.
             </h3>
 
-            <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;" data-i18n="refreshmentsText">
+            <p style="margin:0 0 22px; color:var(--muted); line-height:1.78; font-size:15px;" data-i18n="refreshmentsText">
               Ob Ayran, stilles Wasser oder ein klassisches Erfrischungsgetränk — die Auswahl ist bewusst schlicht gehalten und passt zum Essen.
             </p>
 
@@ -1688,7 +1738,7 @@
         heroPoint3Text: "Wer uns besucht, soll sich sein eigenes Urteil bilden — nicht nach Worten, sondern nach Geschmack.",
         storeKicker: "Unser Laden",
         storeTitle: "Einfach gesagt: Wir nehmen uns Zeit für Dinge, die man später schmeckt.",
-        storeText: "Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.",
+        storeText: "Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Nach einer Zeit, in der viele Gäste uns vermisst haben, sind wir mit neuer Energie und frischem Blick zurück. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.",
         qualityTitle: "Was uns wichtig ist",
         qualityText: "Der Teig wird täglich zubereitet und bekommt seine Ruhezeit. Die Falafel werden frisch gemacht. Für unseren Chicken Kebab verwenden wir ein Brot, das eigens für uns hergestellt wird. Das sind keine großen Tricks, sondern Entscheidungen, die im Alltag einen Unterschied machen.",
         qualityQuote: "Wir glauben, dass gutes Essen nicht laut erklärt werden muss. Man merkt es, wenn es vor einem steht.",
@@ -1822,7 +1872,7 @@
         heroPoint3Text: "Anyone who visits us should make up their own mind — not from words, but from taste.",
         storeKicker: "Our place",
         storeTitle: "Simply put: we give time to the things people will taste later.",
-        storeText: "Sultan was never built around trying to be loud. What matters to us is working cleanly, combining good ingredients in a sensible way, and serving food people genuinely want to come back for. A lot of what we do has grown over years and has been refined through daily work.",
+        storeText: "Sultan was never built around trying to be loud. What matters to us is working cleanly, combining good ingredients in a sensible way, and serving food people genuinely want to come back for. After a period in which many guests missed us, we are back with new energy and a fresh focus. A lot of what we do has grown over years and has been refined through daily work.",
         qualityTitle: "What matters to us",
         qualityText: "Our dough is prepared fresh every day and given time to rest. The falafel is made fresh. For our chicken kebab, we use bread that is made especially for us. These are not big tricks — just everyday decisions that make a real difference.",
         qualityQuote: "We believe good food does not need to be explained loudly. You can tell once it is in front of you.",
@@ -1837,7 +1887,7 @@
         imageCaption: "Sultan is a place for people who care about fresh preparation, honest portions and a clear, balanced taste.",
         smallMenuTitle: "Why the menu is intentionally smaller",
         smallMenuText: "We chose not to build an overloaded menu. We would rather offer less, but stand behind it properly. That leaves more attention for preparation, ingredients and what is actually served in the end.",
-        smallMenuQuote: "In the end, it should not be the size of the menu that impresses people, but what they actually get.",
+        smallMenuQuote: "In the end, it should not be the size of the menu that impress people, but what they actually get.",
         menuKicker: "Menu",
         menuTitle: "Our selection at a glance.",
         menuText: "Here you will find chicken vegetable kebab, falafel, lahmacun, pizza, salads, sides and dessert. Everything is arranged so it stays easy to understand and quick to choose from.",
@@ -1956,7 +2006,7 @@
         heroPoint3Text: "Bizi ziyaret eden herkes kendi kararını sözlere göre değil, tada göre vermeli.",
         storeKicker: "Mekanımız",
         storeTitle: "Kısacası: Sonradan tadını hissedeceğin şeylere zaman veriyoruz.",
-        storeText: "Sultan yüksek sesle öne çıkma düşüncesiyle kurulmadı. Bizim için önemli olan temiz çalışmak, iyi malzemeleri doğru şekilde bir araya getirmek ve insanların yeniden söylemek isteyeceği yemekler sunmak. Yaptığımız birçok şey yıllar içinde oluştu ve günlük işin içinde geliştirildi.",
+        storeText: "Sultan yüksek sesle öne çıkma düşüncesiyle kurulmadı. Bizim için önemli olan temiz çalışmak, iyi malzemeleri doğru şekilde bir araya getirmek ve insanların yeniden söylemek isteyeceği yemekler sunmak. Bizi özleyen birçok misafirden sonra şimdi yeni enerji ve daha güçlü bir odakla yeniden buradayız. Yaptığımız birçok şey yıllar içinde oluştu ve günlük işin içinde geliştirildi.",
         qualityTitle: "Bizim için önemli olan",
         qualityText: "Hamurumuz her gün hazırlanır ve dinlenme süresini alır. Falafel taze yapılır. Chicken kebabımız için özel olarak hazırlanan bir ekmek kullanıyoruz. Bunlar büyük numaralar değil; günlük işte gerçekten fark yaratan kararlar.",
         qualityQuote: "İyi yemek yüksek sesle anlatılmak zorunda değildir. Önüne geldiğinde zaten anlarsın.",
