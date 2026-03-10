@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sultan Gemüse Kebab</title>
+  <title>Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt</title>
   <meta
     name="description"
-    content="Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt. Aus 25 Jahren Erfahrung, in 8 Jahren weiter verfeinert."
+    content="Sultan Gemüse Kebab in Berlin – Wo Qualität Geschmack bekommt. Frischer Teig, täglich zubereitete Falafel, ehrliche Zutaten und echte Leidenschaft für gutes Essen."
   />
   <style>
     :root{
@@ -26,6 +26,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
@@ -48,7 +49,7 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,.74);
+      background:rgba(5,5,5,.78);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
@@ -426,12 +427,22 @@
     }
 
     .pill{
-      padding:9px 12px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
       border-radius:999px;
       background:rgba(158,214,60,.08);
       border:1px solid rgba(158,214,60,.22);
       color:#eef7dd;
       font-size:14px;
+    }
+
+    .pill img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      display:block;
     }
 
     .visual-grid{
@@ -550,65 +561,48 @@
       line-height:1.6;
     }
 
-.drinks-grid{
-  position:relative;
-  z-index:1;
-  display:grid;
-  grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap:28px;
-  align-items:stretch;
-}
+    .drinks-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap:28px;
+      align-items:stretch;
+    }
 
-.drinks-visual{
-  border-radius:32px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-  background:#050505;
-  box-shadow:var(--shadow);
-  min-height:820px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
+    .drinks-visual{
+      border-radius:32px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#050505;
+      box-shadow:var(--shadow);
+      min-height:820px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+    }
 
-.drinks-visual img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center center;
-  display:block;
-  background:#050505;
-}
+    .drinks-visual img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center center;
+      display:block;
+      background:#050505;
+    }
 
-.drinks-card{
-  background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:30px;
-  padding:30px;
-  box-shadow:var(--shadow);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-@media (max-width:1024px){
-  .drinks-grid{
-    grid-template-columns:1fr;
-  }
-
-  .drinks-visual{
-    min-height:720px;
-  }
-}
-
-@media (max-width:760px){
-  .drinks-visual{
-    min-height:520px;
-    padding:12px;
-  }
-}
+    .drinks-card{
+      background:linear-gradient(180deg, rgba(10,10,10,.96), rgba(12,18,13,.96));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
 
     .drink-row{
       display:flex;
@@ -634,34 +628,6 @@
       margin-top:4px;
     }
 
-    .cta-panel{
-      position:relative;
-      overflow:hidden;
-      background:
-        linear-gradient(180deg, rgba(8,8,8,.84), rgba(10,15,11,.90)),
-        url("PHOTO-2026-02-11-14-35-05 7.jpg") center/cover no-repeat;
-      background-blend-mode:normal, soft-light;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:34px;
-      padding:38px;
-      box-shadow:var(--shadow);
-    }
-
-    .cta-panel::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.24), rgba(0,0,0,.08)),
-        radial-gradient(circle at right center, rgba(158,214,60,.12), transparent 26%);
-      pointer-events:none;
-    }
-
-    .cta-panel > *{
-      position:relative;
-      z-index:1;
-    }
-
     .info-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -674,6 +640,21 @@
       padding-left:18px;
       color:var(--muted);
       line-height:1.8;
+    }
+
+    .maps-link{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:14px;
+      color:var(--green-strong);
+      font-weight:700;
+    }
+
+    .maps-link img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
     }
 
     footer{
@@ -712,6 +693,10 @@
 
       .hero{
         min-height:auto;
+      }
+
+      .drinks-visual{
+        min-height:720px;
       }
     }
 
@@ -752,6 +737,11 @@
       .btn{
         width:100%;
       }
+
+      .drinks-visual{
+        min-height:520px;
+        padding:12px;
+      }
     }
   </style>
 </head>
@@ -773,7 +763,7 @@
         <a href="#geschichte">Geschichte</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
-        <a href="#abschluss">Abschluss</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -877,26 +867,26 @@
         </div>
       </div>
 
-     <div class="visual-grid">
-  <div class="image-card">
-    <img src="PHOTO-2026-02-11-14-35-04 6.jpg" alt="Sultan Markenbild" />
-    <div class="caption">
-      Die Sultan-Bildsprache bleibt bewusst ruhig und hochwertig: grüne Akzente, dunkle Eleganz und eine klare Linie ohne Unruhe.
-    </div>
-  </div>
+      <div class="visual-grid">
+        <div class="image-card">
+          <img src="PHOTO-2026-02-11-14-35-04 6.jpg" alt="Sultan Markenbild" />
+          <div class="caption">
+            Die Sultan-Bildsprache bleibt bewusst ruhig und hochwertig: grüne Akzente, dunkle Eleganz und eine klare Linie ohne Unruhe.
+          </div>
+        </div>
 
-  <div class="card">
-    <h3>Warum wir bewusst klar bleiben</h3>
-    <p>
-      Wir wollen nicht mit zu vielen Bildern, zu vielen Versprechen oder einer überladenen Karte beeindrucken.
-      Wir wollen mit dem überzeugen, was wirklich zählt: ehrliche Zutaten, spürbare Qualität, faire Preise
-      und Gerichte, bei denen jede Zutat bewusst gewählt ist.
-    </p>
-    <div class="quote">
-      Eine kleine Karte. Ein klarer Fokus. Und genau dadurch mehr Qualität in jedem Detail.
-    </div>
-  </div>
-</div>
+        <div class="card">
+          <h3>Warum wir bewusst klar bleiben</h3>
+          <p>
+            Wir wollen nicht mit zu vielen Bildern, zu vielen Versprechen oder einer überladenen Karte beeindrucken.
+            Wir wollen mit dem überzeugen, was wirklich zählt: ehrliche Zutaten, spürbare Qualität, faire Preise
+            und Gerichte, bei denen jede Zutat bewusst gewählt ist.
+          </p>
+          <div class="quote">
+            Eine kleine Karte. Ein klarer Fokus. Und genau dadurch mehr Qualität in jedem Detail.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1220,96 +1210,170 @@
         </p>
       </div>
 
-     <div class="drinks-grid">
-  <div class="drinks-visual">
-    <img src="PHOTO-2026-02-11-14-35-05 5.jpg" alt="Elephant Bay und Erfrischungen bei Sultan Gemüse Kebab" />
-  </div>
+      <div class="drinks-grid">
+        <div class="drinks-visual">
+          <img src="PHOTO-2026-02-11-14-35-05 5.jpg" alt="Elephant Bay und Erfrischungen bei Sultan Gemüse Kebab" />
+        </div>
 
-  <div class="drinks-card">
-    <div class="kicker" style="margin-bottom:10px;">Erfrischungen</div>
-    <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);">
-      Frisch, sichtbar und perfekt in die Marke eingebunden.
-    </h3>
+        <div class="drinks-card">
+          <div class="kicker" style="margin-bottom:10px;">Erfrischungen</div>
+          <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);">
+            Frisch, sichtbar und perfekt in die Marke eingebunden.
+          </h3>
 
-    <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;">
-      Dieses Motiv bekommt jetzt bewusst mehr Raum, damit Frische, Farbe und Markenwirkung
-      sofort sichtbar werden. Auch im Getränkebereich bleibt Sultan klar, hochwertig und
-      sauber präsentiert.
-    </p>
+          <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;">
+            Dieses Motiv bekommt bewusst mehr Raum, damit Frische, Farbe und Markenwirkung
+            sofort sichtbar werden. Auch im Getränkebereich bleibt Sultan klar, hochwertig und
+            sauber präsentiert.
+          </p>
 
-    <div class="drink-row">
-      <div>
-        <strong>Elephant Bay</strong>
-        <span>330 ml</span>
+          <div class="drink-row">
+            <div>
+              <strong>Elephant Bay</strong>
+              <span>330 ml</span>
+            </div>
+            <div class="price">2,50 €</div>
+          </div>
+
+          <div class="drink-row">
+            <div>
+              <strong>Stilles Wasser</strong>
+              <span>500 ml</span>
+            </div>
+            <div class="price">2,50 €</div>
+          </div>
+
+          <div class="drink-row">
+            <div>
+              <strong>Ayran</strong>
+              <span>250 ml · Allergen 7</span>
+            </div>
+            <div class="price">2,00 €</div>
+          </div>
+
+          <div class="quote" style="margin-top:22px;">
+            Limonade, Eistee und Cola – modern inszeniert, klar lesbar und passend zur Welt von Sultan.
+          </div>
+        </div>
       </div>
-      <div class="price">2,50 €</div>
-    </div>
-
-    <div class="drink-row">
-      <div>
-        <strong>Stilles Wasser</strong>
-        <span>500 ml</span>
-      </div>
-      <div class="price">2,50 €</div>
-    </div>
-
-    <div class="drink-row">
-      <div>
-        <strong>Ayran</strong>
-        <span>250 ml · Allergen 7</span>
-      </div>
-      <div class="price">2,00 €</div>
-    </div>
-
-    <div class="quote" style="margin-top:22px;">
-      Limonade, Eistee und Cola – modern inszeniert, klar lesbar und passend zur Welt von Sultan.
-    </div>
-  </div>
-</div>
     </div>
   </section>
 
-  <section id="abschluss">
+  <section id="kontakt" class="section-soft">
     <div class="container">
-      <div class="cta-panel">
-        <div class="section-head" style="margin-bottom:0;">
-          <div class="kicker">Der nächste Schritt</div>
-          <h2>Die Basis ist jetzt stark. Jetzt machen wir daraus die endgültige Abschlussversion.</h2>
+      <div class="section-head">
+        <div class="kicker">Besuche Sultan</div>
+        <h2>Wir freuen uns auf deinen Besuch</h2>
+        <p>Wo Qualität Geschmack bekommt.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="card">
+          <h3>Adresse</h3>
           <p>
-            Design, Markenwirkung, Speisekarte und Geschichte stehen. Im nächsten Schritt ergänzen wir
-            Kontakt, Öffnungszeiten, Impressum und Datenschutz – und dann ist eure Website bereit für den echten Start.
+            Sultan Gemüse Kebab<br>
+            Ostpreußendamm 79<br>
+            12207 Berlin
+          </p>
+
+          <p>
+            E-Mail<br>
+            dnmz.unternehmen@outlook.de
+          </p>
+
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Ostpreußendamm+79+Berlin" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps">
+            Standort in Google Maps öffnen
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>Öffnungszeiten</h3>
+          <p>
+            Montag – Sonntag<br>
+            11:00 – 00:00 Uhr
+          </p>
+
+          <p>
+            Frisch zubereitet während der gesamten Öffnungszeit.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="info-grid">
-          <div class="card">
-            <h3>Was jetzt gelungen ist</h3>
-            <ul class="list">
-              <li>echtes Sultan-Logo sauber im Header und Hero</li>
-              <li>sichtbarer, eleganter Hintergrund mit Sultan-Charakter</li>
-              <li>klare Geschichte mit Herkunft, Familie und Qualität</li>
-              <li>ruhigeres und hochwertigeres Gesamtbild</li>
-              <li>übersichtliche Speisekarte mit Fokus auf Produkte</li>
-              <li>stabile Basis, auf der wir jetzt gezielt weiterarbeiten können</li>
-            </ul>
-          </div>
+  <section id="social" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Sultan Online</div>
+        <h2>Folge uns</h2>
+      </div>
 
-          <div class="card">
-            <h3>Was ich für den finalen Abschluss brauche</h3>
-            <ul class="list">
-              <li>vollständiger Betreibername</li>
-              <li>Rechtsform: Einzelunternehmen, UG, GmbH oder anderes</li>
-              <li>vollständige Adresse</li>
-              <li>Telefonnummer</li>
-              <li>E-Mail-Adresse</li>
-              <li>echte Öffnungszeiten</li>
-              <li>Name der verantwortlichen Person</li>
-              <li>USt-IdNr., falls vorhanden</li>
-              <li>Handelsregister + Registernummer, falls vorhanden</li>
-              <li>Instagram, TikTok, Maps oder Lieferdienst-Links, falls vorhanden</li>
-            </ul>
-          </div>
-        </div>
+      <div class="pill-row">
+        <a class="pill" href="https://www.instagram.com/sultan.official.content/" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          Instagram
+        </a>
+
+        <a class="pill" href="https://www.tiktok.com/@sultan.official.content" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok">
+          TikTok
+        </a>
+
+        <a class="pill" href="https://www.youtube.com/@sultan.official.content" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+          YouTube
+        </a>
+
+        <a class="pill" href="https://www.google.com/maps/search/?api=1&query=Ostpreußendamm+79+Berlin" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Maps">
+          Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="impressum" class="section-soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Rechtliches</div>
+        <h2>Impressum</h2>
+      </div>
+
+      <div class="card">
+        <p>Angaben gemäß § 5 TMG</p>
+
+        <p>
+          Sultan Gemüse Kebab<br>
+          Einzelunternehmen
+        </p>
+
+        <p>
+          Ostpreußendamm 79<br>
+          12207 Berlin<br>
+          Deutschland
+        </p>
+
+        <p>
+          Vertreten durch:<br>
+          Hulusi Dönmez
+        </p>
+
+        <p>
+          Kontakt:<br>
+          E-Mail: dnmz.unternehmen@outlook.de
+        </p>
+
+        <p>
+          USt-IdNr.: DE123456789
+        </p>
+
+        <p>
+          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
+          Hulusi Dönmez<br>
+          Ostpreußendamm 79<br>
+          12207 Berlin
+        </p>
       </div>
     </div>
   </section>
@@ -1323,6 +1387,8 @@
         <a href="#geschichte">Geschichte</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
       </div>
     </div>
   </footer>
