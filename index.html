@@ -7,11 +7,12 @@
   <title>Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde</title>
   <meta
     name="description"
-    content="Sultan Gemüse Kebab in Berlin Lichterfelde. Frisch zubereiteter Teig, täglich gemachte Falafel, Chicken Gemüse Kebab, Lahmacun, Pizza und ehrliche Zutaten."
+    content="Sultan Gemüse Kebab in Berlin Lichterfelde am Ostpreußendamm 79. Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza mit frisch zubereitetem Teig, ehrlichen Zutaten und klarer Auswahl."
   >
   <meta name="robots" content="index,follow">
   <meta name="author" content="Sultan Gemüse Kebab">
   <meta name="theme-color" content="#050505">
+
   <meta name="geo.region" content="DE-BE">
   <meta name="geo.placename" content="Berlin">
   <meta name="geo.position" content="52.4183943;13.3052034">
@@ -19,13 +20,13 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
-  <meta property="og:description" content="Frisch zubereiteter Teig, täglich gemachte Falafel und ehrliche Zutaten in Berlin Lichterfelde.">
+  <meta property="og:description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
   <meta property="og:locale" content="de_DE">
   <meta property="og:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
-  <meta name="twitter:description" content="Frisch zubereiteter Teig, täglich gemachte Falafel und ehrliche Zutaten in Berlin Lichterfelde.">
+  <meta name="twitter:description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
   <meta name="twitter:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
 
   <link rel="preconnect" href="https://www.google.com">
@@ -38,6 +39,7 @@
     "@type": "Restaurant",
     "name": "Sultan Gemüse Kebab",
     "image": "PHOTO-2026-02-11-14-35-05 7.jpg",
+    "description": "Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.",
     "servesCuisine": ["Turkish", "Kebab", "Falafel", "Pizza"],
     "priceRange": "€",
     "address": {
@@ -76,13 +78,14 @@
     :root{
       --bg:#050505;
       --panel:#0b0e0c;
+      --panel-2:#101512;
       --text:#ffffff;
       --muted:#d7d7d7;
       --soft:#a9ada9;
       --line:rgba(255,255,255,.08);
       --green:#9ed63c;
       --green-strong:#b8ef53;
-      --shadow:0 22px 60px rgba(0,0,0,.34);
+      --shadow:0 24px 70px rgba(0,0,0,.36);
       --radius:28px;
       --max:1240px;
     }
@@ -218,41 +221,43 @@
       align-items:center;
       overflow:hidden;
       background:#050505;
+      isolation:isolate;
     }
 
     .hero-bg{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(4,4,4,.78) 0%, rgba(4,4,4,.45) 40%, rgba(4,4,4,.70) 100%),
+        linear-gradient(90deg, rgba(4,4,4,.80) 0%, rgba(4,4,4,.46) 42%, rgba(4,4,4,.72) 100%),
         url("PHOTO-2026-02-11-14-35-05 7.jpg") center center / cover no-repeat;
       transform:scale(1.06);
       animation:heroZoom 18s ease-in-out infinite alternate;
     }
 
-    @keyframes heroZoom{
-      from{transform:scale(1.06)}
-      to{transform:scale(1.12)}
-    }
-
-    .hero-bg::before{
+    .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 18% 22%, rgba(158,214,60,.18), transparent 16%),
-        radial-gradient(circle at 80% 70%, rgba(158,214,60,.10), transparent 18%),
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.32));
+        radial-gradient(circle at 18% 24%, rgba(158,214,60,.18), transparent 16%),
+        radial-gradient(circle at 82% 72%, rgba(158,214,60,.10), transparent 18%);
+      z-index:0;
       pointer-events:none;
     }
 
-    .hero-bg::after{
+    .hero::after{
       content:"";
       position:absolute;
       inset:auto 0 0 0;
       height:240px;
       background:linear-gradient(180deg, rgba(5,5,5,0), rgba(5,5,5,.95));
+      z-index:0;
       pointer-events:none;
+    }
+
+    @keyframes heroZoom{
+      from{transform:scale(1.06) translateY(0)}
+      to{transform:scale(1.12) translateY(-8px)}
     }
 
     .hero-inner{
@@ -896,7 +901,7 @@
 
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="#start">Start</a>
-        <a href="#qualitaet">Qualität</a>
+        <a href="#qualitaet">Unser Laden</a>
         <a href="#geschichte">Geschichte</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
@@ -1540,6 +1545,11 @@
             Kontakt:<br>
             E-Mail: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>
           </p>
+
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+            DE2026300369
+          </p>
         </div>
       </div>
     </section>
@@ -1598,7 +1608,7 @@
       © 2026 Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt
       <div class="footer-links">
         <a href="#start">Start</a>
-        <a href="#qualitaet">Qualität</a>
+        <a href="#qualitaet">Unser Laden</a>
         <a href="#geschichte">Geschichte</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
