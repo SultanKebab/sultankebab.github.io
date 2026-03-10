@@ -6,6 +6,7 @@
 
   <title>Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde</title>
   <meta
+    id="meta-description"
     name="description"
     content="Sultan Gemüse Kebab in Berlin Lichterfelde am Ostpreußendamm 79. Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza mit frisch zubereitetem Teig, ehrlichen Zutaten und klarer Auswahl."
   >
@@ -19,14 +20,14 @@
   <meta name="ICBM" content="52.4183943,13.3052034">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
-  <meta property="og:description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
+  <meta property="og:title" id="meta-og-title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
+  <meta property="og:description" id="meta-og-description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
   <meta property="og:locale" content="de_DE">
   <meta property="og:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
-  <meta name="twitter:description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
+  <meta name="twitter:title" id="meta-twitter-title" content="Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde">
+  <meta name="twitter:description" id="meta-twitter-description" content="Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.">
   <meta name="twitter:image" content="PHOTO-2026-02-11-14-35-05 7.jpg">
 
   <link rel="preconnect" href="https://www.google.com">
@@ -78,7 +79,6 @@
     :root{
       --bg:#050505;
       --panel:#0b0e0c;
-      --panel-2:#101512;
       --text:#ffffff;
       --muted:#d7d7d7;
       --soft:#a9ada9;
@@ -180,6 +180,14 @@
       margin-top:3px;
     }
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
     .nav-links{
       display:flex;
       gap:18px;
@@ -212,6 +220,39 @@
     .nav-links a:hover::after,
     .nav-links a:focus-visible::after{
       width:100%;
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:6px;
+    }
+
+    .lang-btn{
+      border:0;
+      background:transparent;
+      color:#f2f2f2;
+      font:inherit;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.4px;
+      padding:10px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:.22s ease;
+    }
+
+    .lang-btn:hover{
+      background:rgba(255,255,255,.06);
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(180deg,var(--green-strong),var(--green));
+      color:#0b1007;
     }
 
     .hero{
@@ -821,25 +862,28 @@
       }
     }
 
-    @media (max-width:760px){
+    @media (max-width:860px){
       .nav{
         padding:14px 0;
         flex-direction:column;
         align-items:flex-start;
       }
 
-      .brand{
+      .nav-right{
         width:100%;
-      }
-
-      .brand-logo{
-        width:46px;
-        height:46px;
+        justify-content:flex-start;
       }
 
       .nav-links{
         justify-content:flex-start;
         gap:14px;
+      }
+    }
+
+    @media (max-width:760px){
+      .brand-logo{
+        width:46px;
+        height:46px;
       }
 
       .hero-highlights{
@@ -887,26 +931,34 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Zum Inhalt springen</a>
 
   <header class="topbar">
     <div class="container nav">
       <div class="brand">
-        <img src="Sultan Logo 8K.png" alt="Sultan Logo" class="brand-logo" width="52" height="52">
+        <img src="Sultan Logo 8K.png" alt="Sultan Logo" class="brand-logo" width="52" height="52" data-i18n-attr="alt:logoAlt">
         <div class="brand-copy">
-          <strong>Sultan Gemüse Kebab</strong>
-          <span>Wo Qualität Geschmack bekommt</span>
+          <strong data-i18n="brandName">Sultan Gemüse Kebab</strong>
+          <span data-i18n="brandTagline">Wo Qualität Geschmack bekommt</span>
         </div>
       </div>
 
-      <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#start">Start</a>
-        <a href="#qualitaet">Unser Laden</a>
-        <a href="#geschichte">Geschichte</a>
-        <a href="#speisekarte">Speisekarte</a>
-        <a href="#getraenke">Getränke</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Hauptnavigation">
+          <a href="#start" data-i18n="navStart">Start</a>
+          <a href="#qualitaet" data-i18n="navStore">Unser Laden</a>
+          <a href="#geschichte" data-i18n="navStory">Geschichte</a>
+          <a href="#speisekarte" data-i18n="navMenu">Speisekarte</a>
+          <a href="#getraenke" data-i18n="navDrinks">Getränke</a>
+          <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+        </nav>
+
+        <div class="lang-switch" aria-label="Sprachauswahl">
+          <button class="lang-btn active" data-lang="de" type="button">DE</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="tr" type="button">TR</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -915,51 +967,47 @@
       <div class="hero-bg"></div>
       <div class="container hero-inner">
         <div>
-          <div class="eyebrow">Sultan · Wo Qualität Geschmack bekommt</div>
-          <h1>Mit Ruhe gemacht.<br>Frisch serviert.</h1>
-          <p>
-            Bei Sultan beginnt vieles nicht erst am Tresen, sondern schon davor.
-            Unser Teig wird täglich vorbereitet und bekommt die Zeit, die er braucht.
-            Falafel werden frisch gemacht, das Brot für unseren Chicken Kebab wird eigens für uns hergestellt
-            und auch bei den übrigen Zutaten achten wir darauf, dass am Ende nicht nur etwas Sättigendes,
-            sondern etwas Stimmiges auf dem Tisch liegt.
+          <div class="eyebrow" data-i18n="heroEyebrow">Sultan · Wo Qualität Geschmack bekommt</div>
+          <h1 data-i18n-html="heroTitle">Mit Ruhe gemacht.<br>Frisch serviert.</h1>
+          <p data-i18n="heroText">
+            Bei Sultan beginnt vieles nicht erst am Tresen, sondern schon davor. Unser Teig wird täglich vorbereitet und bekommt die Zeit, die er braucht. Falafel werden frisch gemacht, das Brot für unseren Chicken Kebab wird eigens für uns hergestellt und auch bei den übrigen Zutaten achten wir darauf, dass am Ende nicht nur etwas Sättigendes, sondern etwas Stimmiges auf dem Tisch liegt.
           </p>
 
           <div class="cta-row">
-            <a href="#speisekarte" class="btn btn-primary">Speisekarte ansehen</a>
-            <a href="https://www.google.com/maps/place/Sultan/@52.4184069,13.2949251,15z/data=!3m1!4b1!4m6!3m5!1s0x47a85b000eea7869:0xcba457e5f43fe588!8m2!3d52.4183943!4d13.3052034!16s%2Fg%2F11z1xtylwh" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Route öffnen</a>
+            <a href="#speisekarte" class="btn btn-primary" data-i18n="heroBtnMenu">Speisekarte ansehen</a>
+            <a href="https://www.google.com/maps/place/Sultan/@52.4184069,13.2949251,15z/data=!3m1!4b1!4m6!3m5!1s0x47a85b000eea7869:0xcba457e5f43fe588!8m2!3d52.4183943!4d13.3052034!16s%2Fg%2F11z1xtylwh" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="heroBtnRoute">Route öffnen</a>
           </div>
 
           <div class="hero-highlights">
             <div class="highlight">
               <strong>24h</strong>
-              <span>Ruhezeit für unseren Teig</span>
+              <span data-i18n="highlight1">Ruhezeit für unseren Teig</span>
             </div>
             <div class="highlight">
-              <strong>Täglich</strong>
-              <span>frisch zubereitete Falafel</span>
+              <strong data-i18n="highlight2strong">Täglich</strong>
+              <span data-i18n="highlight2">frisch zubereitete Falafel</span>
             </div>
             <div class="highlight">
               <strong>8 Jahre</strong>
-              <span>Arbeit an Rezepten und Abläufen</span>
+              <span data-i18n="highlight3">Arbeit an Rezepten und Abläufen</span>
             </div>
           </div>
         </div>
 
         <div class="hero-panel">
-          <img src="Sultan Logo 8K.png" alt="Sultan Gemüse Kebab Logo" class="hero-panel-logo" width="410" height="410">
+          <img src="Sultan Logo 8K.png" alt="Sultan Gemüse Kebab Logo" class="hero-panel-logo" width="410" height="410" data-i18n-attr="alt:heroLogoAlt">
           <div class="hero-panel-copy">
             <div class="hero-point">
-              <strong>Unsere Art zu arbeiten</strong>
-              Wir versuchen nicht, mit großen Versprechen zu überzeugen, sondern mit dem, was jeden Tag auf den Teller kommt.
+              <strong data-i18n="heroPoint1Title">Unsere Art zu arbeiten</strong>
+              <span data-i18n="heroPoint1Text">Wir versuchen nicht, mit großen Versprechen zu überzeugen, sondern mit dem, was jeden Tag auf den Teller kommt.</span>
             </div>
             <div class="hero-point">
-              <strong>Bewusst übersichtlich</strong>
-              Unsere Karte ist klar gehalten, damit wir uns auf das konzentrieren können, was wir wirklich gut machen wollen.
+              <strong data-i18n="heroPoint2Title">Bewusst übersichtlich</strong>
+              <span data-i18n="heroPoint2Text">Unsere Karte ist klar gehalten, damit wir uns auf das konzentrieren können, was wir wirklich gut machen wollen.</span>
             </div>
             <div class="hero-point">
-              <strong>Am besten selbst probieren</strong>
-              Wer uns besucht, soll sich sein eigenes Urteil bilden — nicht nach Worten, sondern nach Geschmack.
+              <strong data-i18n="heroPoint3Title">Am besten selbst probieren</strong>
+              <span data-i18n="heroPoint3Text">Wer uns besucht, soll sich sein eigenes Urteil bilden — nicht nach Worten, sondern nach Geschmack.</span>
             </div>
           </div>
         </div>
@@ -969,43 +1017,35 @@
     <section id="qualitaet" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Unser Laden</div>
-          <h2>Einfach gesagt: Wir nehmen uns Zeit für Dinge, die man später schmeckt.</h2>
-          <p>
-            Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten.
-            Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen
-            und Gerichte zu servieren, die man gerne noch einmal bestellt.
-            Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.
+          <div class="kicker" data-i18n="storeKicker">Unser Laden</div>
+          <h2 data-i18n="storeTitle">Einfach gesagt: Wir nehmen uns Zeit für Dinge, die man später schmeckt.</h2>
+          <p data-i18n="storeText">
+            Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.
           </p>
         </div>
 
         <div class="story-grid">
           <div class="card">
-            <h3>Was uns wichtig ist</h3>
-            <p>
-              Der Teig wird täglich zubereitet und bekommt seine Ruhezeit.
-              Die Falafel werden frisch gemacht.
-              Für unseren Chicken Kebab verwenden wir ein Brot, das eigens für uns hergestellt wird.
-              Das sind keine großen Tricks, sondern Entscheidungen, die im Alltag einen Unterschied machen.
+            <h3 data-i18n="qualityTitle">Was uns wichtig ist</h3>
+            <p data-i18n="qualityText">
+              Der Teig wird täglich zubereitet und bekommt seine Ruhezeit. Die Falafel werden frisch gemacht. Für unseren Chicken Kebab verwenden wir ein Brot, das eigens für uns hergestellt wird. Das sind keine großen Tricks, sondern Entscheidungen, die im Alltag einen Unterschied machen.
             </p>
-            <div class="quote">
+            <div class="quote" data-i18n="qualityQuote">
               Wir glauben, dass gutes Essen nicht laut erklärt werden muss. Man merkt es, wenn es vor einem steht.
             </div>
           </div>
 
           <div class="card" id="geschichte">
-            <h3>Wie Sultan entstanden ist</h3>
-            <p>
-              Die Grundlage für Sultan kommt aus der langjährigen Erfahrung unseres Vaters, der über viele Jahre in Berlin gekocht hat.
-              Gemeinsam mit seinen Söhnen ist daraus ein eigener Laden geworden, an dem Rezepte, Abläufe und Details über lange Zeit weiterentwickelt wurden.
-              Was heute bei uns angeboten wird, ist das Ergebnis dieser gemeinsamen Arbeit.
+            <h3 data-i18n="storyTitle">Wie Sultan entstanden ist</h3>
+            <p data-i18n="storyText">
+              Die Grundlage für Sultan kommt aus der langjährigen Erfahrung unseres Vaters, der über viele Jahre in Berlin gekocht hat. Gemeinsam mit seinen Söhnen ist daraus ein eigener Laden geworden, an dem Rezepte, Abläufe und Details über lange Zeit weiterentwickelt wurden. Was heute bei uns angeboten wird, ist das Ergebnis dieser gemeinsamen Arbeit.
             </p>
             <div class="pill-row">
-              <div class="pill">25 Jahre Erfahrung</div>
-              <div class="pill">Familienbetrieb</div>
-              <div class="pill">8 Jahre Entwicklung</div>
-              <div class="pill">faire Preise</div>
-              <div class="pill">klare Auswahl</div>
+              <div class="pill" data-i18n="pill1">25 Jahre Erfahrung</div>
+              <div class="pill" data-i18n="pill2">Familienbetrieb</div>
+              <div class="pill" data-i18n="pill3">8 Jahre Entwicklung</div>
+              <div class="pill" data-i18n="pill4">faire Preise</div>
+              <div class="pill" data-i18n="pill5">klare Auswahl</div>
             </div>
           </div>
         </div>
@@ -1017,20 +1057,19 @@
               alt="Speisen bei Sultan Gemüse Kebab in Berlin"
               loading="lazy"
               decoding="async"
+              data-i18n-attr="alt:imageAltFood"
             >
-            <div class="caption">
+            <div class="caption" data-i18n="imageCaption">
               Sultan ist ein Laden für Menschen, die Wert auf frische Zubereitung, ehrliche Portionen und einen klaren Geschmack legen.
             </div>
           </div>
 
           <div class="card">
-            <h3>Warum die Karte bewusst kleiner ist</h3>
-            <p>
-              Wir haben uns gegen eine überladene Speisekarte entschieden.
-              Lieber weniger, dafür Dinge, hinter denen wir stehen können.
-              So bleibt im Alltag mehr Aufmerksamkeit für die Vorbereitung, die Zutaten und das, was am Ende ausgegeben wird.
+            <h3 data-i18n="smallMenuTitle">Warum die Karte bewusst kleiner ist</h3>
+            <p data-i18n="smallMenuText">
+              Wir haben uns gegen eine überladene Speisekarte entschieden. Lieber weniger, dafür Dinge, hinter denen wir stehen können. So bleibt im Alltag mehr Aufmerksamkeit für die Vorbereitung, die Zutaten und das, was am Ende ausgegeben wird.
             </p>
-            <div class="quote">
+            <div class="quote" data-i18n="smallMenuQuote">
               Am Ende soll nicht die Menge beeindrucken, sondern das, was man tatsächlich bekommt.
             </div>
           </div>
@@ -1041,22 +1080,21 @@
     <section id="speisekarte" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Speisekarte</div>
-          <h2>Unser Angebot auf einen Blick.</h2>
-          <p>
-            Bei uns findest du Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate, Beilagen und Dessert.
-            Alles ist so aufgebaut, dass man schnell findet, worauf man Lust hat, ohne dass die Karte unübersichtlich wird.
+          <div class="kicker" data-i18n="menuKicker">Speisekarte</div>
+          <h2 data-i18n="menuTitle">Unser Angebot auf einen Blick.</h2>
+          <p data-i18n="menuText">
+            Bei uns findest du Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate, Beilagen und Dessert. Alles ist so aufgebaut, dass man schnell findet, worauf man Lust hat, ohne dass die Karte unübersichtlich wird.
           </p>
         </div>
 
         <div class="menu-layout">
           <div class="menu-block">
-            <h3>Döner</h3>
+            <h3 data-i18n="catDoner">Döner</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Bowl</strong>
-                <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
+                <small data-i18n="donerChickenDesc">Chicken Gemüse Kebab · Allergene 1,6,7</small>
               </div>
               <div class="price">10,00 €</div>
             </div>
@@ -1064,7 +1102,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Dürüm</strong>
-                <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
+                <small data-i18n="donerChickenDesc">Chicken Gemüse Kebab · Allergene 1,6,7</small>
               </div>
               <div class="price">9,00 €</div>
             </div>
@@ -1072,25 +1110,25 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Box</strong>
-                <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
+                <small data-i18n="donerChickenDesc">Chicken Gemüse Kebab · Allergene 1,6,7</small>
               </div>
               <div class="price">8,50 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Brot</strong>
-                <small>Chicken Gemüse Kebab · Allergene 1,6,7</small>
+                <strong data-i18n="breadLabel">Brot</strong>
+                <small data-i18n="donerChickenDesc">Chicken Gemüse Kebab · Allergene 1,6,7</small>
               </div>
               <div class="price">7,50 €</div>
             </div>
 
-            <h3 style="margin-top:30px;">Falafel</h3>
+            <h3 style="margin-top:30px;" data-i18n="catFalafel">Falafel</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Bowl</strong>
-                <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
+                <small data-i18n="falafelDesc">Falafel Gemüse Kebab · Allergene 1,6,11</small>
               </div>
               <div class="price">10,00 €</div>
             </div>
@@ -1098,7 +1136,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Dürüm</strong>
-                <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
+                <small data-i18n="falafelDesc">Falafel Gemüse Kebab · Allergene 1,6,11</small>
               </div>
               <div class="price">9,00 €</div>
             </div>
@@ -1106,46 +1144,46 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Box</strong>
-                <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
+                <small data-i18n="falafelDesc">Falafel Gemüse Kebab · Allergene 1,6,11</small>
               </div>
               <div class="price">8,50 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Brot</strong>
-                <small>Falafel Gemüse Kebab · Allergene 1,6,11</small>
+                <strong data-i18n="breadLabel">Brot</strong>
+                <small data-i18n="falafelDesc">Falafel Gemüse Kebab · Allergene 1,6,11</small>
               </div>
               <div class="price">7,50 €</div>
             </div>
 
-            <h3 style="margin-top:30px;">Verfeinern</h3>
+            <h3 style="margin-top:30px;" data-i18n="catExtras">Verfeinern</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Chicken extra</strong>
-                <small>Allergene 6,7</small>
+                <strong data-i18n="extraChicken">Chicken extra</strong>
+                <small data-i18n="allergens67">Allergene 6,7</small>
               </div>
               <div class="price">3,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Falafel extra</strong>
-                <small>Allergene 1,11</small>
+                <strong data-i18n="extraFalafel">Falafel extra</strong>
+                <small data-i18n="allergens111">Allergene 1,11</small>
               </div>
               <div class="price">2,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Brot extra</strong>
-                <small>Allergen 1</small>
+                <strong data-i18n="extraBread">Brot extra</strong>
+                <small data-i18n="allergen1">Allergen 1</small>
               </div>
               <div class="price">1,00 €</div>
             </div>
 
-            <div class="note">
+            <div class="note" data-i18n="saucesNote">
               Saucen: Kräuter (3,7) · Knoblauch (3,7) · Scharf Vegan · Knoblauch Vegan · Sesam Vegan (11)
             </div>
           </div>
@@ -1155,42 +1193,42 @@
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>10 Stück</strong>
-                <small>frisch aus dem Ofen · Allergen 1</small>
+                <strong>10 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="freshFromOven1">frisch aus dem Ofen · Allergen 1</small>
               </div>
               <div class="price">18,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>5 Stück</strong>
-                <small>frisch aus dem Ofen · Allergen 1</small>
+                <strong>5 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="freshFromOven1">frisch aus dem Ofen · Allergen 1</small>
               </div>
               <div class="price">9,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>3 Stück</strong>
-                <small>frisch aus dem Ofen · Allergen 1</small>
+                <strong>3 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="freshFromOven1">frisch aus dem Ofen · Allergen 1</small>
               </div>
               <div class="price">5,50 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>1 Stück</strong>
-                <small>frisch aus dem Ofen · Allergen 1</small>
+                <strong>1 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="freshFromOven1">frisch aus dem Ofen · Allergen 1</small>
               </div>
               <div class="price">2,00 €</div>
             </div>
 
-            <h3 style="margin-top:30px;">Pizza 28 cm</h3>
+            <h3 style="margin-top:30px;" data-i18n="pizza28">Pizza 28 cm</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Tonno</strong>
-                <small>Tomatensauce & Mozzarella · Thunfisch, Zwiebeln · Allergene 1,4,7</small>
+                <small data-i18n="pizzaTonno">Tomatensauce & Mozzarella · Thunfisch, Zwiebeln · Allergene 1,4,7</small>
               </div>
               <div class="price">12,00 €</div>
             </div>
@@ -1198,7 +1236,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Sucuk</strong>
-                <small>Tomatensauce & Mozzarella · Allergene 1,7,9</small>
+                <small data-i18n="pizzaSucuk">Tomatensauce & Mozzarella · Allergene 1,7,9</small>
               </div>
               <div class="price">12,00 €</div>
             </div>
@@ -1206,7 +1244,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Salami</strong>
-                <small>Tomatensauce & Mozzarella · Allergene 1,7,9</small>
+                <small data-i18n="pizzaSalami">Tomatensauce & Mozzarella · Allergene 1,7,9</small>
               </div>
               <div class="price">12,00 €</div>
             </div>
@@ -1214,7 +1252,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Prosciutto</strong>
-                <small>Tomatensauce & Mozzarella · Putenbrust · Allergene 1,7,9</small>
+                <small data-i18n="pizzaProsciutto">Tomatensauce & Mozzarella · Putenbrust · Allergene 1,7,9</small>
               </div>
               <div class="price">12,00 €</div>
             </div>
@@ -1222,7 +1260,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Mista</strong>
-                <small>Tomatensauce & Mozzarella · Putenbrust, Salami · Allergene 1,7,9</small>
+                <small data-i18n="pizzaMista">Tomatensauce & Mozzarella · Putenbrust, Salami · Allergene 1,7,9</small>
               </div>
               <div class="price">12,00 €</div>
             </div>
@@ -1230,7 +1268,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Funghi</strong>
-                <small>Tomatensauce & Mozzarella · Champignons · Allergene 1,7</small>
+                <small data-i18n="pizzaFunghi">Tomatensauce & Mozzarella · Champignons · Allergene 1,7</small>
               </div>
               <div class="price">11,00 €</div>
             </div>
@@ -1238,7 +1276,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Vegetaria</strong>
-                <small>Tomatensauce & Mozzarella · Zucchini, Aubergine, Paprika · Allergene 1,7</small>
+                <small data-i18n="pizzaVegetaria">Tomatensauce & Mozzarella · Zucchini, Aubergine, Paprika · Allergene 1,7</small>
               </div>
               <div class="price">11,00 €</div>
             </div>
@@ -1246,7 +1284,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Mozzarella</strong>
-                <small>extra Mozzarella · Allergene 1,7</small>
+                <small data-i18n="pizzaMozzarella">extra Mozzarella · Allergene 1,7</small>
               </div>
               <div class="price">11,00 €</div>
             </div>
@@ -1254,7 +1292,7 @@
             <div class="menu-item">
               <div class="menu-copy">
                 <strong>Margherita</strong>
-                <small>Mozzarella · Allergene 1,7</small>
+                <small data-i18n="pizzaMargherita">Mozzarella · Allergene 1,7</small>
               </div>
               <div class="price">10,00 €</div>
             </div>
@@ -1263,77 +1301,77 @@
 
         <div class="menu-layout" style="margin-top:22px;">
           <div class="menu-block">
-            <h3>Salate & Sides</h3>
+            <h3 data-i18n="catSaladsSides">Salate & Sides</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Salat Thunfisch</strong>
-                <small>Allergen 4</small>
+                <strong data-i18n="saladTuna">Salat Thunfisch</strong>
+                <small data-i18n="allergen4">Allergen 4</small>
               </div>
               <div class="price">8,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Salat Käse</strong>
-                <small>Allergen 7</small>
+                <strong data-i18n="saladCheese">Salat Käse</strong>
+                <small data-i18n="allergen7">Allergen 7</small>
               </div>
               <div class="price">7,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Salat Gemischt</strong>
-                <small>frisch und leicht</small>
+                <strong data-i18n="saladMixed">Salat Gemischt</strong>
+                <small data-i18n="freshAndLight">frisch und leicht</small>
               </div>
               <div class="price">6,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Linsensuppe</strong>
-                <small>wärmend und klassisch</small>
+                <strong data-i18n="lentilSoup">Linsensuppe</strong>
+                <small data-i18n="warmingClassic">wärmend und klassisch</small>
               </div>
               <div class="price">6,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Pommes</strong>
-                <small>knusprig serviert</small>
+                <strong data-i18n="fries">Pommes</strong>
+                <small data-i18n="crispyServed">knusprig serviert</small>
               </div>
               <div class="price">5,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Falafel 4 Stück</strong>
-                <small>Allergene 1,11</small>
+                <strong data-i18n="falafel4">Falafel 4 Stück</strong>
+                <small data-i18n="allergens111">Allergene 1,11</small>
               </div>
               <div class="price">3,00 €</div>
             </div>
           </div>
 
           <div class="menu-block">
-            <h3>Dessert & Allergene</h3>
+            <h3 data-i18n="catDessertAllergens">Dessert & Allergene</h3>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Baklava 3 Stück</strong>
-                <small>Allergene 1,3,7,8</small>
+                <strong>Baklava 3 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="allergens1378">Allergene 1,3,7,8</small>
               </div>
               <div class="price">5,00 €</div>
             </div>
 
             <div class="menu-item">
               <div class="menu-copy">
-                <strong>Burma 3 Stück</strong>
-                <small>Allergene 1,3,7,8</small>
+                <strong>Burma 3 <span data-i18n="piecesLabel">Stück</span></strong>
+                <small data-i18n="allergens1378">Allergene 1,3,7,8</small>
               </div>
               <div class="price">5,00 €</div>
             </div>
 
-            <div class="note" style="margin-top:18px;">
+            <div class="note" data-i18n-html="allergenNote">
               Allergene: 1 Gluten · 2 Krebstiere · 3 Eier · 4 Fisch · 5 Erdnüsse · 6 Soja ·
               7 Laktose · 8 Schalenfrüchte · 9 Sellerie · 10 Senf · 11 Sesam · 12 Sulfite ·
               13 Lupinen · 14 Weichtiere
@@ -1350,11 +1388,10 @@
     <section id="getraenke" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Getränke</div>
-          <h2>Etwas Passendes dazu.</h2>
-          <p>
-            Zu unserem Angebot gehören klassische Erfrischungsgetränke, Ayran und Wasser.
-            Nicht mehr und nicht weniger als das, was zu gutem Essen einfach dazugehört.
+          <div class="kicker" data-i18n="drinksKicker">Getränke</div>
+          <h2 data-i18n="drinksTitle">Etwas Passendes dazu.</h2>
+          <p data-i18n="drinksText">
+            Zu unserem Angebot gehören klassische Erfrischungsgetränke, Ayran und Wasser. Nicht mehr und nicht weniger als das, was zu gutem Essen einfach dazugehört.
           </p>
         </div>
 
@@ -1365,16 +1402,17 @@
               alt="Getränke und Erfrischungen bei Sultan Gemüse Kebab Berlin"
               loading="lazy"
               decoding="async"
+              data-i18n-attr="alt:imageAltDrinks"
             >
           </div>
 
           <div class="drinks-card">
-            <div class="kicker" style="margin-bottom:10px;">Erfrischungen</div>
-            <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);">
+            <div class="kicker" style="margin-bottom:10px;" data-i18n="refreshmentsKicker">Erfrischungen</div>
+            <h3 style="margin:0 0 16px; font-size:32px; line-height:1.08; color:var(--green-strong);" data-i18n="refreshmentsTitle">
               Gekühlt und unkompliziert.
             </h3>
 
-            <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;">
+            <p style="margin:0 0 22px; color:var(--muted); line-height:1.75; font-size:16px;" data-i18n="refreshmentsText">
               Ob Ayran, stilles Wasser oder ein klassisches Erfrischungsgetränk — die Auswahl ist bewusst schlicht gehalten und passt zum Essen.
             </p>
 
@@ -1388,7 +1426,7 @@
 
             <div class="drink-row">
               <div>
-                <strong>Stilles Wasser</strong>
+                <strong data-i18n="stillWater">Stilles Wasser</strong>
                 <span>500 ml</span>
               </div>
               <div class="price">2,50 €</div>
@@ -1397,12 +1435,12 @@
             <div class="drink-row">
               <div>
                 <strong>Ayran</strong>
-                <span>250 ml · Allergen 7</span>
+                <span data-i18n="ayranDesc">250 ml · Allergen 7</span>
               </div>
               <div class="price">2,00 €</div>
             </div>
 
-            <div class="quote" style="margin-top:22px;">
+            <div class="quote" style="margin-top:22px;" data-i18n="refreshmentsQuote">
               Auch hier gilt: lieber passend als überladen.
             </div>
           </div>
@@ -1413,24 +1451,24 @@
     <section id="kontakt" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Besuche Sultan</div>
-          <h2>Komm vorbei und probier es selbst.</h2>
-          <p>
+          <div class="kicker" data-i18n="visitKicker">Besuche Sultan</div>
+          <h2 data-i18n="visitTitle">Komm vorbei und probier es selbst.</h2>
+          <p data-i18n="visitText">
             Worte können vieles beschreiben. Am Ende zählt aber, wie es vor dir steht und wie es schmeckt.
           </p>
         </div>
 
         <div class="info-grid">
           <div class="card">
-            <h3>Adresse</h3>
-            <p>
+            <h3 data-i18n="addressTitle">Adresse</h3>
+            <p data-i18n-html="addressText">
               Sultan Gemüse Kebab<br>
               Ostpreußendamm 79<br>
               12207 Berlin
             </p>
 
             <p>
-              E-Mail<br>
+              <span data-i18n="emailLabel">E-Mail</span><br>
               <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>
             </p>
 
@@ -1439,23 +1477,20 @@
               href="https://www.google.com/maps/place/Sultan/@52.4184069,13.2949251,15z/data=!3m1!4b1!4m6!3m5!1s0x47a85b000eea7869:0xcba457e5f43fe588!8m2!3d52.4183943!4d13.3052034!16s%2Fg%2F11z1xtylwh"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="mapsLink"
             >
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 21s7-5.33 7-11a7 7 0 1 0-14 0c0 5.67 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/>
-                <circle cx="12" cy="10" r="2.8" stroke="currentColor" stroke-width="1.8"/>
-              </svg>
               Route zu Sultan Gemüse Kebab öffnen
             </a>
           </div>
 
           <div class="card">
-            <h3>Öffnungszeiten</h3>
-            <p>
+            <h3 data-i18n="hoursTitle">Öffnungszeiten</h3>
+            <p data-i18n-html="hoursText">
               Montag – Sonntag<br>
               11:00 – 00:00 Uhr
             </p>
 
-            <p>
+            <p data-i18n="hoursNote">
               Frisch zubereitet während der gesamten Öffnungszeit.
             </p>
           </div>
@@ -1466,9 +1501,9 @@
     <section id="social" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Sultan Online</div>
-          <h2>Weitere Einblicke</h2>
-          <p>
+          <div class="kicker" data-i18n="onlineKicker">Sultan Online</div>
+          <h2 data-i18n="onlineTitle">Weitere Einblicke</h2>
+          <p data-i18n="onlineText">
             Wenn du sehen willst, was bei uns im Laden passiert, findest du weitere Eindrücke auch auf unseren Kanälen.
           </p>
         </div>
@@ -1518,35 +1553,35 @@
     <section id="impressum" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Rechtliches</div>
-          <h2>Impressum</h2>
+          <div class="kicker" data-i18n="legalKicker">Rechtliches</div>
+          <h2 data-i18n="imprintTitle">Impressum</h2>
         </div>
 
         <div class="card">
-          <p>Angaben gemäß § 5 DDG</p>
+          <p data-i18n="imprintLaw">Angaben gemäß § 5 DDG</p>
 
-          <p>
+          <p data-i18n-html="imprintCompany">
             Sultan Gemüse Kebab<br>
             Einzelunternehmen
           </p>
 
-          <p>
+          <p data-i18n-html="imprintAddress">
             Ostpreußendamm 79<br>
             12207 Berlin<br>
             Deutschland
           </p>
 
-          <p>
+          <p data-i18n-html="imprintRep">
             Vertreten durch:<br>
             Hulusi Dönmez
           </p>
 
-          <p>
+          <p data-i18n-html="imprintContact">
             Kontakt:<br>
             E-Mail: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>
           </p>
 
-          <p>
+          <p data-i18n-html="imprintVat">
             Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
             DE2026300369
           </p>
@@ -1557,36 +1592,36 @@
     <section id="datenschutz" class="section-soft">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Rechtliches</div>
-          <h2>Datenschutzerklärung</h2>
+          <div class="kicker" data-i18n="legalKicker">Rechtliches</div>
+          <h2 data-i18n="privacyTitle">Datenschutzerklärung</h2>
         </div>
 
         <div class="card">
-          <p>
+          <p data-i18n="privacy1">
             Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich der Information über unser gastronomisches Angebot.
           </p>
 
-          <p>
+          <p data-i18n="privacy2">
             Beim Aufruf dieser Website werden technisch erforderliche Daten verarbeitet, um die Website sicher und zuverlässig bereitzustellen. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Informationen zum verwendeten Browser und Betriebssystem sowie die aufgerufenen Seiten gehören.
           </p>
 
-          <p>
+          <p data-i18n="privacy3">
             Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in den Datenschutzinformationen von GitHub.
           </p>
 
-          <p>
+          <p data-i18n="privacy4">
             Diese Website verwendet nach unserem derzeitigen Stand keine Analyse- oder Tracking-Tools, keine eingebetteten Karten, keine Social-Media-Plugins und kein eigenes Kontaktformular.
           </p>
 
-          <p>
+          <p data-i18n="privacy5">
             Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage.
           </p>
 
-          <p>
+          <p data-i18n="privacy6">
             Auf dieser Website sind Links zu externen Plattformen wie Instagram, TikTok, YouTube und Google Maps enthalten. Erst beim Anklicken dieser Links werden Sie auf die jeweilige externe Website weitergeleitet. Für die Datenverarbeitung auf diesen externen Seiten sind ausschließlich deren Betreiber verantwortlich.
           </p>
 
-          <p>
+          <p data-i18n-html="privacy7">
             Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
             Hulusi Dönmez<br>
             Sultan Gemüse Kebab<br>
@@ -1595,7 +1630,7 @@
             E-Mail: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>
           </p>
 
-          <p>
+          <p data-i18n="privacy8">
             Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.
           </p>
         </div>
@@ -1605,18 +1640,464 @@
 
   <footer>
     <div class="container">
-      © 2026 Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt
+      <span data-i18n="footerCopy">© 2026 Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt</span>
       <div class="footer-links">
-        <a href="#start">Start</a>
-        <a href="#qualitaet">Unser Laden</a>
-        <a href="#geschichte">Geschichte</a>
-        <a href="#speisekarte">Speisekarte</a>
-        <a href="#getraenke">Getränke</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="#impressum">Impressum</a>
-        <a href="#datenschutz">Datenschutz</a>
+        <a href="#start" data-i18n="navStart">Start</a>
+        <a href="#qualitaet" data-i18n="navStore">Unser Laden</a>
+        <a href="#geschichte" data-i18n="navStory">Geschichte</a>
+        <a href="#speisekarte" data-i18n="navMenu">Speisekarte</a>
+        <a href="#getraenke" data-i18n="navDrinks">Getränke</a>
+        <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+        <a href="#impressum" data-i18n="imprintTitle">Impressum</a>
+        <a href="#datenschutz" data-i18n="privacyTitle">Datenschutz</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      de: {
+        pageTitle: "Sultan Gemüse Kebab Berlin – Döner, Falafel, Lahmacun und Pizza in Lichterfelde",
+        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde am Ostpreußendamm 79. Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza mit frisch zubereitetem Teig, ehrlichen Zutaten und klarer Auswahl.",
+        ogDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde mit Chicken Gemüse Kebab, Falafel, Lahmacun und Pizza.",
+        skipLink: "Zum Inhalt springen",
+        logoAlt: "Sultan Logo",
+        heroLogoAlt: "Sultan Gemüse Kebab Logo",
+        brandName: "Sultan Gemüse Kebab",
+        brandTagline: "Wo Qualität Geschmack bekommt",
+        navStart: "Start",
+        navStore: "Unser Laden",
+        navStory: "Geschichte",
+        navMenu: "Speisekarte",
+        navDrinks: "Getränke",
+        navContact: "Kontakt",
+        heroEyebrow: "Sultan · Wo Qualität Geschmack bekommt",
+        heroTitle: "Mit Ruhe gemacht.<br>Frisch serviert.",
+        heroText: "Bei Sultan beginnt vieles nicht erst am Tresen, sondern schon davor. Unser Teig wird täglich vorbereitet und bekommt die Zeit, die er braucht. Falafel werden frisch gemacht, das Brot für unseren Chicken Kebab wird eigens für uns hergestellt und auch bei den übrigen Zutaten achten wir darauf, dass am Ende nicht nur etwas Sättigendes, sondern etwas Stimmiges auf dem Tisch liegt.",
+        heroBtnMenu: "Speisekarte ansehen",
+        heroBtnRoute: "Route öffnen",
+        highlight1: "Ruhezeit für unseren Teig",
+        highlight2strong: "Täglich",
+        highlight2: "frisch zubereitete Falafel",
+        highlight3: "Arbeit an Rezepten und Abläufen",
+        heroPoint1Title: "Unsere Art zu arbeiten",
+        heroPoint1Text: "Wir versuchen nicht, mit großen Versprechen zu überzeugen, sondern mit dem, was jeden Tag auf den Teller kommt.",
+        heroPoint2Title: "Bewusst übersichtlich",
+        heroPoint2Text: "Unsere Karte ist klar gehalten, damit wir uns auf das konzentrieren können, was wir wirklich gut machen wollen.",
+        heroPoint3Title: "Am besten selbst probieren",
+        heroPoint3Text: "Wer uns besucht, soll sich sein eigenes Urteil bilden — nicht nach Worten, sondern nach Geschmack.",
+        storeKicker: "Unser Laden",
+        storeTitle: "Einfach gesagt: Wir nehmen uns Zeit für Dinge, die man später schmeckt.",
+        storeText: "Hinter Sultan steckt nicht der Gedanke, möglichst laut aufzutreten. Uns geht es darum, sauber zu arbeiten, gute Zutaten sinnvoll zusammenzubringen und Gerichte zu servieren, die man gerne noch einmal bestellt. Vieles daran ist über Jahre entstanden und im Alltag immer weiter verbessert worden.",
+        qualityTitle: "Was uns wichtig ist",
+        qualityText: "Der Teig wird täglich zubereitet und bekommt seine Ruhezeit. Die Falafel werden frisch gemacht. Für unseren Chicken Kebab verwenden wir ein Brot, das eigens für uns hergestellt wird. Das sind keine großen Tricks, sondern Entscheidungen, die im Alltag einen Unterschied machen.",
+        qualityQuote: "Wir glauben, dass gutes Essen nicht laut erklärt werden muss. Man merkt es, wenn es vor einem steht.",
+        storyTitle: "Wie Sultan entstanden ist",
+        storyText: "Die Grundlage für Sultan kommt aus der langjährigen Erfahrung unseres Vaters, der über viele Jahre in Berlin gekocht hat. Gemeinsam mit seinen Söhnen ist daraus ein eigener Laden geworden, an dem Rezepte, Abläufe und Details über lange Zeit weiterentwickelt wurden. Was heute bei uns angeboten wird, ist das Ergebnis dieser gemeinsamen Arbeit.",
+        pill1: "25 Jahre Erfahrung",
+        pill2: "Familienbetrieb",
+        pill3: "8 Jahre Entwicklung",
+        pill4: "faire Preise",
+        pill5: "klare Auswahl",
+        imageAltFood: "Speisen bei Sultan Gemüse Kebab in Berlin",
+        imageCaption: "Sultan ist ein Laden für Menschen, die Wert auf frische Zubereitung, ehrliche Portionen und einen klaren Geschmack legen.",
+        smallMenuTitle: "Warum die Karte bewusst kleiner ist",
+        smallMenuText: "Wir haben uns gegen eine überladene Speisekarte entschieden. Lieber weniger, dafür Dinge, hinter denen wir stehen können. So bleibt im Alltag mehr Aufmerksamkeit für die Vorbereitung, die Zutaten und das, was am Ende ausgegeben wird.",
+        smallMenuQuote: "Am Ende soll nicht die Menge beeindrucken, sondern das, was man tatsächlich bekommt.",
+        menuKicker: "Speisekarte",
+        menuTitle: "Unser Angebot auf einen Blick.",
+        menuText: "Bei uns findest du Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate, Beilagen und Dessert. Alles ist so aufgebaut, dass man schnell findet, worauf man Lust hat, ohne dass die Karte unübersichtlich wird.",
+        catDoner: "Döner",
+        breadLabel: "Brot",
+        donerChickenDesc: "Chicken Gemüse Kebab · Allergene 1,6,7",
+        catFalafel: "Falafel",
+        falafelDesc: "Falafel Gemüse Kebab · Allergene 1,6,11",
+        catExtras: "Verfeinern",
+        extraChicken: "Chicken extra",
+        allergens67: "Allergene 6,7",
+        extraFalafel: "Falafel extra",
+        allergens111: "Allergene 1,11",
+        extraBread: "Brot extra",
+        allergen1: "Allergen 1",
+        saucesNote: "Saucen: Kräuter (3,7) · Knoblauch (3,7) · Scharf Vegan · Knoblauch Vegan · Sesam Vegan (11)",
+        piecesLabel: "Stück",
+        freshFromOven1: "frisch aus dem Ofen · Allergen 1",
+        pizza28: "Pizza 28 cm",
+        pizzaTonno: "Tomatensauce & Mozzarella · Thunfisch, Zwiebeln · Allergene 1,4,7",
+        pizzaSucuk: "Tomatensauce & Mozzarella · Allergene 1,7,9",
+        pizzaSalami: "Tomatensauce & Mozzarella · Allergene 1,7,9",
+        pizzaProsciutto: "Tomatensauce & Mozzarella · Putenbrust · Allergene 1,7,9",
+        pizzaMista: "Tomatensauce & Mozzarella · Putenbrust, Salami · Allergene 1,7,9",
+        pizzaFunghi: "Tomatensauce & Mozzarella · Champignons · Allergene 1,7",
+        pizzaVegetaria: "Tomatensauce & Mozzarella · Zucchini, Aubergine, Paprika · Allergene 1,7",
+        pizzaMozzarella: "extra Mozzarella · Allergene 1,7",
+        pizzaMargherita: "Mozzarella · Allergene 1,7",
+        catSaladsSides: "Salate & Sides",
+        saladTuna: "Salat Thunfisch",
+        allergen4: "Allergen 4",
+        saladCheese: "Salat Käse",
+        allergen7: "Allergen 7",
+        saladMixed: "Salat Gemischt",
+        freshAndLight: "frisch und leicht",
+        lentilSoup: "Linsensuppe",
+        warmingClassic: "wärmend und klassisch",
+        fries: "Pommes",
+        crispyServed: "knusprig serviert",
+        falafel4: "Falafel 4 Stück",
+        catDessertAllergens: "Dessert & Allergene",
+        allergens1378: "Allergene 1,3,7,8",
+        allergenNote: "Allergene: 1 Gluten · 2 Krebstiere · 3 Eier · 4 Fisch · 5 Erdnüsse · 6 Soja · 7 Laktose · 8 Schalenfrüchte · 9 Sellerie · 10 Senf · 11 Sesam · 12 Sulfite · 13 Lupinen · 14 Weichtiere<br><br>* Gluten auch inkl. Weizen, Roggen, Gerste, Hafer<br>** Schalenfrüchte auch inkl. Nüsse",
+        drinksKicker: "Getränke",
+        drinksTitle: "Etwas Passendes dazu.",
+        drinksText: "Zu unserem Angebot gehören klassische Erfrischungsgetränke, Ayran und Wasser. Nicht mehr und nicht weniger als das, was zu gutem Essen einfach dazugehört.",
+        imageAltDrinks: "Getränke und Erfrischungen bei Sultan Gemüse Kebab Berlin",
+        refreshmentsKicker: "Erfrischungen",
+        refreshmentsTitle: "Gekühlt und unkompliziert.",
+        refreshmentsText: "Ob Ayran, stilles Wasser oder ein klassisches Erfrischungsgetränk — die Auswahl ist bewusst schlicht gehalten und passt zum Essen.",
+        stillWater: "Stilles Wasser",
+        ayranDesc: "250 ml · Allergen 7",
+        refreshmentsQuote: "Auch hier gilt: lieber passend als überladen.",
+        visitKicker: "Besuche Sultan",
+        visitTitle: "Komm vorbei und probier es selbst.",
+        visitText: "Worte können vieles beschreiben. Am Ende zählt aber, wie es vor dir steht und wie es schmeckt.",
+        addressTitle: "Adresse",
+        addressText: "Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin",
+        emailLabel: "E-Mail",
+        mapsLink: "Route zu Sultan Gemüse Kebab öffnen",
+        hoursTitle: "Öffnungszeiten",
+        hoursText: "Montag – Sonntag<br>11:00 – 00:00 Uhr",
+        hoursNote: "Frisch zubereitet während der gesamten Öffnungszeit.",
+        onlineKicker: "Sultan Online",
+        onlineTitle: "Weitere Einblicke",
+        onlineText: "Wenn du sehen willst, was bei uns im Laden passiert, findest du weitere Eindrücke auch auf unseren Kanälen.",
+        legalKicker: "Rechtliches",
+        imprintTitle: "Impressum",
+        imprintLaw: "Angaben gemäß § 5 DDG",
+        imprintCompany: "Sultan Gemüse Kebab<br>Einzelunternehmen",
+        imprintAddress: "Ostpreußendamm 79<br>12207 Berlin<br>Deutschland",
+        imprintRep: "Vertreten durch:<br>Hulusi Dönmez",
+        imprintContact: 'Kontakt:<br>E-Mail: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        imprintVat: "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>DE2026300369",
+        privacyTitle: "Datenschutzerklärung",
+        privacy1: "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich der Information über unser gastronomisches Angebot.",
+        privacy2: "Beim Aufruf dieser Website werden technisch erforderliche Daten verarbeitet, um die Website sicher und zuverlässig bereitzustellen. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Informationen zum verwendeten Browser und Betriebssystem sowie die aufgerufenen Seiten gehören.",
+        privacy3: "Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in den Datenschutzinformationen von GitHub.",
+        privacy4: "Diese Website verwendet nach unserem derzeitigen Stand keine Analyse- oder Tracking-Tools, keine eingebetteten Karten, keine Social-Media-Plugins und kein eigenes Kontaktformular.",
+        privacy5: "Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage.",
+        privacy6: "Auf dieser Website sind Links zu externen Plattformen wie Instagram, TikTok, YouTube und Google Maps enthalten. Erst beim Anklicken dieser Links werden Sie auf die jeweilige externe Website weitergeleitet. Für die Datenverarbeitung auf diesen externen Seiten sind ausschließlich deren Betreiber verantwortlich.",
+        privacy7: 'Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Hulusi Dönmez<br>Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin<br>E-Mail: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        privacy8: "Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.",
+        footerCopy: "© 2026 Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt"
+      },
+
+      en: {
+        pageTitle: "Sultan Gemüse Kebab Berlin – Doner, Falafel, Lahmacun and Pizza in Lichterfelde",
+        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde at Ostpreußendamm 79. Chicken vegetable kebab, falafel, lahmacun and pizza with freshly prepared dough, honest ingredients and a clear menu.",
+        ogDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde with chicken vegetable kebab, falafel, lahmacun and pizza.",
+        skipLink: "Skip to content",
+        logoAlt: "Sultan logo",
+        heroLogoAlt: "Sultan Gemüse Kebab logo",
+        brandName: "Sultan Gemüse Kebab",
+        brandTagline: "Where quality turns into taste",
+        navStart: "Home",
+        navStore: "Our place",
+        navStory: "Story",
+        navMenu: "Menu",
+        navDrinks: "Drinks",
+        navContact: "Contact",
+        heroEyebrow: "Sultan · Where quality turns into taste",
+        heroTitle: "Made with patience.<br>Served fresh.",
+        heroText: "At Sultan, a lot begins long before anything reaches the counter. Our dough is prepared fresh every day and given the time it needs. Falafel is made fresh daily, the bread for our chicken kebab is produced especially for us, and with the rest of our ingredients we try to make sure the final result is not just filling, but well put together.",
+        heroBtnMenu: "View menu",
+        heroBtnRoute: "Open route",
+        highlight1: "Resting time for our dough",
+        highlight2strong: "Daily",
+        highlight2: "freshly prepared falafel",
+        highlight3: "years of work on recipes and daily routines",
+        heroPoint1Title: "How we work",
+        heroPoint1Text: "We do not try to convince people with big promises, but with what arrives on the plate every day.",
+        heroPoint2Title: "Kept intentionally clear",
+        heroPoint2Text: "Our menu stays focused so we can concentrate on what we really want to do well.",
+        heroPoint3Title: "Best judged by trying it",
+        heroPoint3Text: "Anyone who visits us should make up their own mind — not from words, but from taste.",
+        storeKicker: "Our place",
+        storeTitle: "Simply put: we give time to the things people will taste later.",
+        storeText: "Sultan was never built around trying to be loud. What matters to us is working cleanly, combining good ingredients in a sensible way, and serving food people genuinely want to come back for. A lot of what we do has grown over years and has been refined through daily work.",
+        qualityTitle: "What matters to us",
+        qualityText: "Our dough is prepared fresh every day and given time to rest. The falafel is made fresh. For our chicken kebab, we use bread that is made especially for us. These are not big tricks — just everyday decisions that make a real difference.",
+        qualityQuote: "We believe good food does not need to be explained loudly. You can tell once it is in front of you.",
+        storyTitle: "How Sultan came to be",
+        storyText: "The foundation of Sultan comes from our father’s many years of cooking experience in Berlin. Together with his sons, that experience became its own place, where recipes, routines and details were developed over a long period of time. What we serve today is the result of that shared work.",
+        pill1: "25 years of experience",
+        pill2: "family business",
+        pill3: "8 years of development",
+        pill4: "fair prices",
+        pill5: "clear selection",
+        imageAltFood: "Food at Sultan Gemüse Kebab in Berlin",
+        imageCaption: "Sultan is a place for people who care about fresh preparation, honest portions and a clear, balanced taste.",
+        smallMenuTitle: "Why the menu is intentionally smaller",
+        smallMenuText: "We chose not to build an overloaded menu. We would rather offer less, but stand behind it properly. That leaves more attention for preparation, ingredients and what is actually served in the end.",
+        smallMenuQuote: "In the end, it should not be the size of the menu that impresses people, but what they actually get.",
+        menuKicker: "Menu",
+        menuTitle: "Our selection at a glance.",
+        menuText: "Here you will find chicken vegetable kebab, falafel, lahmacun, pizza, salads, sides and dessert. Everything is arranged so it stays easy to understand and quick to choose from.",
+        catDoner: "Doner",
+        breadLabel: "Bread",
+        donerChickenDesc: "Chicken vegetable kebab · Allergens 1,6,7",
+        catFalafel: "Falafel",
+        falafelDesc: "Falafel vegetable kebab · Allergens 1,6,11",
+        catExtras: "Extras",
+        extraChicken: "Extra chicken",
+        allergens67: "Allergens 6,7",
+        extraFalafel: "Extra falafel",
+        allergens111: "Allergens 1,11",
+        extraBread: "Extra bread",
+        allergen1: "Allergen 1",
+        saucesNote: "Sauces: Herb (3,7) · Garlic (3,7) · Spicy vegan · Garlic vegan · Sesame vegan (11)",
+        piecesLabel: "pcs",
+        freshFromOven1: "fresh from the oven · Allergen 1",
+        pizza28: "Pizza 28 cm",
+        pizzaTonno: "Tomato sauce & mozzarella · tuna, onions · Allergens 1,4,7",
+        pizzaSucuk: "Tomato sauce & mozzarella · Allergens 1,7,9",
+        pizzaSalami: "Tomato sauce & mozzarella · Allergens 1,7,9",
+        pizzaProsciutto: "Tomato sauce & mozzarella · turkey ham · Allergens 1,7,9",
+        pizzaMista: "Tomato sauce & mozzarella · turkey ham, salami · Allergens 1,7,9",
+        pizzaFunghi: "Tomato sauce & mozzarella · mushrooms · Allergens 1,7",
+        pizzaVegetaria: "Tomato sauce & mozzarella · zucchini, aubergine, peppers · Allergens 1,7",
+        pizzaMozzarella: "extra mozzarella · Allergens 1,7",
+        pizzaMargherita: "Mozzarella · Allergens 1,7",
+        catSaladsSides: "Salads & sides",
+        saladTuna: "Tuna salad",
+        allergen4: "Allergen 4",
+        saladCheese: "Cheese salad",
+        allergen7: "Allergen 7",
+        saladMixed: "Mixed salad",
+        freshAndLight: "fresh and light",
+        lentilSoup: "Lentil soup",
+        warmingClassic: "warm and classic",
+        fries: "Fries",
+        crispyServed: "served crispy",
+        falafel4: "Falafel 4 pcs",
+        catDessertAllergens: "Dessert & allergens",
+        allergens1378: "Allergens 1,3,7,8",
+        allergenNote: "Allergens: 1 Gluten · 2 Crustaceans · 3 Eggs · 4 Fish · 5 Peanuts · 6 Soy · 7 Lactose · 8 Tree nuts · 9 Celery · 10 Mustard · 11 Sesame · 12 Sulphites · 13 Lupin · 14 Molluscs<br><br>* Gluten including wheat, rye, barley, oats<br>** Tree nuts including nuts",
+        drinksKicker: "Drinks",
+        drinksTitle: "Something fitting on the side.",
+        drinksText: "We offer classic soft drinks, ayran and water. Nothing more and nothing less than what naturally belongs with good food.",
+        imageAltDrinks: "Drinks and refreshments at Sultan Gemüse Kebab Berlin",
+        refreshmentsKicker: "Refreshments",
+        refreshmentsTitle: "Cold and uncomplicated.",
+        refreshmentsText: "Whether ayran, still water or a classic soft drink — the selection is intentionally simple and fits naturally with the food.",
+        stillWater: "Still water",
+        ayranDesc: "250 ml · Allergen 7",
+        refreshmentsQuote: "The same idea applies here too: better fitting than overloaded.",
+        visitKicker: "Visit Sultan",
+        visitTitle: "Come by and try it for yourself.",
+        visitText: "Words can describe a lot. In the end, what matters is what is in front of you and how it tastes.",
+        addressTitle: "Address",
+        addressText: "Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin",
+        emailLabel: "Email",
+        mapsLink: "Open route to Sultan Gemüse Kebab",
+        hoursTitle: "Opening hours",
+        hoursText: "Monday – Sunday<br>11:00 am – 12:00 am",
+        hoursNote: "Freshly prepared throughout our opening hours.",
+        onlineKicker: "Sultan online",
+        onlineTitle: "More impressions",
+        onlineText: "If you want to see more of what goes on in our place, you can also find additional impressions on our channels.",
+        legalKicker: "Legal",
+        imprintTitle: "Legal notice",
+        imprintLaw: "Information according to § 5 DDG",
+        imprintCompany: "Sultan Gemüse Kebab<br>Sole proprietorship",
+        imprintAddress: "Ostpreußendamm 79<br>12207 Berlin<br>Germany",
+        imprintRep: "Represented by:<br>Hulusi Dönmez",
+        imprintContact: 'Contact:<br>Email: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        imprintVat: "VAT identification number according to § 27 a German VAT Act:<br>DE2026300369",
+        privacyTitle: "Privacy policy",
+        privacy1: "The protection of your personal data is important to us. This website serves solely to provide information about our food offering.",
+        privacy2: "When this website is accessed, technically necessary data may be processed in order to provide the website securely and reliably. This may include in particular the IP address, date and time of access, information about the browser and operating system used, and the pages visited.",
+        privacy3: "This website is provided via GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Further information on data processing by GitHub can be found in GitHub’s privacy information.",
+        privacy4: "According to our current setup, this website does not use analytics or tracking tools, embedded maps, social media plugins, or its own contact form.",
+        privacy5: "If you contact us by email, we process the information you send solely for the purpose of handling your enquiry.",
+        privacy6: "This website contains links to external platforms such as Instagram, TikTok, YouTube and Google Maps. Only when you click these links will you be redirected to the respective external website. The operators of those external websites are solely responsible for the data processing there.",
+        privacy7: 'The controller responsible for data processing on this website is:<br>Hulusi Dönmez<br>Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin<br>Email: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        privacy8: "Within the framework of the statutory provisions, you have the right to information, rectification, erasure, restriction of processing and, where applicable, the right to lodge a complaint with a data protection supervisory authority.",
+        footerCopy: "© 2026 Sultan Gemüse Kebab – Where quality turns into taste"
+      },
+
+      tr: {
+        pageTitle: "Sultan Gemüse Kebab Berlin – Lichterfelde’de Döner, Falafel, Lahmacun ve Pizza",
+        pageDescription: "Berlin Lichterfelde, Ostpreußendamm 79’daki Sultan Gemüse Kebab. Taze hazırlanan hamur, dürüst malzemeler ve sade bir seçkiyle chicken sebzeli kebap, falafel, lahmacun ve pizza.",
+        ogDescription: "Berlin Lichterfelde’de chicken sebzeli kebap, falafel, lahmacun ve pizza sunan Sultan Gemüse Kebab.",
+        skipLink: "İçeriğe geç",
+        logoAlt: "Sultan logosu",
+        heroLogoAlt: "Sultan Gemüse Kebab logosu",
+        brandName: "Sultan Gemüse Kebab",
+        brandTagline: "Kalitenin lezzete dönüştüğü yer",
+        navStart: "Ana sayfa",
+        navStore: "Mekanımız",
+        navStory: "Hikâyemiz",
+        navMenu: "Menü",
+        navDrinks: "İçecekler",
+        navContact: "İletişim",
+        heroEyebrow: "Sultan · Kalitenin lezzete dönüştüğü yer",
+        heroTitle: "Sakinlikle hazırlanır.<br>Taze servis edilir.",
+        heroText: "Sultan’da birçok şey tezgahta değil, daha öncesinde başlar. Hamurumuz her gün hazırlanır ve ihtiyacı olan süreyi alır. Falafel günlük olarak taze yapılır, chicken kebabımız için kullanılan ekmek bize özel hazırlanır. Diğer malzemelerde de amacımız sadece doyurucu değil, dengeli ve yerinde bir sonuç sunmaktır.",
+        heroBtnMenu: "Menüyü gör",
+        heroBtnRoute: "Yol tarifi aç",
+        highlight1: "Hamurumuz için dinlenme süresi",
+        highlight2strong: "Her gün",
+        highlight2: "taze hazırlanan falafel",
+        highlight3: "tarifler ve işleyiş üzerinde geçen yıllar",
+        heroPoint1Title: "Çalışma biçimimiz",
+        heroPoint1Text: "Büyük sözlerle değil, her gün tabağa gelen şeyle ikna etmeye çalışıyoruz.",
+        heroPoint2Title: "Bilinçli olarak sade",
+        heroPoint2Text: "Gerçekten iyi yapmak istediğimiz işlere odaklanabilmek için menümüzü net tuttuk.",
+        heroPoint3Title: "En doğrusu kendin denemek",
+        heroPoint3Text: "Bizi ziyaret eden herkes kendi kararını sözlere göre değil, tada göre vermeli.",
+        storeKicker: "Mekanımız",
+        storeTitle: "Kısacası: Sonradan tadını hissedeceğin şeylere zaman veriyoruz.",
+        storeText: "Sultan yüksek sesle öne çıkma düşüncesiyle kurulmadı. Bizim için önemli olan temiz çalışmak, iyi malzemeleri doğru şekilde bir araya getirmek ve insanların yeniden söylemek isteyeceği yemekler sunmak. Yaptığımız birçok şey yıllar içinde oluştu ve günlük işin içinde geliştirildi.",
+        qualityTitle: "Bizim için önemli olan",
+        qualityText: "Hamurumuz her gün hazırlanır ve dinlenme süresini alır. Falafel taze yapılır. Chicken kebabımız için özel olarak hazırlanan bir ekmek kullanıyoruz. Bunlar büyük numaralar değil; günlük işte gerçekten fark yaratan kararlar.",
+        qualityQuote: "İyi yemek yüksek sesle anlatılmak zorunda değildir. Önüne geldiğinde zaten anlarsın.",
+        storyTitle: "Sultan nasıl ortaya çıktı",
+        storyText: "Sultan’ın temeli, babamızın Berlin’de yıllar boyunca edindiği mutfak tecrübesine dayanır. O tecrübe oğullarıyla birlikte zaman içinde kendi mekanına dönüştü; tarifler, işleyiş ve ayrıntılar uzun süre boyunca geliştirildi. Bugün sunduğumuz şey bu ortak emeğin sonucudur.",
+        pill1: "25 yıllık deneyim",
+        pill2: "aile işletmesi",
+        pill3: "8 yıllık gelişim",
+        pill4: "uygun fiyatlar",
+        pill5: "net seçim",
+        imageAltFood: "Berlin’de Sultan Gemüse Kebab’da sunulan yemekler",
+        imageCaption: "Sultan; taze hazırlığa, dürüst porsiyonlara ve net bir lezzet dengesine önem veren insanlar içindir.",
+        smallMenuTitle: "Menünün neden bilinçli olarak daha küçük olduğu",
+        smallMenuText: "Aşırı kalabalık bir menü yapmak istemedik. Daha az ama gerçekten arkasında durabildiğimiz şeyler sunmayı tercih ettik. Böylece hazırlığa, malzemelere ve sonunda servis edilen şeye daha fazla dikkat verebiliyoruz.",
+        smallMenuQuote: "Sonunda etkileyen şey menünün büyüklüğü değil, gerçekten eline geçen şey olmalı.",
+        menuKicker: "Menü",
+        menuTitle: "Sunumumuzun kısa özeti.",
+        menuText: "Bizde chicken sebzeli kebap, falafel, lahmacun, pizza, salata, yan ürünler ve tatlı bulabilirsin. Her şey, kolay anlaşılır ve rahat seçilir şekilde düzenlenmiştir.",
+        catDoner: "Döner",
+        breadLabel: "Ekmek",
+        donerChickenDesc: "Chicken sebzeli kebap · Alerjenler 1,6,7",
+        catFalafel: "Falafel",
+        falafelDesc: "Falafel sebzeli kebap · Alerjenler 1,6,11",
+        catExtras: "İlaveler",
+        extraChicken: "Ekstra chicken",
+        allergens67: "Alerjenler 6,7",
+        extraFalafel: "Ekstra falafel",
+        allergens111: "Alerjenler 1,11",
+        extraBread: "Ekstra ekmek",
+        allergen1: "Alerjen 1",
+        saucesNote: "Soslar: Otlu (3,7) · Sarımsaklı (3,7) · Acı vegan · Sarımsaklı vegan · Susamlı vegan (11)",
+        piecesLabel: "adet",
+        freshFromOven1: "fırından taze · Alerjen 1",
+        pizza28: "Pizza 28 cm",
+        pizzaTonno: "Domates sosu & mozzarella · ton balığı, soğan · Alerjenler 1,4,7",
+        pizzaSucuk: "Domates sosu & mozzarella · Alerjenler 1,7,9",
+        pizzaSalami: "Domates sosu & mozzarella · Alerjenler 1,7,9",
+        pizzaProsciutto: "Domates sosu & mozzarella · hindi füme · Alerjenler 1,7,9",
+        pizzaMista: "Domates sosu & mozzarella · hindi füme, salam · Alerjenler 1,7,9",
+        pizzaFunghi: "Domates sosu & mozzarella · mantar · Alerjenler 1,7",
+        pizzaVegetaria: "Domates sosu & mozzarella · kabak, patlıcan, biber · Alerjenler 1,7",
+        pizzaMozzarella: "ekstra mozzarella · Alerjenler 1,7",
+        pizzaMargherita: "Mozzarella · Alerjenler 1,7",
+        catSaladsSides: "Salatalar & yan ürünler",
+        saladTuna: "Ton balıklı salata",
+        allergen4: "Alerjen 4",
+        saladCheese: "Peynirli salata",
+        allergen7: "Alerjen 7",
+        saladMixed: "Karışık salata",
+        freshAndLight: "hafif ve taze",
+        lentilSoup: "Mercimek çorbası",
+        warmingClassic: "klasik ve iç ısıtan",
+        fries: "Patates kızartması",
+        crispyServed: "çıtır servis edilir",
+        falafel4: "Falafel 4 adet",
+        catDessertAllergens: "Tatlı & alerjenler",
+        allergens1378: "Alerjenler 1,3,7,8",
+        allergenNote: "Alerjenler: 1 Gluten · 2 Kabuklular · 3 Yumurta · 4 Balık · 5 Yer fıstığı · 6 Soya · 7 Laktoz · 8 Sert kabuklu yemişler · 9 Kereviz · 10 Hardal · 11 Susam · 12 Sülfitler · 13 Lupin · 14 Yumuşakçalar<br><br>* Gluten; buğday, çavdar, arpa ve yulafı da kapsar<br>** Sert kabuklu yemişler; çeşitli kuruyemişleri de kapsar",
+        drinksKicker: "İçecekler",
+        drinksTitle: "Yanına uygun bir şey.",
+        drinksText: "Klasik soğuk içecekler, ayran ve su sunuyoruz. İyi yemeğin yanında doğal olarak ne gerekiyorsa, o kadar.",
+        imageAltDrinks: "Berlin’de Sultan Gemüse Kebab’da içecekler ve ferahlatıcı seçenekler",
+        refreshmentsKicker: "Ferahlatıcılar",
+        refreshmentsTitle: "Soğuk ve sade.",
+        refreshmentsText: "Ayran, su ya da klasik bir soğuk içecek fark etmez — seçki bilinçli olarak sade tutulmuştur ve yemekle uyum sağlar.",
+        stillWater: "Su",
+        ayranDesc: "250 ml · Alerjen 7",
+        refreshmentsQuote: "Burada da aynı anlayış geçerli: fazla değil, uyumlu olsun.",
+        visitKicker: "Sultan’ı ziyaret et",
+        visitTitle: "Gel ve kendin dene.",
+        visitText: "Sözler birçok şeyi anlatabilir. Sonunda önemli olan önüne ne geldiği ve tadının nasıl olduğudur.",
+        addressTitle: "Adres",
+        addressText: "Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin",
+        emailLabel: "E-posta",
+        mapsLink: "Sultan Gemüse Kebab için yol tarifini aç",
+        hoursTitle: "Açılış saatleri",
+        hoursText: "Pazartesi – Pazar<br>11:00 – 00:00",
+        hoursNote: "Açık olduğumuz süre boyunca taze hazırlanır.",
+        onlineKicker: "Sultan online",
+        onlineTitle: "Daha fazla görünüm",
+        onlineText: "Mekanda neler olduğuna daha yakından bakmak istersen, kanallarımızda da ek görüntüler bulabilirsin.",
+        legalKicker: "Yasal bilgiler",
+        imprintTitle: "Künye",
+        imprintLaw: "§ 5 DDG uyarınca bilgiler",
+        imprintCompany: "Sultan Gemüse Kebab<br>Şahıs işletmesi",
+        imprintAddress: "Ostpreußendamm 79<br>12207 Berlin<br>Almanya",
+        imprintRep: "Temsil eden:<br>Hulusi Dönmez",
+        imprintContact: 'İletişim:<br>E-posta: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        imprintVat: "§ 27 a Alman KDV Kanunu uyarınca KDV kimlik numarası:<br>DE2026300369",
+        privacyTitle: "Gizlilik politikası",
+        privacy1: "Kişisel verilerinizin korunması bizim için önemlidir. Bu web sitesi yalnızca gastronomi teklifimiz hakkında bilgi vermek amacıyla kullanılmaktadır.",
+        privacy2: "Bu web sitesi ziyaret edildiğinde, sitenin güvenli ve güvenilir şekilde sunulabilmesi için teknik olarak gerekli veriler işlenebilir. Bunlara özellikle IP adresi, erişim tarihi ve saati, kullanılan tarayıcı ve işletim sistemi bilgileri ile ziyaret edilen sayfalar dahil olabilir.",
+        privacy3: "Bu web sitesi GitHub Pages üzerinden sağlanmaktadır. Hizmet sağlayıcı GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, ABD’dir. GitHub tarafından veri işlenmesine dair daha fazla bilgi GitHub’ın gizlilik bilgilerinde bulunabilir.",
+        privacy4: "Mevcut kurulumumuza göre bu web sitesi analiz veya takip araçları, gömülü haritalar, sosyal medya eklentileri ya da kendi iletişim formunu kullanmamaktadır.",
+        privacy5: "Bizimle e-posta yoluyla iletişime geçtiğinizde, gönderdiğiniz bilgileri yalnızca talebinizi işlemek amacıyla kullanırız.",
+        privacy6: "Bu web sitesi Instagram, TikTok, YouTube ve Google Maps gibi dış platformlara bağlantılar içerir. Bu bağlantılara tıkladığınızda ilgili dış web sitesine yönlendirilirsiniz. Bu dış sitelerdeki veri işlemeden yalnızca ilgili işletmeciler sorumludur.",
+        privacy7: 'Bu web sitesindeki veri işleme faaliyetlerinden sorumlu kişi:<br>Hulusi Dönmez<br>Sultan Gemüse Kebab<br>Ostpreußendamm 79<br>12207 Berlin<br>E-posta: <a href="mailto:dnmz.unternehmen@outlook.de">dnmz.unternehmen@outlook.de</a>',
+        privacy8: "Yasal hükümler çerçevesinde bilgi alma, düzeltme, silme, işlemenin kısıtlanması ve gerekli hallerde bir veri koruma denetim makamına şikayette bulunma hakkına sahipsiniz.",
+        footerCopy: "© 2026 Sultan Gemüse Kebab – Kalitenin lezzete dönüştüğü yer"
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang] || translations.de;
+      document.documentElement.lang = lang;
+
+      document.title = t.pageTitle;
+      document.getElementById('meta-description').setAttribute('content', t.pageDescription);
+      document.getElementById('meta-og-title').setAttribute('content', t.pageTitle);
+      document.getElementById('meta-og-description').setAttribute('content', t.ogDescription);
+      document.getElementById('meta-twitter-title').setAttribute('content', t.pageTitle);
+      document.getElementById('meta-twitter-description').setAttribute('content', t.ogDescription);
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+
+      document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
+        if (t[key] !== undefined) el.setAttribute(attr, t[key]);
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('sultan-language', lang);
+    }
+
+    const savedLanguage = localStorage.getItem('sultan-language') || 'de';
+    setLanguage(savedLanguage);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>
