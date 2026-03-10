@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sultan Gemüse Kebab</title>
-  <meta name="description" content="Sultan Gemüse Kebab – frischer Kebab, Falafel, Lahmacun, Pizza und mehr." />
+  <meta name="description" content="Sultan Gemüse Kebab – moderne offizielle Website mit Speisekarte, Öffnungszeiten und Kontakt." />
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #050505;
       color: #ffffff;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     a {
@@ -23,87 +23,112 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     header {
-      border-bottom: 1px solid #1f1f1f;
-      background: #050505;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.96);
+      border-bottom: 1px solid #1b1b1b;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
       font-size: 28px;
-      font-weight: bold;
+      font-weight: 800;
       color: #9cff00;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      font-size: 15px;
+      gap: 22px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #ffffff;
-      opacity: 0.9;
+      opacity: 0.92;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #9cff00;
     }
 
     .hero {
-      padding: 90px 0 70px;
-      background: linear-gradient(180deg, #050505 0%, #0c0c0c 100%);
-      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 90px;
+      background:
+        radial-gradient(circle at top left, rgba(156,255,0,0.12), transparent 28%),
+        radial-gradient(circle at right center, rgba(156,255,0,0.08), transparent 22%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
     }
 
     .badge {
       display: inline-block;
-      padding: 8px 14px;
       border: 1px solid #9cff00;
       color: #9cff00;
+      padding: 8px 14px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 54px;
-      line-height: 1.05;
-      margin: 0 0 20px;
+      margin: 0 0 18px;
+      font-size: 62px;
+      line-height: 1.02;
+      letter-spacing: -1.4px;
     }
 
     .hero p {
-      max-width: 760px;
-      margin: 0 auto 30px;
-      font-size: 19px;
+      margin: 0 0 28px;
+      max-width: 720px;
       color: #d8d8d8;
+      font-size: 19px;
     }
 
     .hero-buttons {
       display: flex;
-      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-weight: bold;
       display: inline-block;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -111,24 +136,70 @@
       color: #050505;
     }
 
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
     .btn-secondary {
       border: 1px solid #9cff00;
       color: #9cff00;
+      background: transparent;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #101010 0%, #0a0a0a 100%);
+      border: 1px solid #1d1d1d;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      color: #9cff00;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .highlight-box {
+      background: #0f0f0f;
+      border: 1px solid #1f1f1f;
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .highlight-box strong {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 6px;
     }
 
     section {
-      padding: 70px 0;
+      padding: 80px 0;
+    }
+
+    .section-tag {
+      color: #9cff00;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-size: 34px;
-      margin-bottom: 12px;
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
     }
 
     .section-subtitle {
+      max-width: 760px;
       color: #cfcfcf;
-      max-width: 700px;
-      margin-bottom: 35px;
+      margin: 0 0 34px;
+      font-size: 17px;
     }
 
     .cards {
@@ -138,55 +209,65 @@
     }
 
     .card {
-      background: #101010;
-      border: 1px solid #1e1e1e;
-      border-radius: 18px;
+      background: #0f0f0f;
+      border: 1px solid #1d1d1d;
+      border-radius: 22px;
       padding: 24px;
     }
 
     .card h3 {
       margin-top: 0;
+      margin-bottom: 12px;
       color: #9cff00;
+      font-size: 22px;
     }
 
-    .menu-list {
+    .menu-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
     .menu-item {
-      background: #101010;
-      border: 1px solid #1e1e1e;
-      border-radius: 16px;
+      background: #0f0f0f;
+      border: 1px solid #1d1d1d;
+      border-radius: 18px;
       padding: 20px;
     }
 
     .menu-item strong {
       display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 10px;
-      font-size: 18px;
+      gap: 14px;
+      font-size: 19px;
       margin-bottom: 8px;
-      color: #ffffff;
     }
 
-    .menu-item span {
+    .price {
       color: #9cff00;
       white-space: nowrap;
+      font-weight: 800;
     }
 
-    .hours, .contact-box, .legal-box {
-      background: #101010;
-      border: 1px solid #1e1e1e;
-      border-radius: 18px;
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: #0f0f0f;
+      border: 1px solid #1d1d1d;
+      border-radius: 22px;
       padding: 24px;
     }
 
     .hours-row {
       display: flex;
       justify-content: space-between;
-      padding: 10px 0;
+      gap: 16px;
+      padding: 12px 0;
       border-bottom: 1px solid #1d1d1d;
     }
 
@@ -194,38 +275,51 @@
       border-bottom: none;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    .legal-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .legal-links a {
+      border: 1px solid #2b2b2b;
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: #d8d8d8;
+    }
+
+    .legal-links a:hover {
+      border-color: #9cff00;
+      color: #9cff00;
     }
 
     footer {
-      border-top: 1px solid #1f1f1f;
-      padding: 26px 0;
-      color: #bdbdbd;
-      font-size: 14px;
+      border-top: 1px solid #1a1a1a;
+      padding: 26px 0 34px;
+      color: #bcbcbc;
       text-align: center;
+      font-size: 14px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
+      .hero-grid,
       .cards,
-      .menu-list,
-      .two-col {
+      .menu-grid,
+      .info-grid {
         grid-template-columns: 1fr;
       }
 
       h1 {
-        font-size: 40px;
+        font-size: 44px;
       }
 
       .nav {
+        padding: 14px 0;
         flex-direction: column;
-        gap: 12px;
       }
 
       .nav-links {
-        flex-wrap: wrap;
         justify-content: center;
       }
     }
@@ -237,52 +331,71 @@
       <div class="brand">Sultan Gemüse Kebab</div>
       <nav class="nav-links">
         <a href="#start">Start</a>
+        <a href="#konzept">Konzept</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#zeiten">Öffnungszeiten</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="#rechtliches">Rechtliches</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" id="start">
-      <div class="container">
-        <div class="badge">Premium Street Food</div>
-        <h1>Wo Qualität<br>Geschmack bekommt.</h1>
-        <p>
-          Willkommen bei Sultan Gemüse Kebab. Frische Zutaten, starker Geschmack
-          und ein moderner Auftritt – genau wie in deiner Werbung: dunkel, edel,
-          kontraststark und hochwertig.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#speisekarte">Speisekarte ansehen</a>
-          <a class="btn btn-secondary" href="#kontakt">Kontakt</a>
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Original Chicken Gemüse Kebab</div>
+          <h1>Wo Qualität<br>Geschmack bekommt.</h1>
+          <p>
+            Moderne offizielle Website von Sultan Gemüse Kebab. Dunkel, kontraststark,
+            hochwertig und klar aufgebaut – passend zu deinem Werbestil mit Schwarz,
+            Weiß und kräftigem Grün.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#speisekarte">Speisekarte ansehen</a>
+            <a class="btn btn-secondary" href="#kontakt">Kontakt öffnen</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Sultan Qualität</h3>
+          <div class="highlight-box">
+            <strong>Frischer Geschmack</strong>
+            <div>Saubere Präsentation, starke Optik und ein moderner Premium-Auftritt.</div>
+          </div>
+          <div class="highlight-box">
+            <strong>Klare Infos für Kunden</strong>
+            <div>Speisekarte, Öffnungszeiten, Kontakt und Rechtliches an einem Ort.</div>
+          </div>
+          <div class="highlight-box">
+            <strong>Bereit für den nächsten Schritt</strong>
+            <div>Als Nächstes ersetzen wir die Platzhalter mit deinen echten Daten.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="konzept">
       <div class="container">
-        <h2 class="section-title">Unser Konzept</h2>
+        <div class="section-tag">Unser Auftritt</div>
+        <h2 class="section-title">Modern, hochwertig und sofort wiedererkennbar</h2>
         <p class="section-subtitle">
-          Diese erste Version ist bewusst professionell, sauber und klar aufgebaut.
-          Im nächsten Schritt tragen wir deine echten Ladeninfos, Speisekarte,
-          Bilder, Öffnungszeiten und Rechtstexte ein.
+          Deine Werbung gibt schon klar die Richtung vor: dunkler Hintergrund,
+          helles Grün als starke Kontrastfarbe, weiße Typografie und ein edles,
+          urbanes Gesamtbild. Genau darauf ist diese Homepage aufgebaut.
         </p>
 
         <div class="cards">
           <div class="card">
-            <h3>Frische Zutaten</h3>
-            <p>Täglich frisch zubereitet mit Fokus auf Geschmack, Qualität und saubere Präsentation.</p>
+            <h3>Starker Kontrast</h3>
+            <p>Schwarz als Grundfläche, Grün als Akzent und Weiß für klare Lesbarkeit.</p>
           </div>
           <div class="card">
-            <h3>Moderner Auftritt</h3>
-            <p>Schwarz, Weiß und kräftiges Grün – passend zu deinem Sultan-Branding.</p>
+            <h3>Professioneller Eindruck</h3>
+            <p>Kein chaotischer Flyer-Look, sondern eine saubere Marke mit klarer Struktur.</p>
           </div>
           <div class="card">
-            <h3>Schnell & klar</h3>
-            <p>Kunden finden sofort die wichtigsten Infos: Karte, Öffnungszeiten, Kontakt und Rechtliches.</p>
+            <h3>Rechtlich vorbereitet</h3>
+            <p>Als Nächstes ergänzen wir Impressum, Datenschutz und echte Kontaktdaten.</p>
           </div>
         </div>
       </div>
@@ -290,35 +403,37 @@
 
     <section id="speisekarte">
       <div class="container">
+        <div class="section-tag">Auswahl</div>
         <h2 class="section-title">Speisekarte</h2>
         <p class="section-subtitle">
-          Das sind vorerst Platzhalter. Danach ersetzen wir alles mit deinen echten Gerichten und Preisen aus deiner Werbung.
+          Hier steht jetzt eine saubere Vorschau. Danach ersetzen wir jeden Punkt mit
+          den echten Gerichten, Preisen und Zusatzinfos aus deinem Material.
         </p>
 
-        <div class="menu-list">
+        <div class="menu-grid">
           <div class="menu-item">
-            <strong>Chicken Gemüse Kebab <span>Preis folgt</span></strong>
-            <div>Frisch, saftig und mit knackigem Gemüse serviert.</div>
+            <strong>Chicken Gemüse Kebab <span class="price">Preis folgt</span></strong>
+            <div>Mit frischem Gemüse, Sauce und hochwertigem Auftritt als Signature-Produkt.</div>
           </div>
           <div class="menu-item">
-            <strong>Falafel <span>Preis folgt</span></strong>
-            <div>Vegetarische Alternative mit frischem Salat und Sauce.</div>
+            <strong>Falafel <span class="price">Preis folgt</span></strong>
+            <div>Vegetarische Option mit frischem Salat und klassischer Sauce.</div>
           </div>
           <div class="menu-item">
-            <strong>Lahmacun <span>Preis folgt</span></strong>
-            <div>Frisch belegt und direkt serviert.</div>
+            <strong>Lahmacun <span class="price">Preis folgt</span></strong>
+            <div>Frisch serviert, schnell zubereitet und beliebt für unterwegs.</div>
           </div>
           <div class="menu-item">
-            <strong>Pizza 28 cm <span>Preis folgt</span></strong>
-            <div>Beliebte Auswahl für den schnellen Hunger.</div>
+            <strong>Pizza 28 cm <span class="price">Preis folgt</span></strong>
+            <div>Weitere feste Kategorie aus deinem Werbematerial.</div>
           </div>
           <div class="menu-item">
-            <strong>Pommes & Extras <span>Preis folgt</span></strong>
-            <div>Perfekt als Beilage oder Ergänzung.</div>
+            <strong>Pommes & Extras <span class="price">Preis folgt</span></strong>
+            <div>Beilagen, Zusatzwünsche und kleine Ergänzungen zur Bestellung.</div>
           </div>
           <div class="menu-item">
-            <strong>Getränke <span>Preis folgt</span></strong>
-            <div>Ayran, Wasser, Softdrinks und mehr.</div>
+            <strong>Getränke <span class="price">Preis folgt</span></strong>
+            <div>Ayran, Wasser, Softdrinks und weitere Erfrischungen.</div>
           </div>
         </div>
       </div>
@@ -326,12 +441,13 @@
 
     <section id="zeiten">
       <div class="container">
+        <div class="section-tag">Besuchszeiten</div>
         <h2 class="section-title">Öffnungszeiten</h2>
         <p class="section-subtitle">
-          Diese Zeiten sind Platzhalter. Danach tragen wir deine echten Zeiten ein.
+          Das sind noch Platzhalter. Gleich danach setzen wir deine echten Zeiten ein.
         </p>
 
-        <div class="hours">
+        <div class="panel">
           <div class="hours-row"><div>Montag</div><div>11:00 – 22:00</div></div>
           <div class="hours-row"><div>Dienstag</div><div>11:00 – 22:00</div></div>
           <div class="hours-row"><div>Mittwoch</div><div>11:00 – 22:00</div></div>
@@ -345,31 +461,38 @@
 
     <section id="kontakt">
       <div class="container">
+        <div class="section-tag">Kontakt & Pflichtangaben</div>
         <h2 class="section-title">Kontakt</h2>
         <p class="section-subtitle">
-          Hier kommen deine echten Kontaktdaten rein.
+          Hier tragen wir jetzt im nächsten Schritt deine echten Kontaktdaten und
+          danach die rechtlichen Seiten ein.
         </p>
 
-        <div class="two-col">
-          <div class="contact-box">
+        <div class="info-grid">
+          <div class="panel">
             <h3>Kontaktdaten</h3>
             <p><strong>Ladenname:</strong> Sultan Gemüse Kebab</p>
-            <p><strong>Adresse:</strong> Adresse folgt</p>
-            <p><strong>Telefon:</strong> Telefonnummer folgt</p>
-            <p><strong>E-Mail:</strong> E-Mail folgt</p>
-            <p><strong>Stadt:</strong> Stadt folgt</p>
+            <p><strong>Adresse:</strong> folgt</p>
+            <p><strong>Telefon:</strong> folgt</p>
+            <p><strong>E-Mail:</strong> folgt</p>
+            <p><strong>Stadt:</strong> folgt</p>
           </div>
 
-          <div class="legal-box" id="rechtliches">
+          <div class="panel">
             <h3>Rechtliches</h3>
-            <p>Als Nächstes erstellen wir sauber:</p>
+            <p>Als Nächstes ergänzen wir professionell:</p>
             <p>• Impressum</p>
             <p>• Datenschutzerklärung</p>
-            <p>• saubere Pflichtangaben für die Website</p>
+            <p>• Pflichtangaben für die Website</p>
             <p>
-              Vollständig rechtlich prüfen kann das nur ein Anwalt oder Datenschutzberater,
-              aber wir bauen die Seite professionell und sauber auf.
+              Eine individuelle verbindliche Prüfung macht nur ein Anwalt oder Datenschutzberater,
+              aber wir bauen die Seite strukturiert, sauber und deutlich professioneller als üblich auf.
             </p>
+
+            <div class="legal-links">
+              <a href="impressum.html">Impressum</a>
+              <a href="datenschutz.html">Datenschutz</a>
+            </div>
           </div>
         </div>
       </div>
