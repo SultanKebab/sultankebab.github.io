@@ -1,17 +1,385 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Sultan Gemüse Kebab</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sultan Gemüse Kebab</title>
+  <meta name="description" content="Sultan Gemüse Kebab – frischer Kebab, Falafel, Lahmacun, Pizza und mehr." />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      border-bottom: 1px solid #1f1f1f;
+      background: #050505;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: bold;
+      color: #9cff00;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      opacity: 0.9;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(180deg, #050505 0%, #0c0c0c 100%);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #9cff00;
+      color: #9cff00;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 54px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: 19px;
+      color: #d8d8d8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #9cff00;
+      color: #050505;
+    }
+
+    .btn-secondary {
+      border: 1px solid #9cff00;
+      color: #9cff00;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #cfcfcf;
+      max-width: 700px;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #101010;
+      border: 1px solid #1e1e1e;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #9cff00;
+    }
+
+    .menu-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .menu-item {
+      background: #101010;
+      border: 1px solid #1e1e1e;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .menu-item strong {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .menu-item span {
+      color: #9cff00;
+      white-space: nowrap;
+    }
+
+    .hours, .contact-box, .legal-box {
+      background: #101010;
+      border: 1px solid #1e1e1e;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #1d1d1d;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    footer {
+      border-top: 1px solid #1f1f1f;
+      padding: 26px 0;
+      color: #bdbdbd;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .cards,
+      .menu-list,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Sultan Gemüse Kebab</div>
+      <nav class="nav-links">
+        <a href="#start">Start</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#zeiten">Öffnungszeiten</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#rechtliches">Rechtliches</a>
+      </nav>
+    </div>
+  </header>
 
-<body style="background:black;color:white;text-align:center;font-family:Arial">
+  <main>
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="badge">Premium Street Food</div>
+        <h1>Wo Qualität<br>Geschmack bekommt.</h1>
+        <p>
+          Willkommen bei Sultan Gemüse Kebab. Frische Zutaten, starker Geschmack
+          und ein moderner Auftritt – genau wie in deiner Werbung: dunkel, edel,
+          kontraststark und hochwertig.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#speisekarte">Speisekarte ansehen</a>
+          <a class="btn btn-secondary" href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </section>
 
-<h1>Sultan Gemüse Kebab</h1>
+    <section>
+      <div class="container">
+        <h2 class="section-title">Unser Konzept</h2>
+        <p class="section-subtitle">
+          Diese erste Version ist bewusst professionell, sauber und klar aufgebaut.
+          Im nächsten Schritt tragen wir deine echten Ladeninfos, Speisekarte,
+          Bilder, Öffnungszeiten und Rechtstexte ein.
+        </p>
 
-<p>Willkommen auf unserer offiziellen Website.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Frische Zutaten</h3>
+            <p>Täglich frisch zubereitet mit Fokus auf Geschmack, Qualität und saubere Präsentation.</p>
+          </div>
+          <div class="card">
+            <h3>Moderner Auftritt</h3>
+            <p>Schwarz, Weiß und kräftiges Grün – passend zu deinem Sultan-Branding.</p>
+          </div>
+          <div class="card">
+            <h3>Schnell & klar</h3>
+            <p>Kunden finden sofort die wichtigsten Infos: Karte, Öffnungszeiten, Kontakt und Rechtliches.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<p>Unsere neue Website wird gerade aufgebaut.</p>
+    <section id="speisekarte">
+      <div class="container">
+        <h2 class="section-title">Speisekarte</h2>
+        <p class="section-subtitle">
+          Das sind vorerst Platzhalter. Danach ersetzen wir alles mit deinen echten Gerichten und Preisen aus deiner Werbung.
+        </p>
 
+        <div class="menu-list">
+          <div class="menu-item">
+            <strong>Chicken Gemüse Kebab <span>Preis folgt</span></strong>
+            <div>Frisch, saftig und mit knackigem Gemüse serviert.</div>
+          </div>
+          <div class="menu-item">
+            <strong>Falafel <span>Preis folgt</span></strong>
+            <div>Vegetarische Alternative mit frischem Salat und Sauce.</div>
+          </div>
+          <div class="menu-item">
+            <strong>Lahmacun <span>Preis folgt</span></strong>
+            <div>Frisch belegt und direkt serviert.</div>
+          </div>
+          <div class="menu-item">
+            <strong>Pizza 28 cm <span>Preis folgt</span></strong>
+            <div>Beliebte Auswahl für den schnellen Hunger.</div>
+          </div>
+          <div class="menu-item">
+            <strong>Pommes & Extras <span>Preis folgt</span></strong>
+            <div>Perfekt als Beilage oder Ergänzung.</div>
+          </div>
+          <div class="menu-item">
+            <strong>Getränke <span>Preis folgt</span></strong>
+            <div>Ayran, Wasser, Softdrinks und mehr.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="zeiten">
+      <div class="container">
+        <h2 class="section-title">Öffnungszeiten</h2>
+        <p class="section-subtitle">
+          Diese Zeiten sind Platzhalter. Danach tragen wir deine echten Zeiten ein.
+        </p>
+
+        <div class="hours">
+          <div class="hours-row"><div>Montag</div><div>11:00 – 22:00</div></div>
+          <div class="hours-row"><div>Dienstag</div><div>11:00 – 22:00</div></div>
+          <div class="hours-row"><div>Mittwoch</div><div>11:00 – 22:00</div></div>
+          <div class="hours-row"><div>Donnerstag</div><div>11:00 – 22:00</div></div>
+          <div class="hours-row"><div>Freitag</div><div>11:00 – 23:00</div></div>
+          <div class="hours-row"><div>Samstag</div><div>12:00 – 23:00</div></div>
+          <div class="hours-row"><div>Sonntag</div><div>12:00 – 21:00</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="section-subtitle">
+          Hier kommen deine echten Kontaktdaten rein.
+        </p>
+
+        <div class="two-col">
+          <div class="contact-box">
+            <h3>Kontaktdaten</h3>
+            <p><strong>Ladenname:</strong> Sultan Gemüse Kebab</p>
+            <p><strong>Adresse:</strong> Adresse folgt</p>
+            <p><strong>Telefon:</strong> Telefonnummer folgt</p>
+            <p><strong>E-Mail:</strong> E-Mail folgt</p>
+            <p><strong>Stadt:</strong> Stadt folgt</p>
+          </div>
+
+          <div class="legal-box" id="rechtliches">
+            <h3>Rechtliches</h3>
+            <p>Als Nächstes erstellen wir sauber:</p>
+            <p>• Impressum</p>
+            <p>• Datenschutzerklärung</p>
+            <p>• saubere Pflichtangaben für die Website</p>
+            <p>
+              Vollständig rechtlich prüfen kann das nur ein Anwalt oder Datenschutzberater,
+              aber wir bauen die Seite professionell und sauber auf.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Sultan Gemüse Kebab – Offizielle Website
+    </div>
+  </footer>
 </body>
 </html>
