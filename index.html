@@ -94,16 +94,18 @@
       position:relative;
     }
 
-    /* Hintergrund: sichtbar auf Desktop und Mobile */
+    /* Hintergrund: füllt Vollbild ohne schwarze Balken */
     body::before{
       content:"";
       position:fixed;
       inset:0;
       z-index:-3;
       background-image:url("background_web.png");
-      background-repeat:repeat-y;
-      background-position:center top;
-      background-size:1400px auto;
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:cover;
+      transform:scale(1.04);
+      transform-origin:center center;
       opacity:1;
       pointer-events:none;
     }
@@ -114,32 +116,45 @@
       inset:0;
       z-index:-2;
       background:
-        linear-gradient(180deg, rgba(5,8,6,.26) 0%, rgba(5,8,6,.42) 35%, rgba(5,8,6,.58) 100%),
+        linear-gradient(180deg, rgba(5,8,6,.24) 0%, rgba(5,8,6,.38) 35%, rgba(5,8,6,.54) 100%),
         radial-gradient(circle at 12% 12%, rgba(158,214,60,.08), transparent 20%),
         radial-gradient(circle at 85% 18%, rgba(158,214,60,.06), transparent 20%),
         radial-gradient(circle at 22% 80%, rgba(158,214,60,.05), transparent 22%);
       pointer-events:none;
     }
 
+    @media (min-aspect-ratio: 16/9){
+      body::before{
+        transform:scale(1.06);
+      }
+    }
+
+    @media (min-width: 1800px){
+      body::before{
+        transform:scale(1.08);
+      }
+    }
+
     @media (max-width: 980px){
       body::before{
-        background-repeat:repeat-y;
+        background-repeat:no-repeat;
         background-position:center top;
-        background-size:1050px auto;
+        background-size:cover;
+        transform:scale(1.02);
       }
 
       body::after{
         background:
-          linear-gradient(180deg, rgba(5,8,6,.20) 0%, rgba(5,8,6,.36) 35%, rgba(5,8,6,.52) 100%),
+          linear-gradient(180deg, rgba(5,8,6,.20) 0%, rgba(5,8,6,.34) 35%, rgba(5,8,6,.50) 100%),
           radial-gradient(circle at 12% 12%, rgba(158,214,60,.06), transparent 22%);
       }
     }
 
     @media (max-width: 640px){
       body::before{
-        background-repeat:repeat-y;
+        background-size:cover;
         background-position:center top;
-        background-size:900px auto;
+        transform:scale(1.01);
       }
     }
 
@@ -1660,7 +1675,6 @@
         privacy8: "Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.",
         footerCopy: "© 2026 Sultan Gemüse Kebab – Wo Qualität Geschmack bekommt"
       },
-
       en: {
         pageTitle: "Sultan Gemüse Kebab Berlin – Fresh. Made with heart.",
         pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde. Chicken vegetable kebab, falafel, lahmacun, pizza, salads and drinks – prepared with care, honest ingredients and real passion.",
@@ -1794,7 +1808,6 @@
         privacy8: "Within the framework of the statutory provisions, you have the right to information, rectification, erasure, restriction of processing and, where applicable, the right to lodge a complaint with a data protection supervisory authority.",
         footerCopy: "© 2026 Sultan Gemüse Kebab – Where quality becomes taste"
       },
-
       tr: {
         pageTitle: "Sultan Gemüse Kebab Berlin – Taze. Kalpten yapılır.",
         pageDescription: "Berlin Lichterfelde’de Sultan Gemüse Kebab. Chicken sebzeli kebap, falafel, lahmacun, pizza, salata ve içecekler – özen, dürüst malzemeler ve gerçek tutkuyla hazırlanır.",
@@ -1958,8 +1971,13 @@
       });
 
       document.querySelectorAll('[data-i18n-attr]').forEach(el => {
-        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
-        if (t[key] !== undefined) el.setAttribute(attr, t[key]);
+        const attrValue = el.getAttribute('data-i18n-attr');
+        const parts = attrValue.split(':');
+        if (parts.length === 2) {
+          const attr = parts[0];
+          const key = parts[1];
+          if (t[key] !== undefined) el.setAttribute(attr, t[key]);
+        }
       });
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
