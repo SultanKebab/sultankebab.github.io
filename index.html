@@ -11,6 +11,7 @@
   />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#09120d" />
+  <meta name="author" content="Sultan Gemüse Kebab" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sultan Gemüse Kebab Berlin – Frisch. Mit Herz gemacht." />
@@ -28,6 +29,9 @@
     content="Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza und mehr – mit Herz zubereitet in Berlin Lichterfelde."
   />
   <meta name="twitter:image" content="Sultan Logo 8K.png" />
+
+  <link rel="preload" href="background_web.png" as="image" />
+  <link rel="preload" href="Sultan Logo 8K.png" as="image" />
 
   <script type="application/ld+json">
   {
@@ -64,7 +68,7 @@
 
   <style>
     :root{
-      --bg:#09120d;
+      --bg:#08100c;
       --panel:rgba(8,12,10,.80);
       --panel-strong:rgba(7,11,9,.90);
       --panel-soft:rgba(10,16,13,.72);
@@ -94,7 +98,7 @@
       position:relative;
     }
 
-    /* Hintergrund: füllt Vollbild ohne schwarze Balken */
+    /* Hintergrund: ruhiger Look, keine Balken, kein Kacheln */
     body::before{
       content:"";
       position:fixed;
@@ -104,10 +108,11 @@
       background-repeat:no-repeat;
       background-position:center center;
       background-size:cover;
-      transform:scale(1.04);
+      opacity:.58;
+      transform:scale(1.025);
       transform-origin:center center;
-      opacity:1;
       pointer-events:none;
+      will-change:transform;
     }
 
     body::after{
@@ -116,37 +121,46 @@
       inset:0;
       z-index:-2;
       background:
-        linear-gradient(180deg, rgba(5,8,6,.24) 0%, rgba(5,8,6,.38) 35%, rgba(5,8,6,.54) 100%),
-        radial-gradient(circle at 12% 12%, rgba(158,214,60,.08), transparent 20%),
-        radial-gradient(circle at 85% 18%, rgba(158,214,60,.06), transparent 20%),
-        radial-gradient(circle at 22% 80%, rgba(158,214,60,.05), transparent 22%);
+        linear-gradient(180deg, rgba(4,8,6,.64) 0%, rgba(4,8,6,.76) 28%, rgba(4,8,6,.86) 100%),
+        radial-gradient(circle at 18% 12%, rgba(158,214,60,.08), transparent 18%),
+        radial-gradient(circle at 82% 18%, rgba(158,214,60,.06), transparent 18%),
+        radial-gradient(circle at 26% 78%, rgba(158,214,60,.05), transparent 18%),
+        radial-gradient(circle at 84% 72%, rgba(158,214,60,.04), transparent 18%);
       pointer-events:none;
     }
 
-    @media (min-aspect-ratio: 16/9){
+    @media (min-width: 1600px){
       body::before{
-        transform:scale(1.06);
+        transform:scale(1.04);
       }
     }
 
-    @media (min-width: 1800px){
+    @media (min-width: 2200px){
       body::before{
-        transform:scale(1.08);
+        transform:scale(1.055);
+      }
+    }
+
+    @media (max-width: 1200px){
+      body::before{
+        transform:scale(1.02);
       }
     }
 
     @media (max-width: 980px){
       body::before{
+        background-size:cover;
         background-repeat:no-repeat;
         background-position:center top;
-        background-size:cover;
-        transform:scale(1.02);
+        transform:scale(1.01);
+        opacity:.56;
       }
 
       body::after{
         background:
-          linear-gradient(180deg, rgba(5,8,6,.20) 0%, rgba(5,8,6,.34) 35%, rgba(5,8,6,.50) 100%),
-          radial-gradient(circle at 12% 12%, rgba(158,214,60,.06), transparent 22%);
+          linear-gradient(180deg, rgba(4,8,6,.58) 0%, rgba(4,8,6,.72) 34%, rgba(4,8,6,.84) 100%),
+          radial-gradient(circle at 18% 12%, rgba(158,214,60,.06), transparent 20%),
+          radial-gradient(circle at 82% 18%, rgba(158,214,60,.04), transparent 20%);
       }
     }
 
@@ -154,7 +168,13 @@
       body::before{
         background-size:cover;
         background-position:center top;
-        transform:scale(1.01);
+        transform:scale(1);
+        opacity:.54;
+      }
+
+      body::after{
+        background:
+          linear-gradient(180deg, rgba(4,8,6,.54) 0%, rgba(4,8,6,.70) 38%, rgba(4,8,6,.82) 100%);
       }
     }
 
