@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Sultan Gemüse Kebab Berlin – Frisch. Herzhaft. Besonders.</title>
+  <title>Sultan Gemüse Kebab Berlin – Frisch. Mit Herz gemacht.</title>
   <meta
     name="description"
-    content="Sultan Gemüse Kebab in Berlin Lichterfelde. Frisch zubereiteter Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate und Getränke. Mit Herz, Qualität und echtem Geschmack."
+    content="Sultan Gemüse Kebab in Berlin Lichterfelde. Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate und Getränke – mit echter Sorgfalt, ehrlichen Zutaten und viel Herz zubereitet."
   />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0a120d" />
+  <meta name="theme-color" content="#09120d" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sultan Gemüse Kebab Berlin – Frisch. Herzhaft. Besonders." />
+  <meta property="og:title" content="Sultan Gemüse Kebab Berlin – Frisch. Mit Herz gemacht." />
   <meta
     property="og:description"
-    content="Ein Ort für Menschen, die gutes Essen fühlen wollen: mit frischen Zutaten, ehrlicher Qualität und echtem Geschmack."
+    content="Ein Ort für Menschen, die gutes Essen nicht nur essen, sondern fühlen wollen."
   />
   <meta property="og:image" content="Sultan Logo 8K.png" />
   <meta property="og:locale" content="de_DE" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sultan Gemüse Kebab Berlin – Frisch. Herzhaft. Besonders." />
+  <meta name="twitter:title" content="Sultan Gemüse Kebab Berlin – Frisch. Mit Herz gemacht." />
   <meta
     name="twitter:description"
     content="Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza und mehr – mit Herz zubereitet in Berlin Lichterfelde."
@@ -48,9 +48,7 @@
     "openingHoursSpecification":[
       {
         "@type":"OpeningHoursSpecification",
-        "dayOfWeek":[
-          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-        ],
+        "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens":"11:00",
         "closes":"00:00"
       }
@@ -66,44 +64,82 @@
 
   <style>
     :root{
-      --bg:#08100c;
-      --bg-soft:rgba(8,16,12,.74);
-      --panel:rgba(6,10,8,.82);
-      --panel-2:rgba(10,18,14,.84);
+      --bg:#09120d;
+      --panel:rgba(8,12,10,.80);
+      --panel-strong:rgba(7,11,9,.90);
+      --panel-soft:rgba(10,16,13,.72);
+      --text:#ffffff;
+      --muted:#d9ddd9;
+      --soft:#a7afa8;
       --line:rgba(255,255,255,.09);
       --line-soft:rgba(255,255,255,.05);
-      --text:#ffffff;
-      --muted:#d8ded8;
-      --soft:#a9b2aa;
       --green:#9ed63c;
-      --green-strong:#baf254;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
-      --shadow-strong:0 35px 100px rgba(0,0,0,.48);
-      --radius:26px;
+      --green-strong:#bbf35a;
+      --shadow:0 20px 60px rgba(0,0,0,.34);
+      --shadow-strong:0 35px 100px rgba(0,0,0,.46);
+      --radius:28px;
       --max:1240px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+    html,body{min-height:100%}
+
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
-      background-color:var(--bg);
-      background-image:
-        linear-gradient(180deg, rgba(5,8,6,.48), rgba(5,8,6,.62)),
-        url("background_web.png");
-      background-repeat:repeat;
-      background-size:cover;
-      background-attachment:fixed;
-      background-position:center center;
+      background:var(--bg);
       overflow-x:hidden;
+      position:relative;
     }
 
-    @media (max-width: 900px){
-      body{
-        background-attachment:scroll;
-        background-size:cover;
+    /* Hintergrund: sichtbar auf Desktop und Mobile */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background-image:url("background_web.png");
+      background-repeat:repeat-y;
+      background-position:center top;
+      background-size:1400px auto;
+      opacity:1;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg, rgba(5,8,6,.26) 0%, rgba(5,8,6,.42) 35%, rgba(5,8,6,.58) 100%),
+        radial-gradient(circle at 12% 12%, rgba(158,214,60,.08), transparent 20%),
+        radial-gradient(circle at 85% 18%, rgba(158,214,60,.06), transparent 20%),
+        radial-gradient(circle at 22% 80%, rgba(158,214,60,.05), transparent 22%);
+      pointer-events:none;
+    }
+
+    @media (max-width: 980px){
+      body::before{
+        background-repeat:repeat-y;
+        background-position:center top;
+        background-size:1050px auto;
+      }
+
+      body::after{
+        background:
+          linear-gradient(180deg, rgba(5,8,6,.20) 0%, rgba(5,8,6,.36) 35%, rgba(5,8,6,.52) 100%),
+          radial-gradient(circle at 12% 12%, rgba(158,214,60,.06), transparent 22%);
+      }
+    }
+
+    @media (max-width: 640px){
+      body::before{
+        background-repeat:repeat-y;
+        background-position:center top;
+        background-size:900px auto;
       }
     }
 
@@ -112,7 +148,7 @@
     button{font:inherit}
 
     .container{
-      width:min(var(--max), calc(100% - 28px));
+      width:min(var(--max), calc(100% - 24px));
       margin:0 auto;
     }
 
@@ -124,12 +160,13 @@
       height:1px;
       overflow:hidden;
     }
+
     .skip-link:focus{
       left:16px;
       top:16px;
       width:auto;
       height:auto;
-      z-index:9999;
+      z-index:4000;
       padding:12px 16px;
       background:#111;
       color:#fff;
@@ -139,10 +176,10 @@
     .topbar{
       position:sticky;
       top:0;
-      z-index:2000;
-      background:rgba(4,8,6,.72);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
+      z-index:2500;
+      background:rgba(5,9,7,.70);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
@@ -165,23 +202,23 @@
     .brand-logo{
       width:56px;
       height:56px;
-      border-radius:14px;
+      border-radius:16px;
       object-fit:cover;
+      flex:0 0 auto;
       box-shadow:0 0 0 1px rgba(255,255,255,.06);
       background:#000;
-      flex:0 0 auto;
     }
 
     .brand-copy strong{
       display:block;
       font-size:20px;
-      line-height:1.1;
+      line-height:1.05;
     }
 
     .brand-copy span{
       display:block;
-      font-size:12px;
       margin-top:4px;
+      font-size:12px;
       color:var(--soft);
       text-transform:uppercase;
       letter-spacing:.8px;
@@ -197,7 +234,6 @@
 
     .nav-links{
       display:flex;
-      align-items:center;
       gap:16px;
       flex-wrap:wrap;
       justify-content:flex-end;
@@ -218,7 +254,7 @@
       width:0;
       height:2px;
       background:var(--green-strong);
-      transition:.2s ease;
+      transition:.22s ease;
     }
 
     .nav-links a:hover::after,
@@ -250,15 +286,16 @@
 
     .lang-btn.active{
       background:linear-gradient(180deg, var(--green-strong), var(--green));
-      color:#0a1008;
+      color:#09110b;
     }
 
     .hero{
-      position:relative;
-      min-height:94svh;
+      min-height:96svh;
       display:flex;
       align-items:center;
-      padding:42px 0 70px;
+      padding:46px 0 70px;
+      position:relative;
+      z-index:1;
     }
 
     .hero-inner{
@@ -316,13 +353,13 @@
       align-items:center;
       justify-content:center;
       font-weight:700;
-      transition:.25s ease;
+      transition:.22s ease;
       border:1px solid transparent;
     }
 
     .btn-primary{
       background:linear-gradient(180deg,var(--green-strong),var(--green));
-      color:#0a1008;
+      color:#09110b;
       box-shadow:0 18px 40px rgba(158,214,60,.22);
     }
 
@@ -342,12 +379,13 @@
     }
 
     .highlight{
-      background:rgba(6,10,8,.62);
+      background:rgba(8,12,10,.60);
       border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
       padding:16px;
       box-shadow:var(--shadow);
       backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
 
     .highlight strong{
@@ -365,13 +403,15 @@
     }
 
     .hero-card{
-      background:linear-gradient(180deg, rgba(7,12,10,.76), rgba(7,12,10,.9));
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(7,12,10,.76), rgba(7,12,10,.90));
       border:1px solid rgba(255,255,255,.08);
       border-radius:32px;
       padding:28px;
       box-shadow:var(--shadow-strong);
-      overflow:hidden;
-      position:relative;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .hero-card::before{
@@ -385,7 +425,7 @@
     }
 
     .hero-logo{
-      width:min(100%, 420px);
+      width:min(100%, 400px);
       margin:0 auto 18px;
       filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));
       position:relative;
@@ -420,6 +460,8 @@
 
     section{
       padding:88px 0;
+      position:relative;
+      z-index:1;
     }
 
     .section-head{
@@ -458,13 +500,15 @@
     }
 
     .card{
-      background:linear-gradient(180deg, rgba(8,13,11,.78), rgba(7,12,10,.9));
+      background:linear-gradient(180deg, rgba(8,13,11,.76), rgba(7,12,10,.90));
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--radius);
       padding:28px;
       box-shadow:var(--shadow);
       position:relative;
       overflow:hidden;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .card::before{
@@ -474,7 +518,7 @@
       right:0;
       width:160px;
       height:160px;
-      background:radial-gradient(circle, rgba(158,214,60,.1), transparent 70%);
+      background:radial-gradient(circle, rgba(158,214,60,.10), transparent 70%);
       pointer-events:none;
     }
 
@@ -520,11 +564,13 @@
     }
 
     .image-card{
-      background:linear-gradient(180deg, rgba(8,13,11,.78), rgba(7,12,10,.88));
+      background:linear-gradient(180deg, rgba(8,13,11,.76), rgba(7,12,10,.88));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       overflow:hidden;
       box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
     .image-card img{
@@ -550,11 +596,13 @@
     }
 
     .menu-block{
-      background:linear-gradient(180deg, rgba(8,13,11,.8), rgba(7,12,10,.92));
+      background:linear-gradient(180deg, rgba(8,13,11,.80), rgba(7,12,10,.92));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       padding:28px;
       box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .menu-block h3{
@@ -609,7 +657,7 @@
     }
 
     .drinks-visual{
-      background:linear-gradient(180deg, rgba(8,13,11,.78), rgba(7,12,10,.9));
+      background:linear-gradient(180deg, rgba(8,13,11,.78), rgba(7,12,10,.90));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       overflow:hidden;
@@ -619,6 +667,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .drinks-visual img{
@@ -629,7 +679,7 @@
     }
 
     .drinks-card{
-      background:linear-gradient(180deg, rgba(8,13,11,.8), rgba(7,12,10,.92));
+      background:linear-gradient(180deg, rgba(8,13,11,.80), rgba(7,12,10,.92));
       border:1px solid rgba(255,255,255,.08);
       border-radius:30px;
       padding:30px;
@@ -637,6 +687,8 @@
       display:flex;
       flex-direction:column;
       justify-content:center;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
     }
 
     .drink-row{
@@ -690,6 +742,9 @@
       font-size:14px;
       background:rgba(5,9,7,.58);
       backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      position:relative;
+      z-index:1;
     }
 
     .footer-links{
@@ -738,7 +793,7 @@
 
     @media (max-width:760px){
       .container{
-        width:min(var(--max), calc(100% - 20px));
+        width:min(var(--max), calc(100% - 18px));
       }
 
       h1{
@@ -767,7 +822,7 @@
       }
 
       .drinks-visual{
-        min-height:380px;
+        min-height:360px;
         padding:12px;
       }
 
@@ -824,7 +879,7 @@
           <div class="eyebrow" data-i18n="heroEyebrow">Sultan · Frisch gemacht mit Herz und Seele</div>
           <h1 data-i18n-html="heroTitle">Mit Ruhe gemacht.<br>Mit Leidenschaft serviert.</h1>
           <p data-i18n="heroText">
-            Bei Sultan beginnt Qualität lange vor dem ersten Bissen. Unser Teig bekommt Zeit, unsere Falafel werden frisch zubereitet, unser Brot für den Chicken Gemüse Kebab wird eigens für uns hergestellt. Was bei uns auf den Tisch kommt, soll nicht einfach nur satt machen — es soll berühren, begeistern und Lust auf den nächsten Besuch machen.
+            Bei Sultan beginnt Qualität lange vor dem ersten Bissen. Unser Teig bekommt Zeit, unsere Falafel werden frisch zubereitet, unser Brot für den Chicken Gemüse Kebab wird eigens für uns hergestellt. Was bei uns auf den Tisch kommt, soll nicht einfach nur satt machen — es soll begeistern, im Kopf bleiben und Lust auf den nächsten Besuch machen.
           </p>
 
           <div class="cta-row">
@@ -883,7 +938,7 @@
           <div class="kicker" data-i18n="storeKicker">Unser Laden</div>
           <h2 data-i18n="storeTitle">Ein Ort, an dem Geschmack nicht zufällig entsteht.</h2>
           <p data-i18n="storeText">
-            Sultan steht für ehrliches Essen, klare Qualität und das gute Gefühl, etwas Besonderes gefunden zu haben. Hinter jedem Produkt steckt mehr als nur Routine — nämlich Erfahrung, Anspruch und der Wille, jeden Tag das Beste vom Besten zu geben. Genau das spürt man bei jedem Besuch.
+            Sultan steht für ehrliches Essen, klare Qualität und das gute Gefühl, etwas Besonderes gefunden zu haben. Hinter jedem Produkt steckt mehr als nur Routine — nämlich Erfahrung, Anspruch und der Wille, jeden Tag das Beste vom Besten zu geben.
           </p>
         </div>
 
@@ -891,7 +946,7 @@
           <div class="card">
             <h3 data-i18n="qualityTitle">Was uns wichtig ist</h3>
             <p data-i18n="qualityText">
-              Wir achten auf frische Abläufe, gute Zutaten und ein Ergebnis, das Menschen nicht nur zufrieden macht, sondern begeistert. Viele denken zuerst, sie wollen mehr — bis der Geschmack zeigt, warum bei uns Qualität vor Masse steht.
+              Wir achten auf frische Abläufe, gute Zutaten und ein Ergebnis, das Menschen nicht nur zufrieden macht, sondern wirklich begeistert. Manche denken zuerst, sie wollten eine größere Portion — bis der Geschmack erklärt, warum bei uns Qualität vor Masse steht.
             </p>
             <div class="quote" data-i18n="qualityQuote">
               Gutes Essen muss nicht laut sein. Es muss nur so gut sein, dass man wiederkommen will.
@@ -1422,7 +1477,7 @@
           </p>
 
           <p data-i18n="privacy3">
-            Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in den Datenschutzinformationen von GitHub.
+            Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.
           </p>
 
           <p data-i18n="privacy4">
@@ -1473,9 +1528,9 @@
   <script>
     const translations = {
       de: {
-        pageTitle: "Sultan Gemüse Kebab Berlin – Frisch. Herzhaft. Besonders.",
-        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde. Frisch zubereiteter Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate und Getränke. Mit Herz, Qualität und echtem Geschmack.",
-        ogDescription: "Ein Ort für Menschen, die gutes Essen fühlen wollen: mit frischen Zutaten, ehrlicher Qualität und echtem Geschmack.",
+        pageTitle: "Sultan Gemüse Kebab Berlin – Frisch. Mit Herz gemacht.",
+        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde. Chicken Gemüse Kebab, Falafel, Lahmacun, Pizza, Salate und Getränke – mit echter Sorgfalt, ehrlichen Zutaten und viel Herz zubereitet.",
+        ogDescription: "Ein Ort für Menschen, die gutes Essen nicht nur essen, sondern fühlen wollen.",
         skipLink: "Zum Inhalt springen",
         logoAlt: "Sultan Logo",
         heroLogoAlt: "Sultan Gemüse Kebab Logo",
@@ -1489,7 +1544,7 @@
         navContact: "Kontakt",
         heroEyebrow: "Sultan · Frisch gemacht mit Herz und Seele",
         heroTitle: "Mit Ruhe gemacht.<br>Mit Leidenschaft serviert.",
-        heroText: "Bei Sultan beginnt Qualität lange vor dem ersten Bissen. Unser Teig bekommt Zeit, unsere Falafel werden frisch zubereitet, unser Brot für den Chicken Gemüse Kebab wird eigens für uns hergestellt. Was bei uns auf den Tisch kommt, soll nicht einfach nur satt machen — es soll berühren, begeistern und Lust auf den nächsten Besuch machen.",
+        heroText: "Bei Sultan beginnt Qualität lange vor dem ersten Bissen. Unser Teig bekommt Zeit, unsere Falafel werden frisch zubereitet, unser Brot für den Chicken Gemüse Kebab wird eigens für uns hergestellt. Was bei uns auf den Tisch kommt, soll nicht einfach nur satt machen — es soll begeistern, im Kopf bleiben und Lust auf den nächsten Besuch machen.",
         heroBtnMenu: "Speisekarte ansehen",
         heroBtnRoute: "Route öffnen",
         highlight1: "Ruhezeit für unseren Teig",
@@ -1504,9 +1559,9 @@
         heroPoint3Text: "Wer einmal probiert, merkt schnell, warum so viel Herz und Seele in jedem Detail steckt.",
         storeKicker: "Unser Laden",
         storeTitle: "Ein Ort, an dem Geschmack nicht zufällig entsteht.",
-        storeText: "Sultan steht für ehrliches Essen, klare Qualität und das gute Gefühl, etwas Besonderes gefunden zu haben. Hinter jedem Produkt steckt mehr als nur Routine — nämlich Erfahrung, Anspruch und der Wille, jeden Tag das Beste vom Besten zu geben. Genau das spürt man bei jedem Besuch.",
+        storeText: "Sultan steht für ehrliches Essen, klare Qualität und das gute Gefühl, etwas Besonderes gefunden zu haben. Hinter jedem Produkt steckt mehr als nur Routine — nämlich Erfahrung, Anspruch und der Wille, jeden Tag das Beste vom Besten zu geben.",
         qualityTitle: "Was uns wichtig ist",
-        qualityText: "Wir achten auf frische Abläufe, gute Zutaten und ein Ergebnis, das Menschen nicht nur zufrieden macht, sondern begeistert. Viele denken zuerst, sie wollen mehr — bis der Geschmack zeigt, warum bei uns Qualität vor Masse steht.",
+        qualityText: "Wir achten auf frische Abläufe, gute Zutaten und ein Ergebnis, das Menschen nicht nur zufrieden macht, sondern wirklich begeistert. Manche denken zuerst, sie wollten eine größere Portion — bis der Geschmack erklärt, warum bei uns Qualität vor Masse steht.",
         qualityQuote: "Gutes Essen muss nicht laut sein. Es muss nur so gut sein, dass man wiederkommen will.",
         storyTitle: "Wie Sultan entstanden ist",
         storyText: "Sultan ist aus echter Erfahrung gewachsen. Die Grundlage kommt aus vielen Jahren Arbeit in Berlin, verfeinert durch Familie, Hingabe und den Wunsch, einen eigenen Ort mit Charakter zu schaffen. Was heute bei uns serviert wird, ist das Ergebnis von Zeit, Entwicklung und echter Liebe zum Essen.",
@@ -1597,7 +1652,7 @@
         privacyTitle: "Datenschutzerklärung",
         privacy1: "Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich der Information über unser gastronomisches Angebot.",
         privacy2: "Beim Aufruf dieser Website werden technisch erforderliche Daten verarbeitet, um die Website sicher und zuverlässig bereitzustellen. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Informationen zum verwendeten Browser und Betriebssystem sowie die aufgerufenen Seiten gehören.",
-        privacy3: "Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Weitere Informationen zur Datenverarbeitung durch GitHub finden Sie in den Datenschutzinformationen von GitHub.",
+        privacy3: "Diese Website wird über GitHub Pages bereitgestellt. Anbieter ist GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
         privacy4: "Diese Website verwendet nach unserem derzeitigen Stand keine Analyse- oder Tracking-Tools, keine eingebetteten Karten, keine Social-Media-Plugins und kein eigenes Kontaktformular.",
         privacy5: "Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen übermittelten Angaben ausschließlich zur Bearbeitung Ihrer Anfrage.",
         privacy6: "Auf dieser Website sind Links zu externen Plattformen wie Instagram, TikTok, YouTube und Google Maps enthalten. Erst beim Anklicken dieser Links werden Sie auf die jeweilige externe Website weitergeleitet. Für die Datenverarbeitung auf diesen externen Seiten sind ausschließlich deren Betreiber verantwortlich.",
@@ -1607,9 +1662,9 @@
       },
 
       en: {
-        pageTitle: "Sultan Gemüse Kebab Berlin – Fresh. Honest. Memorable.",
-        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde. Fresh chicken vegetable kebab, falafel, lahmacun, pizza, salads and drinks with real passion and quality.",
-        ogDescription: "A place for people who want to feel good food: fresh ingredients, honest quality and unforgettable taste.",
+        pageTitle: "Sultan Gemüse Kebab Berlin – Fresh. Made with heart.",
+        pageDescription: "Sultan Gemüse Kebab in Berlin Lichterfelde. Chicken vegetable kebab, falafel, lahmacun, pizza, salads and drinks – prepared with care, honest ingredients and real passion.",
+        ogDescription: "A place for people who want to feel good food, not just eat it.",
         skipLink: "Skip to content",
         logoAlt: "Sultan logo",
         heroLogoAlt: "Sultan Gemüse Kebab logo",
@@ -1623,7 +1678,7 @@
         navContact: "Contact",
         heroEyebrow: "Sultan · Freshly made with heart and soul",
         heroTitle: "Made with patience.<br>Served with passion.",
-        heroText: "At Sultan, quality begins long before the first bite. Our dough gets the time it needs, our falafel is prepared fresh, and the bread for our chicken vegetable kebab is made especially for us. What we serve should not simply fill you up — it should move you, impress you and make you want to come back.",
+        heroText: "At Sultan, quality begins long before the first bite. Our dough gets the time it needs, our falafel is prepared fresh, and the bread for our chicken vegetable kebab is made especially for us. What we serve should not simply fill you up — it should impress you, stay with you and make you want to come back.",
         heroBtnMenu: "View menu",
         heroBtnRoute: "Open route",
         highlight1: "Resting time for our dough",
@@ -1640,7 +1695,7 @@
         storeTitle: "A place where taste is never accidental.",
         storeText: "Sultan stands for honest food, clear quality and the feeling of having found something special. Behind every product is more than routine — there is experience, standards and the will to give the best of the best every day.",
         qualityTitle: "What matters to us",
-        qualityText: "We care about fresh processes, strong ingredients and a result that does more than satisfy people — it excites them. Many first think they want more, until the taste explains why quality comes before quantity here.",
+        qualityText: "We care about fresh processes, strong ingredients and a result that does more than satisfy people — it truly excites them. Some first think they want more, until the taste explains why quality comes before quantity here.",
         qualityQuote: "Good food does not need to be loud. It only needs to be good enough to make people come back.",
         storyTitle: "How Sultan came to life",
         storyText: "Sultan grew from real experience. Its foundation comes from many years of work in Berlin, shaped by family, dedication and the dream of creating a place with its own character. What we serve today is the result of time, development and real love for food.",
@@ -1731,7 +1786,7 @@
         privacyTitle: "Privacy policy",
         privacy1: "The protection of your personal data is important to us. This website serves solely to provide information about our food offering.",
         privacy2: "When this website is accessed, technically necessary data may be processed in order to provide the website securely and reliably. This may include in particular the IP address, date and time of access, information about the browser and operating system used, and the pages visited.",
-        privacy3: "This website is provided via GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Further information on data processing by GitHub can be found in GitHub’s privacy information.",
+        privacy3: "This website is provided via GitHub Pages. The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.",
         privacy4: "According to our current setup, this website does not use analytics or tracking tools, embedded maps, social media plugins, or its own contact form.",
         privacy5: "If you contact us by email, we process the information you send solely for the purpose of handling your enquiry.",
         privacy6: "This website contains links to external platforms such as Instagram, TikTok, YouTube and Google Maps. Only when you click these links will you be redirected to the respective external website. The operators of those external websites are solely responsible for the data processing there.",
@@ -1741,9 +1796,9 @@
       },
 
       tr: {
-        pageTitle: "Sultan Gemüse Kebab Berlin – Taze. Dürüst. Unutulmaz.",
-        pageDescription: "Berlin Lichterfelde’de Sultan Gemüse Kebab. Chicken sebzeli kebap, falafel, lahmacun, pizza, salata ve içecekler; gerçek emek, kalite ve lezzetle hazırlanır.",
-        ogDescription: "Taze malzemeler, dürüst kalite ve unutulmaz lezzet isteyenler için özel bir adres.",
+        pageTitle: "Sultan Gemüse Kebab Berlin – Taze. Kalpten yapılır.",
+        pageDescription: "Berlin Lichterfelde’de Sultan Gemüse Kebab. Chicken sebzeli kebap, falafel, lahmacun, pizza, salata ve içecekler – özen, dürüst malzemeler ve gerçek tutkuyla hazırlanır.",
+        ogDescription: "Sadece yemek değil, gerçek lezzet hissetmek isteyenler için özel bir yer.",
         skipLink: "İçeriğe geç",
         logoAlt: "Sultan logosu",
         heroLogoAlt: "Sultan Gemüse Kebab logosu",
@@ -1757,7 +1812,7 @@
         navContact: "İletişim",
         heroEyebrow: "Sultan · Kalp ve ruhla taze hazırlanır",
         heroTitle: "Sabırla hazırlanır.<br>Tutkuyla sunulur.",
-        heroText: "Sultan’da kalite ilk lokmadan çok önce başlar. Hamurumuz zamanını alır, falafelimiz taze hazırlanır, chicken sebzeli kebabımızın ekmeği bize özel üretilir. Sunulan şey sadece doyurmak için değil; etkilemek, hayran bırakmak ve yeniden gelme isteği uyandırmak içindir.",
+        heroText: "Sultan’da kalite ilk lokmadan çok önce başlar. Hamurumuz zamanını alır, falafelimiz taze hazırlanır, chicken sebzeli kebabımızın ekmeği bize özel üretilir. Sunulan şey sadece doyurmak için değil; etkilemek, akılda kalmak ve yeniden gelme isteği uyandırmak içindir.",
         heroBtnMenu: "Menüyü gör",
         heroBtnRoute: "Yol tarifi aç",
         highlight1: "Hamur için dinlenme süresi",
@@ -1774,7 +1829,7 @@
         storeTitle: "Lezzetin tesadüfen oluşmadığı bir yer.",
         storeText: "Sultan; dürüst yemek, net kalite ve özel bir yer bulmuş olma hissi demektir. Her ürünün arkasında rutinden fazlası vardır: deneyim, standart ve her gün en iyisini sunma isteği.",
         qualityTitle: "Bizim için önemli olan",
-        qualityText: "Taze süreçlere, güçlü malzemelere ve insanları sadece memnun etmekle kalmayıp heyecanlandıran bir sonuca önem veriyoruz. Çoğu kişi önce daha fazlasını ister; sonra tat, burada neden kalitenin miktardan önce geldiğini anlatır.",
+        qualityText: "Taze süreçlere, güçlü malzemelere ve insanları sadece memnun etmekle kalmayıp gerçekten heyecanlandıran bir sonuca önem veriyoruz. Bazıları önce daha fazlasını istediğini düşünür; sonra tat, burada neden kalitenin miktardan önce geldiğini anlatır.",
         qualityQuote: "İyi yemek yüksek sesle konuşmaz. Sadece insanları geri getirecek kadar iyi olur.",
         storyTitle: "Sultan nasıl doğdu",
         storyText: "Sultan gerçek deneyimden doğdu. Temeli Berlin’de geçen uzun yıllara, aileye, özveriye ve karakteri olan bir yer kurma hayaline dayanır. Bugün sunduğumuz şey zamanın, gelişimin ve gerçek yemek sevgisinin sonucudur.",
@@ -1865,7 +1920,7 @@
         privacyTitle: "Gizlilik politikası",
         privacy1: "Kişisel verilerinizin korunması bizim için önemlidir. Bu web sitesi yalnızca gastronomi hizmetimiz hakkında bilgi vermek amacıyla kullanılmaktadır.",
         privacy2: "Bu web sitesine erişildiğinde, sitenin güvenli ve güvenilir biçimde sunulabilmesi için teknik olarak gerekli veriler işlenebilir. Bunlara özellikle IP adresi, erişim tarihi ve saati, kullanılan tarayıcı ve işletim sistemi bilgileri ile ziyaret edilen sayfalar dahil olabilir.",
-        privacy3: "Bu web sitesi GitHub Pages üzerinden sunulmaktadır. Sağlayıcı GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, ABD’dir. GitHub’ın veri işlemesine ilişkin daha fazla bilgi GitHub gizlilik bilgilerinde bulunabilir.",
+        privacy3: "Bu web sitesi GitHub Pages üzerinden sunulmaktadır. Sağlayıcı GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, ABD’dir.",
         privacy4: "Mevcut kurulumumuza göre bu web sitesi analiz veya takip araçları, gömülü haritalar, sosyal medya eklentileri ya da kendi iletişim formunu kullanmamaktadır.",
         privacy5: "Bizimle e-posta yoluyla iletişime geçtiğinizde, gönderdiğiniz bilgileri yalnızca talebinizi işlemek amacıyla kullanırız.",
         privacy6: "Bu web sitesinde Instagram, TikTok, YouTube ve Google Maps gibi harici platformlara bağlantılar bulunmaktadır. Bu bağlantılara yalnızca tıkladığınızda ilgili harici web sitesine yönlendirilirsiniz. Bu harici sitelerdeki veri işleme faaliyetlerinden yalnızca onların işletmecileri sorumludur.",
@@ -1903,13 +1958,8 @@
       });
 
       document.querySelectorAll('[data-i18n-attr]').forEach(el => {
-        const value = el.getAttribute('data-i18n-attr');
-        const parts = value.split(':');
-        if (parts.length === 2) {
-          const attr = parts[0];
-          const key = parts[1];
-          if (t[key] !== undefined) el.setAttribute(attr, t[key]);
-        }
+        const [attr, key] = el.getAttribute('data-i18n-attr').split(':');
+        if (t[key] !== undefined) el.setAttribute(attr, t[key]);
       });
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
