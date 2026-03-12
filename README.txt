@@ -1,0 +1,1 @@
+Lege die Bilddateien aus deinem bestehenden Projekt zusätzlich in diesen Ordner: Sultan Logo 8K.png, background_web.png, elephantbay_poster_8k_final.png und ggf. weitere verwendete Bilder. Danach kann die Website direkt hochgeladen werden.
