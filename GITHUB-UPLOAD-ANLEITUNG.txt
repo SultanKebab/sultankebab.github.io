@@ -1,0 +1,33 @@
+SULTAN WEBSITE – DIREKTER GITHUB-UPLOAD
+
+1. Diese ZIP-Datei auf dem Mac entpacken.
+2. Den entpackten Ordner öffnen.
+3. Im Ordner Command + A drücken, damit ALLE Dateien und Ordner markiert sind.
+4. Den gesamten markierten Inhalt in das GitHub-Repository ziehen.
+5. Warten, bis der Upload vollständig abgeschlossen ist.
+6. „Commit changes“ anklicken.
+7. In GitHub: Settings > Pages.
+8. Source: „Deploy from a branch“.
+9. Branch: „main“ und Ordner „/ (root)“ auswählen.
+10. Save anklicken und einige Minuten warten.
+
+Auf GitHub müssen danach direkt sichtbar sein:
+index.html
+speisekarte.html
+unser-laden.html
+getraenke.html
+kontakt.html
+impressum.html
+datenschutz.html
+404.html
+assets
+css
+js
+.nojekyll
+
+WICHTIG:
+- Nicht nur die ZIP-Datei hochladen.
+- Nicht nur den äußeren Ordner hochladen.
+- Den INHALT des entpackten Ordners hochladen.
+- „index.html“ muss direkt auf der obersten Ebene des Repositorys liegen.
+- Der komplette Ordner „assets“ enthält alle Bilder und muss mit hochgeladen werden.

@@ -1,0 +1,55 @@
+SULTAN WEBSITE – BILDERÜBERSICHT
+
+Alle Bilddateien befinden sich bereits im Projekt. Bitte keine Namen oder Ordner verändern.
+
+HAUPTDATEIEN
+assets/logo.png
+- Quadratisches Sultan-Logo oben links und als Browser-/App-Symbol.
+
+assets/halal.png
+- Rundes Halal-Zeichen, klein und dezent eingeblendet.
+
+assets/background.webp
+- Dunkler dekorativer Hintergrund, der auf den Seiten verwendet wird.
+
+FOTOS
+assets/photos/kebab-in-hand.png
+- Fertiger Chicken-Gemüse-Kebab in einer Hand. Hauptbild auf der Startseite.
+
+assets/photos/freshly-sliced-chicken.png
+- Nahaufnahme des saftigen, frisch geschnittenen Chickenfleischs.
+
+assets/photos/chicken-spit.png
+- Vollständiger Chicken-Spieß im Laden. Großes Abschlussbild auf „Unser Laden“.
+
+assets/photos/fresh-bread.png
+- Frisch gebackene Brote in der Auslage.
+
+assets/photos/sultan-outdoor-area.png
+- Sultan-Außenansicht mit Sitzbereich und Zugang zum Laden.
+
+assets/photos/sultan-seating-area.png
+- Weitere Außenansicht beziehungsweise Sitzbereich des Ladens.
+
+GETRÄNKE
+assets/elephantbay.webp
+- Elephant-Bay-Produkt-/Getränkefoto.
+
+assets/elephantbay-product.webp
+- Zweites Elephant-Bay-Produktbild, als zusätzliche Website-Datei enthalten.
+
+SOCIAL-MEDIA-SYMBOLE
+assets/social/instagram.svg
+- Instagram-Originalsymbol.
+
+assets/social/tiktok.svg
+- TikTok-Originalsymbol.
+
+assets/social/youtube.svg
+- YouTube-Originalsymbol.
+
+WICHTIG
+- Die Bilder liegen absichtlich im Ordner „assets“ und dessen Unterordnern.
+- Auf der obersten Ebene sieht man daher überwiegend HTML-Dateien; das ist korrekt.
+- Den Ordner „assets“ beim Hochladen unbedingt vollständig mit auswählen.
+- Dateinamen, Groß-/Kleinschreibung und Ordnerstruktur nicht verändern.
